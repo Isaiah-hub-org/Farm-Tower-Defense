@@ -122,9 +122,8 @@ radius = 8.06226
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_lde8g")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.813471
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
