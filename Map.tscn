@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://ce34jbyc2e3vh"]
+[gd_scene load_steps=6 format=4 uid="uid://ce34jbyc2e3vh"]
 
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Icons/Cozy Farm Tileset.png" id="1_gfjgm"]
+[ext_resource type="PackedScene" uid="uid://2oxu1rwfjlhf" path="res://Enemy1.tscn" id="2_3vi7k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_gfjgm")
@@ -56,3 +57,7 @@ curve = SubResource("Curve2D_gfjgm")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(8, 496)
 rotation = -0.0713075
+
+[node name="Enemy1" parent="Path2D/PathFollow2D" instance=ExtResource("2_3vi7k")]
+position = Vector2(27.3589, -495.309)
+rotation = 0.0713075
