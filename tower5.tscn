@@ -120,7 +120,7 @@ radius = 8.06226
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(3, -9)
 sprite_frames = SubResource("SpriteFrames_lde8g")
 animation = &"attack"
 autoplay = "idle"
@@ -131,15 +131,6 @@ position = Vector2(-1, -7)
 shape = SubResource("CircleShape2D_stbnn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-modulate = Color(0, 0, 0, 1)
-offset_left = -25.0
-offset_top = -35.0
-offset_right = 25.0
-offset_bottom = -25.0
-value = 100.0
-show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
