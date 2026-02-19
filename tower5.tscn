@@ -1,7 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://csqnrc374m758"]
+[gd_scene load_steps=24 format=3 uid="uid://csqnrc374m758"]
 
+[ext_resource type="Script" uid="uid://d0pj6214pjsio" path="res://Tower5.cs" id="1_cr6gw"]
 [ext_resource type="Texture2D" uid="uid://bxsufv52cio58" path="res://Assets/ToxicFrog/GreenBlue/ToxicFrogGreenBlue_Attack.png" id="1_oqda0"]
 [ext_resource type="Texture2D" uid="uid://b67ospgelhuek" path="res://Assets/ToxicFrog/GreenBlue/ToxicFrogGreenBlue_Idle.png" id="2_cr6gw"]
+[ext_resource type="PackedScene" uid="uid://chk0bqrcvp2db" path="res://arrow.tscn" id="2_s3rwu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3rwu"]
 atlas = ExtResource("1_oqda0")
@@ -114,10 +116,40 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqda0"]
+bg_color = Color(0.884314, 3.34509e-06, 3.85046e-07, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cr6gw"]
+bg_color = Color(0, 0.701961, 0.117647, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="Theme" id="Theme_s3rwu"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_oqda0")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_cr6gw")
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_stbnn"]
 radius = 8.06226
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_cr6gw")
+arrow = ExtResource("2_s3rwu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -9)
@@ -125,12 +157,20 @@ sprite_frames = SubResource("SpriteFrames_lde8g")
 animation = &"attack"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, -7)
-shape = SubResource("CircleShape2D_stbnn")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = -29.0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = -21.0
+theme = SubResource("Theme_s3rwu")
+value = 70.0
+show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_stbnn")

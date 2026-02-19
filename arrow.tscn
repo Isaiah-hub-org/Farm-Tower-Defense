@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://chk0bqrcvp2db"]
+
+[ext_resource type="Texture2D" uid="uid://c2l5hpguelywj" path="res://Assets/download.png" id="1_2ndhl"]
+[ext_resource type="Script" uid="uid://b5fqj28f7yopc" path="res://AnimatedSprite2d.cs" id="2_acd0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acd0x"]
+atlas = ExtResource("1_2ndhl")
+region = Rect2(0, 0, 948, 380)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbexn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acd0x")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="arrow" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -1)
+scale = Vector2(0.648483, 0.578947)
+sprite_frames = SubResource("SpriteFrames_vbexn")
+animation = &"shoot"
+frame_progress = 0.575122
+script = ExtResource("2_acd0x")
