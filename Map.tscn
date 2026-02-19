@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://ce34jbyc2e3vh"]
+[gd_scene load_steps=8 format=4 uid="uid://ce34jbyc2e3vh"]
 
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Icons/Cozy Farm Tileset.png" id="1_gfjgm"]
 [ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://EnemySpawner.cs" id="2_3vi7k"]
 [ext_resource type="PackedScene" uid="uid://cgbkn2t6g243u" path="res://Enemy.tscn" id="3_3h1ab"]
+[ext_resource type="PackedScene" uid="uid://c75n6vv2naql0" path="res://Enemy2.tscn" id="3_7if1s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_gfjgm")
@@ -53,6 +54,7 @@ tile_set = SubResource("TileSet_3h1ab")
 [node name="EnemySpawner" type="Node2D" parent="." node_paths=PackedStringArray("Path")]
 script = ExtResource("2_3vi7k")
 EnemyScene = ExtResource("3_3h1ab")
+Enemy2Scene = ExtResource("3_7if1s")
 Path = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="EnemySpawner"]

@@ -22,9 +22,9 @@ public partial class Enemy : CharacterBody2D
 		var pathFollow = GetParent<PathFollow2D>();
 		pathFollow.Progress += Speed * (float)delta;
 
-		if (pathFollow.ProgressRatio >= 1.0f)
+		if (pathFollow.ProgressRatio >= 3.0f)
 		{
-		pathFollow.QueueFree(); // removes enemy + pathfollow
+		pathFollow.QueueFree(); 
 		}
 	}
 
