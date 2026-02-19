@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://3yscwecdjlna"]
+
+[ext_resource type="Script" uid="uid://dvfotjuj7iiwq" path="res://parallax_mover.gd" id="1_wyuup"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_wyuup")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
