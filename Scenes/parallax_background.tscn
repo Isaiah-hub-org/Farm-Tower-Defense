@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://db5qyhilwikuk"]
+[gd_scene load_steps=7 format=3 uid="uid://db5qyhilwikuk"]
 
 [ext_resource type="Texture2D" uid="uid://bews2qb1h8tol" path="res://Assets/Menu/background_plains-Sheet1.png" id="1_8ntqg"]
 [ext_resource type="Texture2D" uid="uid://bn77c2s0upt0u" path="res://Assets/Menu/background_plains-Sheet2.png" id="2_41i37"]
 [ext_resource type="Texture2D" uid="uid://dqislimufm720" path="res://Assets/Menu/background_plains-Sheet3.png" id="3_h550e"]
 [ext_resource type="Texture2D" uid="uid://dtbmfdc16l4io" path="res://Assets/Menu/background_plains-Sheet5.png" id="4_7hd7b"]
-[ext_resource type="PackedScene" uid="uid://3yscwecdjlna" path="res://parallax_mover.tscn" id="5_41i37"]
+[ext_resource type="PackedScene" uid="uid://dfcdl8a42r6u0" path="res://Scenes/parallax_mover.tscn" id="5_41i37"]
+[ext_resource type="PackedScene" uid="uid://tk7ns344t866" path="res://Scenes/Menu.tscn" id="6_h550e"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -38,3 +39,5 @@ texture = ExtResource("4_7hd7b")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_41i37")]
 position = Vector2(870, 535)
+
+[node name="Menu" parent="." instance=ExtResource("6_h550e")]

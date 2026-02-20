@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://tk7ns344t866"]
 
-[ext_resource type="Script" uid="uid://c2k8ibxn7xa2n" path="res://Scenes/MainMenu.cs" id="1_ihofj"]
+[ext_resource type="Script" uid="uid://t07d5ry7flbw" path="res://Script/Menu.cs" id="1_3kf3n"]
 
 [sub_resource type="FontVariation" id="FontVariation_ihofj"]
 
@@ -18,7 +18,7 @@ offset_right = -6.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ihofj")
+script = ExtResource("1_3kf3n")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
