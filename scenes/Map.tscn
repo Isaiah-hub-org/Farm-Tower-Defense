@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://ce34jbyc2e3vh"]
+[gd_scene load_steps=8 format=4 uid="uid://bnykvry7xdv1o"]
 
-[ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Icons/Cozy Farm Tileset.png" id="1_gfjgm"]
-[ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://EnemySpawner.cs" id="2_3vi7k"]
-[ext_resource type="PackedScene" uid="uid://cgbkn2t6g243u" path="res://Enemy.tscn" id="3_3h1ab"]
-[ext_resource type="PackedScene" uid="uid://c75n6vv2naql0" path="res://Enemy2.tscn" id="3_7if1s"]
+[ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Icons/Cozy Farm Tileset.png" id="1_tm3qm"]
+[ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://scripts/EnemySpawner.cs" id="2_yyirk"]
+[ext_resource type="PackedScene" uid="uid://cgbkn2t6g243u" path="res://scenes/Enemy.tscn" id="3_41ykk"]
+[ext_resource type="PackedScene" uid="uid://c75n6vv2naql0" path="res://scenes/Enemy2.tscn" id="4_inly4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
-texture = ExtResource("1_gfjgm")
+texture = ExtResource("1_tm3qm")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -52,9 +52,12 @@ tile_map_data = PackedByteArray("AAD+//z/AAAAAAIAAAD+//3/AAAAAAIAAAD+//7/AAAAAAI
 tile_set = SubResource("TileSet_3h1ab")
 
 [node name="EnemySpawner" type="Node2D" parent="." node_paths=PackedStringArray("Path")]
-script = ExtResource("2_3vi7k")
-EnemyScene = ExtResource("3_3h1ab")
-Enemy2Scene = ExtResource("3_7if1s")
+script = ExtResource("2_yyirk")
+EnemyScene = ExtResource("3_41ykk")
+Enemy2Scene = ExtResource("4_inly4")
+SpawnInterval = null
+Wave1Duration = null
+Wave2Duration = null
 Path = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="EnemySpawner"]
@@ -64,9 +67,10 @@ curve = SubResource("Curve2D_7if1s")
 position = Vector2(41, 499)
 rotation = 0.0964738
 
-[node name="Enemy" parent="EnemySpawner/Path2D/PathFollow2D" instance=ExtResource("3_3h1ab")]
+[node name="Enemy" parent="EnemySpawner/Path2D/PathFollow2D" instance=ExtResource("3_41ykk")]
 position = Vector2(-0.481622, -4.97675)
 rotation = -0.0964738
+Speed = null
 
 [node name="Timer" type="Timer" parent="EnemySpawner"]
 autostart = true
