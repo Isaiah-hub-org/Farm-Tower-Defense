@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class AnimatedSprite2d : AnimatedSprite2D
+public partial class Arrow : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
