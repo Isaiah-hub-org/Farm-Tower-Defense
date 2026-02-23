@@ -1,7 +1,7 @@
 using Godot ;
 using System;
 
-public partial class parallax_mover : CharacterBody2D
+public partial class ParallaxMover : CharacterBody2D
 {
     
     [Export]
@@ -19,3 +19,4 @@ public partial class parallax_mover : CharacterBody2D
         MoveAndSlide();
     }
 }
+

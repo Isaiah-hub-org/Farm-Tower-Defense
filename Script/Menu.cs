@@ -6,7 +6,7 @@ using System;
 public partial class Menu : Control
 {
 	public void OnPlayPressed() {
-		 GetTree().ChangeSceneToFile("res://test.tscn");
+		 GetTree().ChangeSceneToFile("");
 		
 	}
 	public void OnSettingsPressed() {
