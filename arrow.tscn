@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://chk0bqrcvp2db"]
+[gd_scene load_steps=6 format=3 uid="uid://chk0bqrcvp2db"]
 
 [ext_resource type="Texture2D" uid="uid://c2l5hpguelywj" path="res://Assets/download.png" id="1_2ndhl"]
-[ext_resource type="Script" uid="uid://b5fqj28f7yopc" path="res://AnimatedSprite2d.cs" id="2_acd0x"]
+[ext_resource type="Script" uid="uid://b1h6tnftmiwtx" path="res://Arrow.cs" id="1_acd0x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l5ahi"]
+radius = 54.0
+height = 494.011
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acd0x"]
 atlas = ExtResource("1_2ndhl")
@@ -19,11 +23,23 @@ animations = [{
 }]
 
 [node name="arrow" type="Node2D"]
+script = ExtResource("1_acd0x")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-44, -8)
+rotation = 1.56874
+shape = SubResource("CapsuleShape2D_l5ahi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6, -1)
+position = Vector2(2, 1)
 scale = Vector2(0.648483, 0.578947)
 sprite_frames = SubResource("SpriteFrames_vbexn")
 animation = &"shoot"
 frame_progress = 0.575122
-script = ExtResource("2_acd0x")
+
+[connection signal="area_entered" from="Area2D" to="." method="arrowarea"]
+[connection signal="body_entered" from="Area2D" to="." method="arrow"]

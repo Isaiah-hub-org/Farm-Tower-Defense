@@ -1,15 +1,13 @@
 using Godot;
 using System;
 
-public partial class Arrow : Node2D
+public partial class Bullet : Area2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+	public void BulletHitSomething(Node2D body) {
+		if(body.GetParent() is Enemy) {
+			body.GetParent().QueueFree();
+		} else {
+			GD.Print(body.GetParent());
+		}
 	}
 }

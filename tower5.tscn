@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://csqnrc374m758"]
+[gd_scene load_steps=22 format=3 uid="uid://csqnrc374m758"]
 
 [ext_resource type="Script" uid="uid://d0pj6214pjsio" path="res://Tower5.cs" id="1_cr6gw"]
 [ext_resource type="Texture2D" uid="uid://bxsufv52cio58" path="res://Assets/ToxicFrog/GreenBlue/ToxicFrogGreenBlue_Attack.png" id="1_oqda0"]
@@ -20,14 +20,6 @@ region = Rect2(96, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygutr"]
 atlas = ExtResource("1_oqda0")
 region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gqdup"]
-atlas = ExtResource("1_oqda0")
-region = Rect2(192, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lgibq"]
-atlas = ExtResource("1_oqda0")
-region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrwuf"]
 atlas = ExtResource("2_cr6gw")
@@ -75,16 +67,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ygutr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gqdup")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lgibq")
 }],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -113,6 +99,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"turn_right",
 "speed": 5.0
 }]
 
@@ -145,7 +136,7 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_oqda0")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_cr6gw")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_stbnn"]
-radius = 8.06226
+radius = 118.017
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_cr6gw")
@@ -154,12 +145,14 @@ arrow = ExtResource("2_s3rwu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -9)
 sprite_frames = SubResource("SpriteFrames_lde8g")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.808859
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+visible = false
 offset_left = -29.0
 offset_top = -33.0
 offset_right = 30.0
@@ -171,6 +164,10 @@ show_percentage = false
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_stbnn")
+
+[connection signal="body_entered" from="Area2D" to="." method="OnEntered"]
