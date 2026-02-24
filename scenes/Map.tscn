@@ -55,9 +55,6 @@ tile_set = SubResource("TileSet_3h1ab")
 script = ExtResource("2_yyirk")
 EnemyScene = ExtResource("3_41ykk")
 Enemy2Scene = ExtResource("4_inly4")
-SpawnInterval = null
-Wave1Duration = null
-Wave2Duration = null
 Path = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="EnemySpawner"]
@@ -70,9 +67,20 @@ rotation = 0.0964738
 [node name="Enemy" parent="EnemySpawner/Path2D/PathFollow2D" instance=ExtResource("3_41ykk")]
 position = Vector2(-0.481622, -4.97675)
 rotation = -0.0964738
-Speed = null
 
 [node name="Timer" type="Timer" parent="EnemySpawner"]
 autostart = true
+
+[node name="WaveLabel" type="Label" parent="EnemySpawner"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 831.0
+offset_top = 8.0
+offset_right = 1068.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Wave 1 Started!"
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]

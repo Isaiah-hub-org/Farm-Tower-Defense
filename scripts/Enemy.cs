@@ -14,7 +14,6 @@ public partial class Enemy : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		// Move along the path
 		pathFollow.Progress += Speed * (float)delta;
 	}
 	public override void _Process(double delta)
@@ -24,8 +23,12 @@ public partial class Enemy : CharacterBody2D
 
 		if (pathFollow.ProgressRatio >= 3.0f)
 		{
-		pathFollow.QueueFree(); 
+			pathFollow.QueueFree(); 
+		}
+		
+		if (pathFollow.ProgressRatio >= 1f)
+		{
+			pathFollow.QueueFree();
 		}
 	}
-
 }
