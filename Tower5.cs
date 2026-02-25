@@ -38,5 +38,6 @@ public partial class Tower5 : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+		
 	}
 }
