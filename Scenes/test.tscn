@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqca6yd6xk68j"]
-
-[ext_resource type="Texture2D" uid="uid://b7vwhkkimxmsl" path="res://Assets/Icons/Monkey.png" id="1_lc1oi"]
-
-[node name="Sprite2D" type="Sprite2D"]
-position = Vector2(41, 44.5)
-scale = Vector2(1.20098, 1.21814)
-texture = ExtResource("1_lc1oi")
