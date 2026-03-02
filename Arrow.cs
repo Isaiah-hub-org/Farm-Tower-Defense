@@ -1,13 +1,19 @@
 using Godot;
-using System;
 
-public partial class Arrow : Area2D
+public partial class Arrow : Node2D
 {
-	public void BulletHitSomething(Node2D body) {
-		if(body.GetParent() is Arrow) {
-			body.GetParent().QueueFree();
-		} else {
-			GD.Print(body.GetParent());
-		}
+	[Export] public float Speed = 500f;
+
+	private Vector2 direction;
+
+	public void SetTarget(Vector2 targetPosition)
+	{
+		direction = (targetPosition - GlobalPosition).Normalized();
+		Rotation = direction.Angle();
+	}
+
+	public override void _Process(double delta)
+	{
+		GlobalPosition += direction * Speed * (float)delta;
 	}
 }

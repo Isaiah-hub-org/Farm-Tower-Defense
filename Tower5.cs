@@ -1,43 +1,58 @@
 using Godot;
-using System;
+using System.Collections.Generic;
 
-public partial class Tower5 : CharacterBody2D
+public partial class Tower5 : Node2D
 {
-	[Export]
-	private PackedScene arrow;
-	public float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+	[Export] public PackedScene ArrowScene;
+	[Export] public float FireRate = 0.7f;
 
-	public override void _PhysicsProcess(double delta)
+	private Area2D range;
+	private Timer fireTimer;
+
+	private List<Node2D> enemies = new();
+	private Node2D currentTarget;
+
+	public override void _Ready()
 	{
-		Vector2 velocity = Velocity;
+		range = GetNode<Area2D>("Range");
+		fireTimer = GetNode<Timer>("FireTimer");
 
-		// Add the gravity.
-		if (!IsOnFloor())
-		{
-			velocity += GetGravity() * (float)delta;
-		}
+		fireTimer.WaitTime = FireRate;
+		fireTimer.Timeout += Shoot;
 
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		{
-			velocity.Y = JumpVelocity;
-		}
+		range.BodyEntered += OnBodyEntered;
+		range.BodyExited += OnBodyExited;
+	}
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
+	private void OnBodyEntered(Node body)
+	{
+		if (body is Node2D enemy && body.IsInGroup("Enemy"))
 		{
-			velocity.X = direction.X * Speed;
+			enemies.Add(enemy);
+			currentTarget = enemy;
 		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-		}
+	}
 
-		Velocity = velocity;
-		MoveAndSlide();
-		
+	private void OnBodyExited(Node body)
+	{
+		if (body is Node2D enemy)
+		{
+			enemies.Remove(enemy);
+
+			if (currentTarget == enemy)
+				currentTarget = enemies.Count > 0 ? enemies[0] : null;
+		}
+	}
+
+	private void Shoot()
+	{
+		if (currentTarget == null)
+			return;
+
+		var arrow = ArrowScene.Instantiate<Arrow>();
+		GetTree().CurrentScene.AddChild(arrow);
+
+		arrow.GlobalPosition = GlobalPosition;
+		arrow.SetTarget(currentTarget.GlobalPosition);
 	}
 }
