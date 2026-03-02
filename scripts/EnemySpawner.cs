@@ -28,15 +28,26 @@ public partial class EnemySpawner : Node2D
 		
 		_waveLabel = GetNode<Label>("WaveLabel");
 		_waveLabel.Text = "";
-		
+
+		// Spawn Timer
 		_spawnTimer = new Timer
 		{
 			WaitTime = SpawnInterval,
 			OneShot = false,
-			Autostart = true
+			Autostart = false
 		};
 		AddChild(_spawnTimer);
 		_spawnTimer.Timeout += SpawnEnemy;
+
+		// Label Timer
+		_labelTimer = new Timer
+		{
+			WaitTime = 2f,
+			OneShot = true,
+			Autostart = false
+		};
+		AddChild(_labelTimer);
+		_labelTimer.Timeout += () => _waveLabel.Text = "";
 
 		StartWave1();
 	}
@@ -47,32 +58,47 @@ public partial class EnemySpawner : Node2D
 
 		if (_currentWave == 1 && _waveTimer >= Wave1Duration)
 		{
-			StartWave2();  
+			StartWave2();
 		}
 		else if (_currentWave == 2 && _waveTimer >= Wave2Duration)
 		{
-			_spawnTimer.Stop();
-			GD.Print("Wave 2 finished!");
-			_labelTimer.Start();
-			GD.Print("Wave 2 finished!");
+			EndWaves();
 		}
 	}
 
-	
 	private void StartWave1()
 	{
+		_spawnTimer.Stop(); // ensure clean start
+
 		_currentWave = 1;
 		_waveTimer = 0f;
-		GD.Print("Wave 1 started!");
+
+		_spawnTimer.Start();
+
 		ShowWaveText("Wave 1 Started!");
+		GD.Print("Wave 1 started!");
 	}
 
 	private void StartWave2()
 	{
+		_spawnTimer.Stop(); // stop old wave first
+
 		_currentWave = 2;
 		_waveTimer = 0f;
+
+		_spawnTimer.Start();
+
 		ShowWaveText("Wave 2 Started!");
 		GD.Print("Wave 2 started!");
+	}
+
+	private void EndWaves()
+	{
+		_spawnTimer.Stop();
+		_currentWave = 0;
+
+		ShowWaveText("Wave 2 Finished!");
+		GD.Print("All waves finished!");
 	}
 
 	private void ShowWaveText(string text)
@@ -89,7 +115,6 @@ public partial class EnemySpawner : Node2D
 			SpawnEnemy2();
 	}
 
-	
 	private void SpawnPathEnemy()
 	{
 		PathFollow2D pathFollow = new PathFollow2D
@@ -100,21 +125,23 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 50f; 
+		enemy.Speed = 50f;
 
 		pathFollow.AddChild(enemy);
 	}
 
-	
 	private void SpawnEnemy2()
 	{
-		Enemy2 enemy = Enemy2Scene.Instantiate<Enemy2>();
-		enemy.Speed = 150f;
+		PathFollow2D pathFollow = new PathFollow2D
+		{
+			Loop = false,
+			Progress = 0
+		};
+		Path.AddChild(pathFollow);
 
-		
-		float randomY = (float)GD.RandRange(0, GetViewportRect().Size.Y);
-		enemy.GlobalPosition = new Vector2(0, randomY); 
+		Enemy2 enemy2 = Enemy2Scene.Instantiate<Enemy2>();
+		enemy2.Speed = 50f;
 
-		AddChild(enemy);
+		pathFollow.AddChild(enemy2);
 	}
 }

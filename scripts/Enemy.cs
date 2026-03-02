@@ -15,20 +15,10 @@ public partial class Enemy : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		pathFollow.Progress += Speed * (float)delta;
-	}
-	public override void _Process(double delta)
-	{
-		var pathFollow = GetParent<PathFollow2D>();
-		pathFollow.Progress += Speed * (float)delta;
 
-		if (pathFollow.ProgressRatio >= 3.0f)
-		{
-			pathFollow.QueueFree(); 
-		}
-		
 		if (pathFollow.ProgressRatio >= 1f)
 		{
-			pathFollow.QueueFree();
+			pathFollow.QueueFree(); // delete enemy when reaching end
 		}
 	}
 }
