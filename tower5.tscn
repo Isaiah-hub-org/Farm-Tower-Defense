@@ -161,10 +161,13 @@ show_percentage = false
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DetectionZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_stbnn")
 
-[connection signal="body_entered" from="Area2D" to="." method="OnEntered"]
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="DetectionZone" to="." method="OnEntered"]
+[connection signal="timeout" from="Timer" to="." method="TimerExpired"]

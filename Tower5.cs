@@ -1,58 +1,48 @@
 using Godot;
-using System.Collections.Generic;
+using Godot.Collections;
 
 public partial class Tower5 : Node2D
 {
 	[Export] public PackedScene ArrowScene;
 	[Export] public float FireRate = 0.7f;
-
-	private Area2D range;
-	private Timer fireTimer;
-
-	private List<Node2D> enemies = new();
-	private Node2D currentTarget;
-
+	private bool ReadyToFire = true;
+	
+	[Export] int damage = 3;
+	[ExportCategory("Node Connections")]
+	Timer timer;
+	private Area2D detectionZone;
+	
+	public Array<Enemy> enemiesInRange;
+	
+ 
 	public override void _Ready()
 	{
-		range = GetNode<Area2D>("Range");
-		fireTimer = GetNode<Timer>("FireTimer");
-
-		fireTimer.WaitTime = FireRate;
-		fireTimer.Timeout += Shoot;
-
-		range.BodyEntered += OnBodyEntered;
-		range.BodyExited += OnBodyExited;
+		enemiesInRange = new Array<Enemy>();
+		detectionZone = GetNode<Area2D>("DetectionZone");
+		timer = GetNode<Timer>("Timer");
 	}
 
-	private void OnBodyEntered(Node body)
+	public override void _PhysicsProcess(double delta)
 	{
-		if (body is Node2D enemy && body.IsInGroup("Enemy"))
+		if (HasEnemiesInRange() && ReadyToFire)
 		{
-			enemies.Add(enemy);
-			currentTarget = enemy;
+			Attack(enemiesInRange.PickRandom());
 		}
 	}
 
-	private void OnBodyExited(Node body)
-	{
-		if (body is Node2D enemy)
-		{
-			enemies.Remove(enemy);
-
-			if (currentTarget == enemy)
-				currentTarget = enemies.Count > 0 ? enemies[0] : null;
-		}
+	public bool HasEnemiesInRange() {
+		var enemies = detectionZone.GetOverlappingBodies();
+		return enemies.Count > 0;
 	}
 
-	private void Shoot()
-	{
-		if (currentTarget == null)
-			return;
-
-		var arrow = ArrowScene.Instantiate<Arrow>();
-		GetTree().CurrentScene.AddChild(arrow);
-
-		arrow.GlobalPosition = GlobalPosition;
-		arrow.SetTarget(currentTarget.GlobalPosition);
+	public void TimerExpired() {
+		ReadyToFire = true;
 	}
+
+	public void Attack(Enemy enemy) {
+		ReadyToFire = false;
+		timer.Start();
+	}
+
+
 }
