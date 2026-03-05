@@ -1,13 +1,19 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=3 uid="uid://dwoy8fi0r54d7"]
 
 [ext_resource type="Script" path="res://scripts/Enemy2.cs" id="1_3n2en"]
 [ext_resource type="Texture2D" path="res://Assets/Icons/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Run.png" id="2_3buae"]
 =======
+=======
+>>>>>>> Stashed changes
 [gd_scene load_steps=13 format=3 uid="uid://dmmne8kjoxri2"]
 
 [ext_resource type="Script" uid="uid://x1ln76djhpww" path="res://scripts/Enemy2.cs" id="1_3n2en"]
 [ext_resource type="Texture2D" uid="uid://cftlthoaox1hm" path="res://Assets/Icons/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Run.png" id="2_3buae"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3n2en"]
@@ -79,7 +85,10 @@ animations = [{
 [node name="Enemy2" type="CharacterBody2D"]
 script = ExtResource("1_3n2en")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Speed = null
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
