@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://dwoy8fi0r54d7"]
+
+[ext_resource type="Script" path="res://scripts/Enemy2.cs" id="1_3n2en"]
+[ext_resource type="Texture2D" path="res://Assets/Icons/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Run.png" id="2_3buae"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n2en"]
+atlas = ExtResource("2_3buae")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3buae"]
+atlas = ExtResource("2_3buae")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adkxb"]
+atlas = ExtResource("2_3buae")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgy0h"]
+atlas = ExtResource("2_3buae")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unis0"]
+atlas = ExtResource("2_3buae")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61ukt"]
+atlas = ExtResource("2_3buae")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc3st"]
+atlas = ExtResource("2_3buae")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wetwd"]
+atlas = ExtResource("2_3buae")
+region = Rect2(560, 0, 80, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hr3b0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n2en")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3buae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adkxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgy0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unis0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61ukt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc3st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wetwd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bthki"]
+
+[node name="Enemy2" type="CharacterBody2D"]
+script = ExtResource("1_3n2en")
+Speed = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.125, 1.0625)
+sprite_frames = SubResource("SpriteFrames_hr3b0")
+frame_progress = 0.0885488
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("CapsuleShape2D_bthki")
