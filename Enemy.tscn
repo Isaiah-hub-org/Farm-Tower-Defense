@@ -1,14 +1,7 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=9 format=3 uid="uid://bxo7txlcmoefv"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_s7bn3"]
 [ext_resource type="Texture2D" path="res://Assets/Icons/chomp_idle (2).png" id="2_2hac7"]
-=======
-[gd_scene load_steps=9 format=3 uid="uid://tteg2ioxvesg"]
-
-[ext_resource type="Script" uid="uid://rlxjb32jeara" path="res://scripts/Enemy.cs" id="1_s7bn3"]
-[ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Icons/chomp_idle (2).png" id="2_2hac7"]
->>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7bn3"]
 atlas = ExtResource("2_2hac7")
@@ -52,10 +45,7 @@ radius = 8.06226
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_s7bn3")
-<<<<<<< Updated upstream
 Speed = null
-=======
->>>>>>> Stashed changes
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6do27")
