@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxo7txlcmoefv"]
+[gd_scene load_steps=9 format=3 uid="uid://tteg2ioxvesg"]
 
-[ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_s7bn3"]
-[ext_resource type="Texture2D" path="res://Assets/Icons/chomp_idle (2).png" id="2_2hac7"]
+[ext_resource type="Script" uid="uid://rlxjb32jeara" path="res://scripts/Enemy.cs" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Icons/chomp_idle (2).png" id="2_2hac7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7bn3"]
 atlas = ExtResource("2_2hac7")
