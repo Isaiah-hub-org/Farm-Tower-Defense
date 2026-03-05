@@ -16,15 +16,10 @@ public partial class EnemySpawner : Node2D
 	private float _waveTimer = 0f;
 
 	[Export] public float Wave1Duration = 23f;  
-	[Export] public float Wave2Duration = 25f;  
+	[Export] public float Wave2Duration = 23f;  
 
 	public override void _Ready()
 	{
-		if (EnemyScene == null || Enemy2Scene == null || Path == null)
-		{
-			GD.PrintErr("EnemyScene, Enemy2Scene, or Path is not assigned!");
-			return;
-		}
 		
 		_waveLabel = GetNode<Label>("WaveLabel");
 		_waveLabel.Text = "";
@@ -49,7 +44,9 @@ public partial class EnemySpawner : Node2D
 		AddChild(_labelTimer);
 		_labelTimer.Timeout += () => _waveLabel.Text = "";
 
-		StartWave1();
+		
+		CallDeferred(nameof(StartWave1));
+		
 	}
 
 	public override void _Process(double delta)
@@ -125,7 +122,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 50f;
+		enemy.Speed = 75f;
 
 		pathFollow.AddChild(enemy);
 	}
@@ -140,7 +137,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy2 enemy2 = Enemy2Scene.Instantiate<Enemy2>();
-		enemy2.Speed = 50f;
+		enemy2.Speed = 75f;
 
 		pathFollow.AddChild(enemy2);
 	}
