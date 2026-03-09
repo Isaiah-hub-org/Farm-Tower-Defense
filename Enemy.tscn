@@ -45,7 +45,6 @@ radius = 1.44222
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_s7bn3")
-Speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
