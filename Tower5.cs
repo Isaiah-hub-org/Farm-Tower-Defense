@@ -1,5 +1,8 @@
 using Godot;
 using Godot.Collections;
+using System.Linq;
+using System.Collections.Generic;
+using System;
 
 public partial class Tower5 : Node2D
 {
@@ -12,12 +15,12 @@ public partial class Tower5 : Node2D
 	Timer timer;
 	private Area2D detectionZone;
 	
-	public Array<Enemy> enemiesInRange;
+	public List<Enemy> enemiesInRange;
 	
  
 	public override void _Ready()
 	{
-		enemiesInRange = new Array<Enemy>();
+		enemiesInRange = new List<Enemy>();
 		detectionZone = GetNode<Area2D>("DetectionZone");
 		timer = GetNode<Timer>("Timer");
 	}
@@ -26,13 +29,15 @@ public partial class Tower5 : Node2D
 	{
 		if (HasEnemiesInRange() && ReadyToFire)
 		{
-			Attack(enemiesInRange.PickRandom());
+			UpdateEnemies();
+			var enemy = ChooseEnemy(enemiesInRange);
+			Attack(enemy);
 		}
 	}
 
 	public bool HasEnemiesInRange() {
-		var enemies = detectionZone.GetOverlappingBodies();
-		return enemies.Count > 0;
+		var enemies = detectionZone.GetOverlappingBodies().Where(x => x is Enemy);
+		return enemies.Count() > 0;
 	}
 
 	public void TimerExpired() {
@@ -41,7 +46,20 @@ public partial class Tower5 : Node2D
 
 	public void Attack(Enemy enemy) {
 		ReadyToFire = false;
+		var arrow = ArrowScene.Instantiate<Arrow>();
+
 		timer.Start();
+	}
+
+	private void UpdateEnemies() {
+		var enemies = detectionZone.GetOverlappingBodies().Where(x => x is Enemy);
+		enemiesInRange = enemies.Select(x => (Enemy) x).ToList();
+	}
+
+	private Enemy ChooseEnemy(List<Enemy> enemies) {
+		int index = Random.Shared.Next(enemies.Count);
+		Enemy randomEnemy = enemies[index];
+		return randomEnemy;
 	}
 
 

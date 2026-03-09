@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://csqnrc374m758"]
+[gd_scene load_steps=22 format=3 uid="uid://csqnrc374m758"]
 
 [ext_resource type="Script" uid="uid://d0pj6214pjsio" path="res://Tower5.cs" id="1_cr6gw"]
 [ext_resource type="Texture2D" uid="uid://bxsufv52cio58" path="res://Assets/ToxicFrog/GreenBlue/ToxicFrogGreenBlue_Attack.png" id="1_oqda0"]
 [ext_resource type="Texture2D" uid="uid://b67ospgelhuek" path="res://Assets/ToxicFrog/GreenBlue/ToxicFrogGreenBlue_Idle.png" id="2_cr6gw"]
+[ext_resource type="PackedScene" uid="uid://ch6j5hmswimey" path="res://enemy.tscn" id="4_s3rwu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3rwu"]
 atlas = ExtResource("1_oqda0")
@@ -135,7 +136,7 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_oqda0")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_cr6gw")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_stbnn"]
-radius = 118.017
+radius = 456.001
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_cr6gw")
@@ -159,7 +160,6 @@ value = 70.0
 show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
 
 [node name="DetectionZone" type="Area2D" parent="."]
 
@@ -168,6 +168,9 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_stbnn")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_s3rwu")]
+position = Vector2(-104, 120)
 
 [connection signal="body_entered" from="DetectionZone" to="." method="OnEntered"]
 [connection signal="timeout" from="Timer" to="." method="TimerExpired"]
