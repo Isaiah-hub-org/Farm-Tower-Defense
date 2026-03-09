@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://bchldvg1ind4x"]
+
+[ext_resource type="Script" uid="uid://bpquemaea33lu" path="res://Base.cs" id="1_nfj5t"]
+[ext_resource type="Texture2D" uid="uid://7ngclq5k56fv" path="res://Assets/Houses.png" id="2_b56jl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfj5t"]
+size = Vector2(185, 212)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b56jl"]
+bg_color = Color(1, 0, 0.0509804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i812h"]
+bg_color = Color(0, 0.65098, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_58kua"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_b56jl")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_i812h")
+
+[node name="Base" type="Node2D"]
+script = ExtResource("1_nfj5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(197, -96)
+scale = Vector2(1.94643, 1.9375)
+texture = ExtResource("2_b56jl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(197.5, -90)
+shape = SubResource("RectangleShape2D_nfj5t")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 78.0
+offset_top = -219.0
+offset_right = 317.0
+offset_bottom = -198.0
+theme = SubResource("Theme_58kua")
+value = 100.0
+show_percentage = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ProgressBar"]
