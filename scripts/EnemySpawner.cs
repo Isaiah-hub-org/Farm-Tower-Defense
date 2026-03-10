@@ -122,7 +122,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 75f;
+		//enemy.Speed = 75f;
 
 		pathFollow.AddChild(enemy);
 	}

@@ -45,11 +45,12 @@ radius = 8.06226
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_s7bn3")
+Speed = 200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6do27")
 frame_progress = 0.77468
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(-0.8, 7.6)
 shape = SubResource("CircleShape2D_cj2mj")

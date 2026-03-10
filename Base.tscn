@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bchldvg1ind4x"]
+[gd_scene load_steps=11 format=3 uid="uid://bchldvg1ind4x"]
 
 [ext_resource type="Script" uid="uid://bpquemaea33lu" path="res://Base.cs" id="1_nfj5t"]
 [ext_resource type="Texture2D" uid="uid://7ngclq5k56fv" path="res://Assets/Houses.png" id="2_b56jl"]
+[ext_resource type="Texture2D" uid="uid://7yinkd477y1y" path="res://Assets/pixil-frame-0.png" id="3_i812h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfj5t"]
-size = Vector2(185, 212)
+size = Vector2(201, 221)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b56jl"]
 bg_color = Color(1, 0, 0.0509804, 1)
@@ -34,18 +35,40 @@ corner_radius_bottom_left = 5
 ProgressBar/styles/background = SubResource("StyleBoxFlat_b56jl")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_i812h")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i812h"]
+atlas = ExtResource("3_i812h")
+region = Rect2(0, 0, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58kua"]
+atlas = ExtResource("2_b56jl")
+region = Rect2(0, 0, 112, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58kua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i812h")
+}],
+"loop": true,
+"name": &"baseHit",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58kua")
+}],
+"loop": true,
+"name": &"main",
+"speed": 5.0
+}]
+
 [node name="Base" type="Node2D"]
 script = ExtResource("1_nfj5t")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(197, -96)
-scale = Vector2(1.94643, 1.9375)
-texture = ExtResource("2_b56jl")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(197.5, -90)
+position = Vector2(189.5, -85.5)
 shape = SubResource("RectangleShape2D_nfj5t")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -57,4 +80,12 @@ theme = SubResource("Theme_58kua")
 value = 100.0
 show_percentage = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="ProgressBar"]
+[node name="Basehit" type="AnimatedSprite2D" parent="."]
+position = Vector2(195, -92.5)
+scale = Vector2(1.92857, 1.99107)
+sprite_frames = SubResource("SpriteFrames_58kua")
+animation = &"baseHit"
+autoplay = "main"
+frame_progress = 0.818078
+
+[connection signal="body_entered" from="Area2D" to="." method="OnIn"]

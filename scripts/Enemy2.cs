@@ -18,7 +18,7 @@ public partial class Enemy2 : CharacterBody2D
 		
 		pathFollow.Progress += Speed * (float)delta;
 
-		if (pathFollow.ProgressRatio < oldProgressRatio)
+		if (pathFollow.ProgressRatio < oldProgressRatio || pathFollow.ProgressRatio == 1)
 		{
 			pathFollow.QueueFree(); 
 			QueueFree();
