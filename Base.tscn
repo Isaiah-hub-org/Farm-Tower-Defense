@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://7ngclq5k56fv" path="res://Assets/Houses.png" id="2_b56jl"]
 [ext_resource type="Texture2D" uid="uid://7yinkd477y1y" path="res://Assets/pixil-frame-0.png" id="3_i812h"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfj5t"]
-size = Vector2(201, 221)
+[sub_resource type="CircleShape2D" id="CircleShape2D_i812h"]
+radius = 138.66687
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b56jl"]
 bg_color = Color(1, 0, 0.0509804, 1)
@@ -69,11 +69,11 @@ script = ExtResource("1_nfj5t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(189.5, -85.5)
-shape = SubResource("RectangleShape2D_nfj5t")
+shape = SubResource("CircleShape2D_i812h")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 78.0
-offset_top = -219.0
+offset_top = -218.0
 offset_right = 317.0
 offset_bottom = -198.0
 theme = SubResource("Theme_58kua")
@@ -86,6 +86,5 @@ scale = Vector2(1.92857, 1.99107)
 sprite_frames = SubResource("SpriteFrames_58kua")
 animation = &"baseHit"
 autoplay = "main"
-frame_progress = 0.818078
 
 [connection signal="body_entered" from="Area2D" to="." method="OnIn"]

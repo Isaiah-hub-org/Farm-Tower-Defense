@@ -4,7 +4,7 @@ using System;
 public partial class Base : Node2D
 {
     public int CurrentHealth;
-    public int MaxHealth = 100;
+    [Export] public int MaxHealth = 100;
     public int damage = 10;
     private ProgressBar BaseBar;
     private AnimatedSprite2D Basehit;
@@ -14,10 +14,11 @@ public partial class Base : Node2D
 
 
     public override void _Ready(){
-        CurrentHealth = MaxHealth;
-		BaseBar = GetNode<ProgressBar>("ProgressBar");
-		BaseBar.MaxValue = MaxHealth;
+        BaseBar.MaxValue = MaxHealth;
 		BaseBar.Value = CurrentHealth;
+		CurrentHealth = MaxHealth;
+		BaseBar = GetNode<ProgressBar>("ProgressBar");
+		
     }
 	
 	
