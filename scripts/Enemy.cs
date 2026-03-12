@@ -3,7 +3,7 @@ using System;
 
 public partial class Enemy : CharacterBody2D
 {
-	[Export] public float Speed = 75f;
+	[Export] public float Speed = 195f;
 
 	private PathFollow2D pathFollow;
 

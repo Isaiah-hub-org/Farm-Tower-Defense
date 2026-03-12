@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bchldvg1ind4x"]
+[gd_scene load_steps=20 format=3 uid="uid://bchldvg1ind4x"]
 
 [ext_resource type="Script" uid="uid://bpquemaea33lu" path="res://Base.cs" id="1_nfj5t"]
 [ext_resource type="Texture2D" uid="uid://7ngclq5k56fv" path="res://Assets/Houses.png" id="2_b56jl"]
 [ext_resource type="Texture2D" uid="uid://7yinkd477y1y" path="res://Assets/pixil-frame-0.png" id="3_i812h"]
+[ext_resource type="Texture2D" uid="uid://cra13p4gc12bg" path="res://Assets/Menu/Untitled 04-03-2025 05-47-35.png" id="4_58kua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i812h"]
 radius = 138.66687
@@ -62,6 +63,93 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nopgj"]
+atlas = ExtResource("4_58kua")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22hco"]
+atlas = ExtResource("4_58kua")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swcnr"]
+atlas = ExtResource("4_58kua")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lvr1"]
+atlas = ExtResource("4_58kua")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4phwr"]
+atlas = ExtResource("4_58kua")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ol3t"]
+atlas = ExtResource("4_58kua")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p605"]
+atlas = ExtResource("4_58kua")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2racw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nopgj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22hco")
+}],
+"loop": true,
+"name": &"hp1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swcnr")
+}],
+"loop": true,
+"name": &"hp2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lvr1")
+}],
+"loop": true,
+"name": &"hp3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4phwr")
+}],
+"loop": true,
+"name": &"hp4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ol3t")
+}],
+"loop": true,
+"name": &"hp5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p605")
+}],
+"loop": true,
+"name": &"hp6",
+"speed": 5.0
+}]
+
 [node name="Base" type="Node2D"]
 script = ExtResource("1_nfj5t")
 
@@ -72,6 +160,7 @@ position = Vector2(189.5, -85.5)
 shape = SubResource("CircleShape2D_i812h")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 offset_left = 78.0
 offset_top = -218.0
 offset_right = 317.0
@@ -84,7 +173,15 @@ show_percentage = false
 position = Vector2(195, -92.5)
 scale = Vector2(1.92857, 1.99107)
 sprite_frames = SubResource("SpriteFrames_58kua")
-animation = &"baseHit"
+animation = &"main"
 autoplay = "main"
+frame_progress = 0.3116191
 
-[connection signal="body_entered" from="Area2D" to="." method="OnIn"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(188.99998, -196.07144)
+scale = Vector2(6.8125, 2.308035)
+sprite_frames = SubResource("SpriteFrames_2racw")
+animation = &"hp6"
+autoplay = "hp6"
+
+[connection signal="body_entered" from="Area2D" to="." method="OnIntered"]

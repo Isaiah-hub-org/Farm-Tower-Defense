@@ -12,8 +12,8 @@ config_version=5
 
 config/name="UI Project"
 config/version="1.0"
-run/main_scene="uid://dg7w1x0t6pbbg"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+run/main_scene="uid://bnykvry7xdv1o"
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="uid://b7vwhkkimxmsl"
 
 [display]

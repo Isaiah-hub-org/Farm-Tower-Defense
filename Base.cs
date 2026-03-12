@@ -1,40 +1,27 @@
 using Godot;
 using System;
+using System.Runtime.Serialization;
 
 public partial class Base : Node2D
 {
-    public int CurrentHealth;
-    [Export] public int MaxHealth = 100;
-    public int damage = 10;
-    private ProgressBar BaseBar;
-    private AnimatedSprite2D Basehit;
-
-
-
-
-
-    public override void _Ready(){
-        BaseBar.MaxValue = MaxHealth;
-		BaseBar.Value = CurrentHealth;
-		CurrentHealth = MaxHealth;
-		BaseBar = GetNode<ProgressBar>("ProgressBar");
-		
-    }
-	
-	
-    public void OnIn(int damage)
+	public AnimatedSprite2D healthBar;
+	private int health = 10;
+	private int damage = 1;
+    public void OnIntered(Node2D body)
 	{
-		GD.Print("enemy hit");
-		CurrentHealth -= damage;
-		CurrentHealth = Mathf.Max(CurrentHealth,0);
-		BaseBar.Value = CurrentHealth;
-		if (CurrentHealth <= 90)
+		if (body is Enemy || body is Enemy2)
 		{
-			Basehit.Play("BaseHit");
+			TakeDamage();
+			if (health <= 9)
+			{
+			healthBar.Play("hp6");
+			}
 		}
-		if (CurrentHealth <= 0)
-		{
-			QueueFree();
-		}
-    }
+	}
+	public void TakeDamage()
+	{
+		health -= damage;
+		
+	}
 }
+
