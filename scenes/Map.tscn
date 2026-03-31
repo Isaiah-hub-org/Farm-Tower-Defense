@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://scripts/EnemySpawner.cs" id="3_0f2yp"]
 [ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://scenes/Enemy.tscn" id="4_vm4q1"]
 [ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://scenes/Enemy2.tscn" id="5_ud676"]
-[ext_resource type="PackedScene" uid="uid://lft7byq2e8m7" path="res://Tower3.tscn" id="6_41ykk"]
+[ext_resource type="PackedScene" uid="uid://lft7byq2e8m7" path="res://scenes/Tower3.tscn" id="6_41ykk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")
@@ -1296,6 +1296,6 @@ text = "Wave 1 Started!"
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Tower3" parent="Node2D" instance=ExtResource("6_41ykk")]
-position = Vector2(996, 706)
+position = Vector2(1080, 726)
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]

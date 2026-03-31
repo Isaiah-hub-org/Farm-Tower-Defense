@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://lft7byq2e8m7"]
+
+[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Icons/wonwon.png" id="1_811kd"]
+
+[node name="Tower3" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_811kd")
+hframes = 4
+vframes = 3
+
+[node name="bullet" type="Sprite2D" parent="."]
+position = Vector2(2, -20)
+rotation = 1.5708
+scale = Vector2(1.068, 1)
+texture = ExtResource("1_811kd")
+hframes = 4
+vframes = 6
+
+[node name="Marker2D" type="Marker2D" parent="bullet"]
+position = Vector2(-12.1723, 1.00005)
