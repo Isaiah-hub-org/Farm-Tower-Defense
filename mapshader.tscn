@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dox2nuq0prmjy"]
+
+[ext_resource type="PackedScene" uid="uid://dg7w1x0t6pbbg" path="res://Map.tscn" id="1_f48mj"]
+[ext_resource type="Shader" uid="uid://b3hygognb8gkg" path="res://mapshader.gdshader" id="2_spun2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f48mj"]
+shader = ExtResource("2_spun2")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="map" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_f48mj")
+position = Vector2(-74, -48)
+
+[node name="distortion" type="Sprite2D" parent="."]
+
+[node name="Map" parent="." instance=ExtResource("1_f48mj")]
+position = Vector2(-121, -56)
