@@ -70,6 +70,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bthki"]
 
 [node name="Enemy2" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_3n2en")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

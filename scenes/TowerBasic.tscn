@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://lft7byq2e8m7"]
+[gd_scene load_steps=4 format=3 uid="uid://dikdqjmnlyfxi"]
 
-[ext_resource type="Script" uid="uid://blkw8stovtift" path="res://scripts/Tower3.cs" id="1_0bfwe"]
-[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Icons/wonwon.png" id="1_811kd"]
+[ext_resource type="Script" uid="uid://bgab1ab7hdnlx" path="res://scenes/TowerBasic.cs" id="1_0tyql"]
+[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Icons/wonwon.png" id="2_cvid6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_811kd"]
 radius = 203.502
 
 [node name="Tower3" type="Node2D"]
-script = ExtResource("1_0bfwe")
+script = ExtResource("1_0tyql")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_811kd")
+texture = ExtResource("2_cvid6")
 hframes = 4
 vframes = 3
 
@@ -19,12 +19,12 @@ vframes = 3
 position = Vector2(2, -20)
 rotation = 1.5708
 scale = Vector2(1.068, 1)
-texture = ExtResource("1_811kd")
+texture = ExtResource("2_cvid6")
 hframes = 4
 vframes = 6
 
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
-visibility_layer = 0
+light_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]
 shape = SubResource("CircleShape2D_811kd")
