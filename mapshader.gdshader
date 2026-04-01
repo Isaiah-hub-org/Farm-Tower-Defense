@@ -1,14 +1,16 @@
 shader_type canvas_item;
 
-void vertex() {
-	// Called for every vertex the material is visible on.
-}
+uniform sampler2D noise_texture: filter_nearest, repeat_enable;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+uniform float strength = 0.05;
+uniform float speed = 1.0;
 
 void fragment() {
-	// Called for every pixel the material is visible on.
-}
+    vec2 noiseUV = UV + vec2(TIME * speed, TIME * speed);
+    float noise = texture(noise_texture, noiseUV).r;
 
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}
+    vec2 distortedUV = SCREEN_UV + (noise - 0.5) * strength;
+
+    COLOR = texture(SCREEN_TEXTURE, distortedUV);
+}
