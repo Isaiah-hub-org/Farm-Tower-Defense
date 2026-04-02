@@ -1,31 +1,40 @@
 using Godot;
 using System;
-using System.Collections.Generic;
+
 
 public partial class Tower3 : Node2D
 {
-	private List<Area2D> enemies = new List<Area2D>();
+	protected Node2D targetEnemy = null;
+	public override void _Ready()
+	{
+		Area2D area = GetNode<Area2D>("EnemyDetectionArea");
+		area.BodyEntered += OnEnemyEntered;
+		area.BodyExited += OnEnemyExited;
+		
+	}
 	
 	public override void _Process(double delta)
 	{
-		if (enemies.Count > 0)
+		if (targetEnemy != null)
 		{
-			var bullet = GetNode<Node2D>("bullet");
-			bullet.LookAt(enmies[0].GlobalPosition);
-			bullet.Rotation -= Mathf.pi / 2;
+			LookAt(targetEnemy.GlobalPosition);
 		}
 	}
 	
-	private void OnEnemyDetectionAreaAreaEntered(Area2D area)
+	private void OnEnemyEntered(Node body)
 	{
-		enemies.Add(area);
-	}
-	
-	private void OnEnemyDetectionAreaAreaExited(Area2D area)
-	{
-		if (enemies.Contains(area))
+		if (body.IsInGroup("enemies"))
 		{
-			enemies.Remove(area);
+			GD.Print("detects");
+			targetEnemy = body as Node2D;
 		}
+	}
+	private void OnEnemyExited(Node body)
+	{
+		if (body == targetEnemy)
+		{
+			targetEnemy = null;
+		}
+	
 	}
 }

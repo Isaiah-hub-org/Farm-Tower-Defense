@@ -1296,6 +1296,6 @@ text = "Wave 1 Started!"
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Tower3" parent="Node2D" instance=ExtResource("6_41ykk")]
-position = Vector2(1641, 730)
+position = Vector2(1282, 834)
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]

@@ -1,33 +1,35 @@
 [gd_scene load_steps=4 format=3 uid="uid://lft7byq2e8m7"]
 
-[ext_resource type="Script" uid="uid://blkw8stovtift" path="res://scripts/Tower3.cs" id="1_0bfwe"]
+[ext_resource type="Script" uid="uid://cle1n5782xo3b" path="res://scripts/Tower3.cs" id="1_0bfwe"]
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Icons/wonwon.png" id="1_811kd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_811kd"]
-radius = 203.502
+radius = 148.165
 
 [node name="Tower3" type="Node2D"]
 script = ExtResource("1_0bfwe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
+position = Vector2(0, 1)
+rotation = 1.5708
+scale = Vector2(2.24542, 2.02777)
 texture = ExtResource("1_811kd")
 hframes = 4
 vframes = 3
 
 [node name="bullet" type="Sprite2D" parent="."]
-position = Vector2(2, -20)
-rotation = 1.5708
+position = Vector2(22, 3)
+rotation = 3.14159
 scale = Vector2(1.068, 1)
 texture = ExtResource("1_811kd")
 hframes = 4
 vframes = 6
 
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
-visibility_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]
+rotation = 1.5708
 shape = SubResource("CircleShape2D_811kd")
 
-[connection signal="area_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_area_entered"]
-[connection signal="area_exited" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_area_exited"]
+[connection signal="body_entered" from="EnemyDetectionArea" to="." method="OnEnemyEntered"]
+[connection signal="body_exited" from="EnemyDetectionArea" to="." method="OnEnemyExited"]
