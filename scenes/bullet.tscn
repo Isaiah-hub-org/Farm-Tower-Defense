@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://k38feyey1and"]
+
+[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Icons/wonwon.png" id="1_mkf8s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkf8s"]
+atlas = ExtResource("1_mkf8s")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y25gk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkf8s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bullet" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y25gk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
