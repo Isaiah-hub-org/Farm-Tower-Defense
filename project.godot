@@ -12,14 +12,12 @@ config_version=5
 
 config/name="UI Project"
 config/version="1.0"
-run/main_scene="uid://b648o3n3o0brr"
+run/main_scene="uid://dg7w1x0t6pbbg"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://b7vwhkkimxmsl"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 window/size/mode=2
 window/size/resizable=false
 window/stretch/mode="canvas_items"
