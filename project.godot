@@ -12,7 +12,7 @@ config_version=5
 
 config/name="UI Project"
 config/version="1.0"
-run/main_scene="uid://b648o3n3o0brr"
+run/main_scene="uid://dox2nuq0prmjy"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://b7vwhkkimxmsl"
 
@@ -40,3 +40,4 @@ folder_colors={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
