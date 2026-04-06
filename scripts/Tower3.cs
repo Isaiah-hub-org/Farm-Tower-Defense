@@ -2,8 +2,13 @@ using Godot;
 using System;
 
 
+
 public partial class Tower3 : Node2D
 {
+	
+	[Export] public PackedScene BulletPrefab;
+	[Export] public float FireRate = 1.0f;
+
 	protected Node2D targetEnemy = null;
 	public override void _Ready()
 	{

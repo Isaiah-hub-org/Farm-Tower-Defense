@@ -31,5 +31,10 @@ vframes = 6
 rotation = 1.5708
 shape = SubResource("CircleShape2D_811kd")
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(33, 1)
+
 [connection signal="body_entered" from="EnemyDetectionArea" to="." method="OnEnemyEntered"]
 [connection signal="body_exited" from="EnemyDetectionArea" to="." method="OnEnemyExited"]
