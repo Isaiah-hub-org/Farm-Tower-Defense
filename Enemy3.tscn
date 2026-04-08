@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkajax83tff8k"]
+[gd_scene load_steps=13 format=3 uid="uid://dkajax83tff8k"]
 
 [ext_resource type="Texture2D" uid="uid://d3kmihps4ngqh" path="res://Assets/ChickenWalking.png" id="1_he7h3"]
 [ext_resource type="Script" uid="uid://qwppnf24dpti" path="res://Enemy3.cs" id="1_yot05"]
-[ext_resource type="Script" uid="uid://b5iqmaawmbyb8" path="res://EnemyHealthBar.cs" id="3_gltvr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yot05"]
 atlas = ExtResource("1_he7h3")
@@ -82,7 +81,6 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_el1gp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_n2sv5")
 value = 50.0
 show_percentage = false
-script = ExtResource("3_gltvr")
 
 [node name="Damage" type="ProgressBar" parent="enemyHealthBar"]
 z_index = -1
