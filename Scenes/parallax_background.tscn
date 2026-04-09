@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://db5qyhilwikuk"]
+
+[ext_resource type="Script" uid="uid://bejvxrvnnguh6" path="res://Script/ParallaxBackgroundScript.cs" id="1_7hd7b"]
+[ext_resource type="Texture2D" uid="uid://bews2qb1h8tol" path="res://Assets/Menu/background_plains-Sheet1.png" id="1_8ntqg"]
+[ext_resource type="Texture2D" uid="uid://bn77c2s0upt0u" path="res://Assets/Menu/background_plains-Sheet2.png" id="2_41i37"]
+[ext_resource type="Texture2D" uid="uid://dqislimufm720" path="res://Assets/Menu/background_plains-Sheet3.png" id="3_h550e"]
+[ext_resource type="Texture2D" uid="uid://dtbmfdc16l4io" path="res://Assets/Menu/background_plains-Sheet5.png" id="4_7hd7b"]
+[ext_resource type="PackedScene" uid="uid://tk7ns344t866" path="res://Scenes/Menu.tscn" id="6_h550e"]
+[ext_resource type="PackedScene" uid="uid://y2ejonfn5arc" path="res://Scenes/settings.tscn" id="7_7hd7b"]
+
+[node name="ParallaxMover" type="ParallaxBackground"]
+script = ExtResource("1_7hd7b")
+
+[node name="farMountain" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="farMountain"]
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("1_8ntqg")
+centered = false
+
+[node name="closeMountain" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="closeMountain"]
+texture_filter = 1
+position = Vector2(0, 56)
+scale = Vector2(0.5125, 0.683333)
+texture = ExtResource("2_41i37")
+centered = false
+
+[node name="closeMountaindup" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="closeMountaindup"]
+texture_filter = 1
+position = Vector2(157, 59)
+scale = Vector2(0.5125, 0.666667)
+texture = ExtResource("2_41i37")
+centered = false
+
+[node name="GreenDirt" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GreenDirt"]
+texture_filter = 2
+texture_repeat = 2
+position = Vector2(0, 127)
+scale = Vector2(1.00312, 0.294444)
+texture = ExtResource("3_h550e")
+centered = false
+
+[node name="Grass" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Grass"]
+position = Vector2(0, 72)
+scale = Vector2(1, 0.6)
+texture = ExtResource("4_7hd7b")
+centered = false
+
+[node name="Menu" parent="." instance=ExtResource("6_h550e")]
+offset_left = 71.0
+offset_top = 26.0
+offset_right = -89.0
+offset_bottom = -22.0
+
+[node name="Control" parent="." instance=ExtResource("7_7hd7b")]
+visible = false
