@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://tk7ns344t866"]
+[gd_scene load_steps=2 format=3 uid="uid://dsvx18265yct"]
 
 [ext_resource type="Script" uid="uid://t07d5ry7flbw" path="res://Script/Menu.cs" id="1_3kf3n"]
 
@@ -26,33 +26,33 @@ alignment = 1
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
 theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
-theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
 theme_override_font_sizes/font_size = 10
 text = "PLAY"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
 theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
-theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
 theme_override_font_sizes/font_size = 10
 text = "SETTINGS"
 
 [node name="load" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
 theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
-theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
 theme_override_font_sizes/font_size = 10
 text = "LOAD"
 
 [node name="exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
 theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
-theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
 theme_override_font_sizes/font_size = 10
 text = "EXIT"
 

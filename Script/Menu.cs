@@ -6,7 +6,7 @@ using System;
 public partial class Menu : Control
 {
 	public void OnPlayPressed() {
-		 GetTree().ChangeSceneToFile("");
+		 GetTree().ChangeSceneToFile("res://Map.tscn");
 		
 	}
 	public void OnSettingsPressed() {
@@ -15,17 +15,17 @@ public partial class Menu : Control
 	public void OnLoadPressed(){
 		
 	}
-    public void OnExitPressed(){
+	public void OnExitPressed(){
 		 GetTree().Quit();
 		
 	}
 	//quit by pressing Esc
 	public override void _Input(InputEvent @event)
 	{
-    if (@event.IsActionPressed("ui_cancel"))
-    	{
-        	GetTree().Quit();
-    	}
+	if (@event.IsActionPressed("ui_cancel"))
+		{
+			GetTree().Quit();
+		}
 	}
 	
 }
