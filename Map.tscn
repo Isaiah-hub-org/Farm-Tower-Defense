@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dg7w1x0t6pbbg"]
+[gd_scene load_steps=24 format=4 uid="uid://balotq8itd52j"]
 
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Icons/Cozy Farm Tileset.png" id="1_v6avs"]
 [ext_resource type="Texture2D" uid="uid://bso8ipmwlhqj8" path="res://Assets/TilesetField.png" id="2_0f2yp"]
