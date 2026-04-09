@@ -7,15 +7,20 @@ The reason you are seeing this text is because you haven't updated the README fi
 
 
 # Project Description
-[PUT YOUR PROJECT DESCRIPTION HERE]
+[Our game is going to be a tower defense game with a farm theme.You’re going to be able to plant different type of plants that are going to protect your base from other plants(which are going to be the enemies).We are going to protect our base which will give us energy(water) to be able to plant new plants and defend.The goal of the game is going to be surviving,there’s going to be 15 waves and you have to survive each of them without losing your base,and after each wave it’s obviously going to get harder,so good luck.]
 
 # Development Team
-[PUT YOUR TEAM MEMBERS AND CONTRIBUTIONS HERE]
+[
+mary
+thang
+JP
+isaiah
+]
 
 # Game Play Features
-## Towers
+## 5 Towers
 ### [TOWER 1]
-[TOWER 1 DESCRIPTION]
+[]
 
 ## Enemies
 ### [ENEMY 1]
