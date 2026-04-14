@@ -17,14 +17,6 @@ texture = ExtResource("1_811kd")
 hframes = 4
 vframes = 3
 
-[node name="bullet" type="Sprite2D" parent="."]
-position = Vector2(22, 3)
-rotation = 3.14159
-scale = Vector2(1.068, 1)
-texture = ExtResource("1_811kd")
-hframes = 4
-vframes = 6
-
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]

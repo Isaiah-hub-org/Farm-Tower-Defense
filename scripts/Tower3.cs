@@ -1,8 +1,5 @@
 using Godot;
 using System;
-
-
-
 public partial class Tower3 : Node2D
 {
 	
@@ -15,6 +12,11 @@ public partial class Tower3 : Node2D
 		Area2D area = GetNode<Area2D>("EnemyDetectionArea");
 		area.BodyEntered += OnEnemyEntered;
 		area.BodyExited += OnEnemyExited;
+		
+		Timer timer = GetNode<Timer>("Timer");
+		timer.WaitTime = FireRate;
+		timer.Timeout += OnTimerTimeout;
+		timer.Start();
 		
 	}
 	
@@ -40,6 +42,5 @@ public partial class Tower3 : Node2D
 		{
 			targetEnemy = null;
 		}
-	
 	}
 }
