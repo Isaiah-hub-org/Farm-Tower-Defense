@@ -30,7 +30,7 @@ public partial class TransitionScene : Control
     {
         if (animName == "fade_out")
         {
-            GetTree().ChangeSceneToFile("res://Scenes/settings.tscn");
+            GetTree().ChangeSceneToFile("res://Map.tscn");
         }
 		if (animName == "fade_in")
 		{
