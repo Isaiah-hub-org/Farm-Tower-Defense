@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://r2tkikdybuf"]
+
+[ext_resource type="PackedScene" uid="uid://dl8xnfvsx46s6" path="res://Map1.tscn" id="1_8j3wr"]
+[ext_resource type="Shader" uid="uid://cubfoync8albe" path="res://shader2.gdshader" id="2_28vmd"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8j3wr"]
+frequency = 0.0069
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_28vmd"]
+seamless = true
+noise = SubResource("FastNoiseLite_8j3wr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4qiir"]
+shader = ExtResource("2_28vmd")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_28vmd")
+shader_parameter/wave_speed = 0.3
+shader_parameter/noise_scale = 1.385
+shader_parameter/distortion_strength = 0.035
+shader_parameter/water_tint = Color(0.2, 0.55, 1, 0.12)
+
+[node name="Map" instance=ExtResource("1_8j3wr")]
+
+[node name="ColorRect" type="ColorRect" parent="." index="4"]
+material = SubResource("ShaderMaterial_4qiir")
+offset_left = 168.0
+offset_top = 561.0
+offset_right = 208.0
+offset_bottom = 601.0
