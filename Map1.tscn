@@ -1,18 +1,18 @@
-[gd_scene load_steps=24 format=4 uid="uid://dg7w1x0t6pbbg"]
+[gd_scene load_steps=24 format=4 uid="uid://dl8xnfvsx46s6"]
 
-[ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Icons/Cozy Farm Tileset.png" id="1_v6avs"]
-[ext_resource type="Texture2D" uid="uid://bso8ipmwlhqj8" path="res://Assets/TilesetField.png" id="2_0f2yp"]
-[ext_resource type="Texture2D" uid="uid://bni0g0xy42eg2" path="res://Assets/Icons/Preview.png" id="2_8qak7"]
-[ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://scripts/EnemySpawner.cs" id="3_0f2yp"]
-[ext_resource type="Texture2D" uid="uid://c2ewuqmaeo4yl" path="res://Assets/TilesetFloor.png" id="3_vm4q1"]
-[ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://scenes/Enemy.tscn" id="4_vm4q1"]
-[ext_resource type="Texture2D" uid="uid://ddgng3o22po1c" path="res://Assets/TilesetFloorDetail.png" id="5_6f7pb"]
-[ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://scenes/Enemy2.tscn" id="5_ud676"]
-[ext_resource type="Texture2D" uid="uid://dfm3po6u5yuab" path="res://Assets/TilesetNature.png" id="6_bhm4d"]
-[ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Chicken.png" id="7_6f7pb"]
+[ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Icons/Cozy Farm Tileset.png" id="1_ns8y8"]
+[ext_resource type="Texture2D" uid="uid://bso8ipmwlhqj8" path="res://Assets/TilesetField.png" id="2_c56d2"]
+[ext_resource type="Texture2D" uid="uid://c2ewuqmaeo4yl" path="res://Assets/TilesetFloor.png" id="3_j3yda"]
+[ext_resource type="Texture2D" uid="uid://bni0g0xy42eg2" path="res://Assets/Icons/Preview.png" id="4_gaj3i"]
+[ext_resource type="Texture2D" uid="uid://ddgng3o22po1c" path="res://Assets/TilesetFloorDetail.png" id="5_5kecc"]
+[ext_resource type="Texture2D" uid="uid://dfm3po6u5yuab" path="res://Assets/TilesetNature.png" id="6_fgv63"]
+[ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Chicken.png" id="7_qk1ka"]
+[ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://scripts/EnemySpawner.cs" id="8_41vac"]
+[ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://scenes/Enemy.tscn" id="9_r2i1d"]
+[ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://scenes/Enemy2.tscn" id="10_oryae"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
-texture = ExtResource("1_v6avs")
+texture = ExtResource("1_ns8y8")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -43,7 +43,7 @@ texture = ExtResource("1_v6avs")
 2:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ud676"]
-texture = ExtResource("2_0f2yp")
+texture = ExtResource("2_c56d2")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -111,7 +111,7 @@ texture = ExtResource("2_0f2yp")
 2:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhm4d"]
-texture = ExtResource("3_vm4q1")
+texture = ExtResource("3_j3yda")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -577,7 +577,7 @@ sources/1 = SubResource("TileSetAtlasSource_ud676")
 sources/2 = SubResource("TileSetAtlasSource_bhm4d")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6f7pb"]
-texture = ExtResource("2_8qak7")
+texture = ExtResource("4_gaj3i")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1780,7 +1780,7 @@ texture = ExtResource("2_8qak7")
 39:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhlij"]
-texture = ExtResource("3_vm4q1")
+texture = ExtResource("3_j3yda")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2245,7 +2245,7 @@ sources/0 = SubResource("TileSetAtlasSource_6f7pb")
 sources/1 = SubResource("TileSetAtlasSource_fhlij")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbu0r"]
-texture = ExtResource("1_v6avs")
+texture = ExtResource("1_ns8y8")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2276,7 +2276,7 @@ texture = ExtResource("1_v6avs")
 2:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrcb4"]
-texture = ExtResource("5_6f7pb")
+texture = ExtResource("5_5kecc")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2312,7 +2312,7 @@ texture = ExtResource("5_6f7pb")
 7:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3mxb"]
-texture = ExtResource("6_bhm4d")
+texture = ExtResource("6_fgv63")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2698,7 +2698,7 @@ texture = ExtResource("6_bhm4d")
 11:20/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_saq0m"]
-texture = ExtResource("7_6f7pb")
+texture = ExtResource("7_qk1ka")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2748,9 +2748,9 @@ tile_map_data = PackedByteArray("AAAkACYAAAAEAAEAAAAlACYAAAAEAAEAAAAvABsAAAAEAAE
 tile_set = SubResource("TileSet_saq0m")
 
 [node name="EnemySpawner" type="Node2D" parent="." node_paths=PackedStringArray("Path")]
-script = ExtResource("3_0f2yp")
-EnemyScene = ExtResource("4_vm4q1")
-Enemy2Scene = ExtResource("5_ud676")
+script = ExtResource("8_41vac")
+EnemyScene = ExtResource("9_r2i1d")
+Enemy2Scene = ExtResource("10_oryae")
 Path = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="EnemySpawner"]
