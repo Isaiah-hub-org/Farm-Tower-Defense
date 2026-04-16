@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsvx18265yct"]
+
+[ext_resource type="Script" uid="uid://t07d5ry7flbw" path="res://Script/Menu.cs" id="1_3kf3n"]
+[ext_resource type="Theme" uid="uid://ntgdml12aani" path="res://Assets/UI_Theme.tres" id="2_upctu"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 11.0
+offset_right = -6.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kf3n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 7.0
+offset_top = -67.0
+offset_right = 169.0
+offset_bottom = 226.0
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_upctu")
+theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
+theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
+theme_override_font_sizes/font_size = 10
+text = "PLAY"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_upctu")
+theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
+theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
+theme_override_font_sizes/font_size = 10
+text = "SETTINGS"
+
+[node name="load" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_upctu")
+theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
+theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
+theme_override_font_sizes/font_size = 10
+text = "LOAD"
+
+[node name="exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_upctu")
+theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
+theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
+theme_override_font_sizes/font_size = 10
+text = "EXIT"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="OnSettingsPressed"]
+[connection signal="pressed" from="VBoxContainer/load" to="." method="OnLoadPressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="OnExitPressed"]

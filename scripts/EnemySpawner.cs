@@ -117,7 +117,8 @@ public partial class EnemySpawner : Node2D
 		PathFollow2D pathFollow = new PathFollow2D
 		{
 			Loop = false,
-			Progress = 0
+			Progress = 0,
+			Rotates = false
 		};
 		Path.AddChild(pathFollow);
 
@@ -132,7 +133,8 @@ public partial class EnemySpawner : Node2D
 		PathFollow2D pathFollow = new PathFollow2D
 		{
 			Loop = false,
-			Progress = 0
+			Progress = 0,
+			Rotates = false
 		};
 		Path.AddChild(pathFollow);
 
