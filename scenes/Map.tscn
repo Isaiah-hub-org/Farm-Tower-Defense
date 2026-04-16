@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://scripts/EnemySpawner.cs" id="3_0f2yp"]
 [ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://Scenes/Enemy.tscn" id="4_vm4q1"]
 [ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://Scenes/Enemy2.tscn" id="5_ud676"]
-[ext_resource type="PackedScene" uid="uid://bchldvg1ind4x" path="res://Base.tscn" id="5_yyirk"]
+[ext_resource type="PackedScene" uid="uid://bchldvg1ind4x" path="res://Scenes/Base.tscn" id="5_yyirk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")

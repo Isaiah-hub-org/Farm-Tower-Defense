@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsvx18265yct"]
+[gd_scene load_steps=2 format=3 uid="uid://btmxqnrga40ob"]
 
 [ext_resource type="Script" uid="uid://t07d5ry7flbw" path="res://Script/Menu.cs" id="1_3kf3n"]
-[ext_resource type="Theme" uid="uid://ntgdml12aani" path="res://Assets/UI_Theme.tres" id="2_upctu"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -27,37 +26,33 @@ alignment = 1
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_upctu")
-theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
-theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
+theme_override_colors/font_hover_color = Color(0.639216, 0.25098, 0.137255, 1)
+theme_override_colors/font_color = Color(0.756863, 0.133333, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.368627, 0.752941, 0.172549, 1)
 theme_override_font_sizes/font_size = 10
 text = "PLAY"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_upctu")
-theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
-theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
+theme_override_colors/font_hover_color = Color(0.690196, 0.25098, 0.145098, 1)
+theme_override_colors/font_color = Color(0.92549, 0.172549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.368627, 0.752941, 0.172549, 1)
 theme_override_font_sizes/font_size = 10
 text = "SETTINGS"
 
 [node name="load" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_upctu")
-theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
-theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
+theme_override_colors/font_hover_color = Color(0.631373, 0.25098, 0.133333, 1)
+theme_override_colors/font_color = Color(0.92549, 0.176471, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.368627, 0.752941, 0.172549, 1)
 theme_override_font_sizes/font_size = 10
 text = "LOAD"
 
 [node name="exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_upctu")
-theme_override_colors/font_hover_color = Color(0.39642, 0.315114, 0.0671548, 1)
-theme_override_colors/font_color = Color(0.92549, 0.729412, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.89729, 0.751165, 0.174018, 1)
+theme_override_colors/font_hover_color = Color(0.678431, 0.25098, 0.152941, 1)
+theme_override_colors/font_color = Color(0.92549, 0.14902, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.368627, 0.752941, 0.172549, 1)
 theme_override_font_sizes/font_size = 10
 text = "EXIT"
 
