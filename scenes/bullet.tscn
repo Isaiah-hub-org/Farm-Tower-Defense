@@ -15,5 +15,8 @@ hframes = 4
 vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_mkf8s")
+
+[connection signal="body_entered" from="." to="." method="_on_enemy_entered"]

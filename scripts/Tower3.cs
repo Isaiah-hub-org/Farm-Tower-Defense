@@ -34,6 +34,8 @@ public partial class Tower3 : Node2D
 		{
 			GD.Print("detects");
 			targetEnemy = body as Node2D;
+			
+			Shoot();
 		}
 	}
 	private void OnEnemyExited(Node body)
@@ -43,4 +45,27 @@ public partial class Tower3 : Node2D
 			targetEnemy = null;
 		}
 	}
+	
+	private void OnTimerTimeout()
+	{
+		if(targetEnemy != null)
+		{
+			Shoot();
+		}	
+	}
+	private void Shoot()
+	{
+		if (BulletPrefab == null)
+		{
+			GD.Print("Bullet prefab missing");
+			return;
+		}
+		
+		Bullet bullet = BulletPrefab.Instantiate<Bullet>();
+		Marker2D marker = GetNode<Marker2D>("Marker2D");
+		bullet.GlobalPosition = marker.GlobalPosition;
+		bullet.Rotation = Rotation;
+		GetTree().CurrentScene.AddChild(bullet);
+	}
+	
 }
