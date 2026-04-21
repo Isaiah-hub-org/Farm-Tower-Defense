@@ -69,7 +69,8 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bthki"]
 
-[node name="Enemy2" type="CharacterBody2D"]
+[node name="Enemy2" type="CharacterBody2D" groups=["enemies"]]
+collision_mask = 2
 script = ExtResource("1_3n2en")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -80,6 +81,7 @@ sprite_frames = SubResource("SpriteFrames_hr3b0")
 frame_progress = 0.0885488
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 0
 position = Vector2(-14, 1)
 rotation = -1.55509
 scale = Vector2(0.7, 0.7)
