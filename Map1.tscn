@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://ddgng3o22po1c" path="res://Assets/TilesetFloorDetail.png" id="5_5kecc"]
 [ext_resource type="Texture2D" uid="uid://dfm3po6u5yuab" path="res://Assets/TilesetNature.png" id="6_fgv63"]
 [ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Chicken.png" id="7_qk1ka"]
-[ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://scripts/EnemySpawner.cs" id="8_41vac"]
-[ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://scenes/Enemy.tscn" id="9_r2i1d"]
-[ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://scenes/Enemy2.tscn" id="10_oryae"]
+[ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://Script/EnemySpawner.cs" id="8_41vac"]
+[ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://Scenes/Enemy.tscn" id="9_r2i1d"]
+[ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://Scenes/Enemy2.tscn" id="10_oryae"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_ns8y8")

@@ -6,7 +6,7 @@ public partial class EnemySpawner : Node2D
 	[Export] public PackedScene EnemyScene;    
 	[Export] public PackedScene Enemy2Scene;  
 	[Export] public Path2D Path;               
-	[Export] public float SpawnInterval = 3f;   
+	[Export] public float SpawnInterval = 1f;   
 
 	private Timer _spawnTimer;
 	private Timer _labelTimer;
@@ -15,8 +15,8 @@ public partial class EnemySpawner : Node2D
 	private int _currentWave = 0;
 	private float _waveTimer = 0f;
 
-	[Export] public float Wave1Duration = 23f;  
-	[Export] public float Wave2Duration = 23f;  
+	[Export] public float Wave1Duration = 50f;  
+	[Export] public float Wave2Duration = 50f;  
 
 	public override void _Ready()
 	{
@@ -37,7 +37,7 @@ public partial class EnemySpawner : Node2D
 		// Label Timer
 		_labelTimer = new Timer
 		{
-			WaitTime = 2f,
+			WaitTime = 10f,
 			OneShot = true,
 			Autostart = false
 		};
@@ -81,7 +81,7 @@ public partial class EnemySpawner : Node2D
 		_spawnTimer.Stop(); // stop old wave first
 
 		_currentWave = 2;
-		_waveTimer = 0f;
+		_waveTimer = 10f;
 
 		_spawnTimer.Start();
 
@@ -95,7 +95,7 @@ public partial class EnemySpawner : Node2D
 		_currentWave = 0;
 
 		ShowWaveText("Wave 2 Finished!");
-		GD.Print("All waves finished!");
+		ShowWaveText("All waves finished!");
 	}
 
 	private void ShowWaveText(string text)
@@ -123,7 +123,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 75f;
+		enemy.Speed = 20f;
 
 		pathFollow.AddChild(enemy);
 	}
@@ -139,7 +139,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy2 enemy2 = Enemy2Scene.Instantiate<Enemy2>();
-		enemy2.Speed = 95f;
+		enemy2.Speed = 40f;
 
 		pathFollow.AddChild(enemy2);
 	}

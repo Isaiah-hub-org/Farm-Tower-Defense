@@ -3,7 +3,7 @@ using System;
 
 public partial class Enemy : CharacterBody2D
 {
-	[Export] public float Speed = 75f;
+	[Export] public float Speed = 10f;
 
 	private PathFollow2D pathFollow;
 
@@ -14,14 +14,18 @@ public partial class Enemy : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		var oldProgressRatio = pathFollow.ProgressRatio;
-		
+		// Move along the path
+		pathFollow.Progress += Speed * (float)delta;
+	}
+	public override void _Process(double delta)
+	{
+		var pathFollow = GetParent<PathFollow2D>();
 		pathFollow.Progress += Speed * (float)delta;
 
-		if (pathFollow.ProgressRatio < oldProgressRatio)
+		if (pathFollow.ProgressRatio >= 1.0f)
 		{
-			pathFollow.QueueFree(); // delete enemy when reaching end
-			QueueFree();
+		pathFollow.QueueFree(); // removes enemy + pathfollow
 		}
 	}
+
 }
