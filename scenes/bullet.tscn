@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://k38feyey1and"]
 
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Icons/wonwon.png" id="1_mkf8s"]
-[ext_resource type="Script" uid="uid://lrlelvpeogtr" path="res://scenes/Bullet.cs" id="1_y25gk"]
+[ext_resource type="Script" uid="uid://lrlelvpeogtr" path="res://Script/Bullet.cs" id="1_y25gk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkf8s"]
 size = Vector2(18, 8)
