@@ -13,10 +13,11 @@ public partial class Bullet : Area2D
 
 	private void OnEnemyEntered(Node2D body)
 	{
-		GD.Print("hit");
+		
 		if (hasHit) return;
 		if (body.IsInGroup("enemies"))
 		{
+			GD.Print("hit");
 			hasHit = true;
 			
 			QueueFree();
