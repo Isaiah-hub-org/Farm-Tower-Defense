@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2sel7m8cx0df"
-path="res://.godot/imported/Mushroom-Hit.png-063fa0d677eec884206335514e70866b.ctex"
+uid="uid://6fe23abummcv"
+path="res://.godot/imported/techno turret1.png-38175b6c52882192c9ef80c32b062387.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Hit.png"
-dest_files=["res://.godot/imported/Mushroom-Hit.png-063fa0d677eec884206335514e70866b.ctex"]
+source_file="res://Assets/techno turret1.png"
+dest_files=["res://.godot/imported/techno turret1.png-38175b6c52882192c9ef80c32b062387.ctex"]
 
 [params]
 

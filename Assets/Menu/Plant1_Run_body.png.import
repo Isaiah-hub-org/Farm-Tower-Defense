@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2sel7m8cx0df"
-path="res://.godot/imported/Mushroom-Hit.png-063fa0d677eec884206335514e70866b.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://duvcf8nyeupjg"
+valid=false
 
 [deps]
 
-source_file="res://Assets/Icons/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Hit.png"
-dest_files=["res://.godot/imported/Mushroom-Hit.png-063fa0d677eec884206335514e70866b.ctex"]
+source_file="res://Assets/Menu/Plant1_Run_body.png"
 
 [params]
 

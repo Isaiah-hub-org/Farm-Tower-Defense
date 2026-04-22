@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cle1n5782xo3b" path="res://Script/Tower3.cs" id="1_0bfwe"]
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Icons/wonwon.png" id="1_811kd"]
-[ext_resource type="PackedScene" uid="uid://k38feyey1and" path="res://scenes/bullet.tscn" id="2_qmf8d"]
+[ext_resource type="PackedScene" uid="uid://k38feyey1and" path="res://Scenes/bullet.tscn" id="2_qmf8d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_811kd"]
 radius = 130.096
