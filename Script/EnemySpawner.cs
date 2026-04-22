@@ -4,14 +4,20 @@ using System;
 public partial class EnemySpawner : Node2D
 {
 	[Export] public PackedScene EnemyScene;    
-	[Export] public PackedScene Enemy2Scene;  
+	[Export] public PackedScene Enemy2Scene;
+	[Export] public PackedScene TowerScene;
 	[Export] public Path2D Path;               
 	[Export] public float SpawnInterval = 1f;   
 
 	private Timer _spawnTimer;
 	private Timer _labelTimer;
 	private Label _waveLabel;
-	
+	private Node2D _towerPreview;
+	public Tower3 _towerToPlace;
+	public bool _isbuilding;
+
+	public TileMapLayer _tileMap;
+	//public float _cellRound;
 	private int _currentWave = 0;
 	private float _waveTimer = 0f;
 
@@ -20,10 +26,13 @@ public partial class EnemySpawner : Node2D
 
 	public override void _Ready()
 	{
-		
+		_towerToPlace = GetNode<Tower3>("Tower3");
+		_tileMap = GetNode<TileMapLayer>("TileMapLayer");
+		//_cellRound = _tileMap.TileSet.TileSize.X; 
+
 		_waveLabel = GetNode<Label>("WaveLabel");
 		_waveLabel.Text = "";
-
+		_isbuilding = true;
 		// Spawn Timer
 		_spawnTimer = new Timer
 		{
@@ -46,6 +55,19 @@ public partial class EnemySpawner : Node2D
 
 		
 		CallDeferred(nameof(StartWave1));
+
+
+		SetIsBuilding(true);	
+
+
+		Node towerButtonParent = GetNode<Node>("CanvasLayer/UI/HBoxContainer/Sprite2D/Button");
+		for (int i = 0; i < towerButtonParent.GetChildCount(); i++)
+		{
+			Control c = (Control)towerButtonParent.GetChild(i);
+			c.Connect("pressed", Callable.From(OnTowerButtonPressed));
+		}
+
+
 		
 	}
 
@@ -60,6 +82,17 @@ public partial class EnemySpawner : Node2D
 		else if (_currentWave == 2 && _waveTimer >= Wave2Duration)
 		{
 			EndWaves();
+		}
+
+
+		if (_isbuilding)
+		{
+			Vector2 mousePos = GetGlobalMousePosition();
+			
+			Vector2I cell = _tileMap.LocalToMap(mousePos);
+			Vector2 snappedPos = _tileMap.MapToLocal(cell);
+			_towerToPlace.Position = snappedPos;
+
 		}
 	}
 
@@ -123,7 +156,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 20f;
+		enemy.Speed = 100f;
 
 		pathFollow.AddChild(enemy);
 	}
@@ -143,4 +176,65 @@ public partial class EnemySpawner : Node2D
 
 		pathFollow.AddChild(enemy2);
 	}
+
+
+    public override void _Input(InputEvent @event)
+    {
+        if( @event is InputEventMouseButton eventMouseButton && eventMouseButton.ButtonIndex == MouseButton.Left && !eventMouseButton.Pressed)
+		{
+			if (_isbuilding)
+			{
+				if (GameManager.instance.BuyTower())
+				{
+					PlaceTower();
+				}
+				else
+				{
+					GD.Print("Not enough coins to place tower!");
+				}
+			}
+			else
+			{
+				_isbuilding = true;
+			}
+		}
+		else if (@event is InputEventMouseMotion)
+		{
+			if (_isbuilding)
+			{
+				Vector2 mousePos = GetGlobalMousePosition();
+				_towerToPlace.Position = mousePos;
+			}
+		}
+    }
+
+	public void SetIsBuilding(bool value)
+	{
+		_isbuilding = value;
+		if (_isbuilding)
+		{
+			((CanvasItem)_towerToPlace).Show();
+		}
+		else
+		{
+			((CanvasItem)_towerToPlace).Hide();
+		}
+	}
+	void PlaceTower(){
+		if (_isbuilding)
+		{
+			_towerToPlace = null;
+		}
+	}
+		
+	private void OnTowerButtonPressed()
+	{
+		if(!GameManager.instance.CanBuyTower())
+		{
+			SetIsBuilding(true);
+		}
+		
+	}
+		
+		
 }
