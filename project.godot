@@ -12,14 +12,14 @@ config_version=5
 
 config/name="UI Project"
 config/version="1.0"
-run/main_scene="uid://db5qyhilwikuk"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+run/main_scene="uid://blrbh4nna5dnh"
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="uid://b7vwhkkimxmsl"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1600
+window/size/viewport_height=720
 window/size/mode=1
 window/size/resizable=false
 window/stretch/mode="canvas_items"
@@ -33,8 +33,8 @@ project/assembly_name="UI Project"
 folder_colors={
 "res://Assets/": "red",
 "res://Documentation/": "gray",
-"res://Scenes/": "purple",
-"res://Scripts/": "yellow"
+"res://scenes/": "purple",
+"res://scripts/": "yellow"
 }
 
 [input]

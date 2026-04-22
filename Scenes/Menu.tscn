@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://tk7ns344t866"]
+[gd_scene load_steps=3 format=3 uid="uid://dsvx18265yct"]
 
 [ext_resource type="Script" uid="uid://t07d5ry7flbw" path="res://Script/Menu.cs" id="1_3kf3n"]
+[ext_resource type="Theme" uid="uid://c1wjec13qh0wu" path="res://Assets/UI_Theme.tres" id="2_upctu"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,14 +14,23 @@ offset_right = -6.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_3kf3n")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_left = 7.0
-offset_top = -67.0
-offset_right = 169.0
-offset_bottom = 226.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.5
+offset_top = -501.5
+offset_right = 316.5
+offset_bottom = 503.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 2
 alignment = 1
 

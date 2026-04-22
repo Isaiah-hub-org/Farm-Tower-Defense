@@ -15,17 +15,17 @@ public partial class Menu : Control
 	public void OnLoadPressed(){
 		
 	}
-    public void OnExitPressed(){
+	public void OnExitPressed(){
 		 GetTree().Quit();
 		
 	}
 	
 	public override void _Input(InputEvent @event)
 	{
-    if (@event.IsActionPressed("ui_cancel"))
-    	{
-        	GetTree().Quit();
-    	}
+	if (@event.IsActionPressed("ui_cancel"))
+		{
+			GetTree().Quit();
+		}
 	}
 	
 }

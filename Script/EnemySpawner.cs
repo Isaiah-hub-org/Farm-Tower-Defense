@@ -4,26 +4,35 @@ using System;
 public partial class EnemySpawner : Node2D
 {
 	[Export] public PackedScene EnemyScene;    
-	[Export] public PackedScene Enemy2Scene;  
+	[Export] public PackedScene Enemy2Scene;
+	[Export] public PackedScene TowerScene;
 	[Export] public Path2D Path;               
-	[Export] public float SpawnInterval = 3f;   
+	[Export] public float SpawnInterval = 2.5f;   
 
 	private Timer _spawnTimer;
 	private Timer _labelTimer;
 	private Label _waveLabel;
-	
+	private Node2D _towerPreview;
+	public Tower3 _towerToPlace;
+	public bool _isbuilding;
+
+	public TileMapLayer _tileMap;
+	//public float _cellRound;
 	private int _currentWave = 0;
 	private float _waveTimer = 0f;
 
-	[Export] public float Wave1Duration = 23f;  
-	[Export] public float Wave2Duration = 23f;  
+	[Export] public float Wave1Duration = 20f;  
+	[Export] public float Wave2Duration = 20f;  
 
 	public override void _Ready()
 	{
-		
+		_towerToPlace = GetNode<Tower3>("Tower3");
+		_tileMap = GetNode<TileMapLayer>("TileMapLayer");
+		//_cellRound = _tileMap.TileSet.TileSize.X; 
+
 		_waveLabel = GetNode<Label>("WaveLabel");
 		_waveLabel.Text = "";
-
+		_isbuilding = true;
 		// Spawn Timer
 		_spawnTimer = new Timer
 		{
@@ -37,7 +46,7 @@ public partial class EnemySpawner : Node2D
 		// Label Timer
 		_labelTimer = new Timer
 		{
-			WaitTime = 2f,
+			WaitTime = 10f,
 			OneShot = true,
 			Autostart = false
 		};
@@ -46,6 +55,19 @@ public partial class EnemySpawner : Node2D
 
 		
 		CallDeferred(nameof(StartWave1));
+
+
+		SetIsBuilding(true);	
+
+
+		Node towerButtonParent = GetNode<Node>("CanvasLayer/UI/HBoxContainer/Sprite2D/Button");
+		for (int i = 0; i < towerButtonParent.GetChildCount(); i++)
+		{
+			Control c = (Control)towerButtonParent.GetChild(i);
+			c.Connect("pressed", Callable.From(OnTowerButtonPressed));
+		}
+
+
 		
 	}
 
@@ -60,6 +82,17 @@ public partial class EnemySpawner : Node2D
 		else if (_currentWave == 2 && _waveTimer >= Wave2Duration)
 		{
 			EndWaves();
+		}
+
+
+		if (_isbuilding)
+		{
+			Vector2 mousePos = GetGlobalMousePosition();
+			
+			Vector2I cell = _tileMap.LocalToMap(mousePos);
+			Vector2 snappedPos = _tileMap.MapToLocal(cell);
+			_towerToPlace.Position = snappedPos;
+
 		}
 	}
 
@@ -81,7 +114,7 @@ public partial class EnemySpawner : Node2D
 		_spawnTimer.Stop(); // stop old wave first
 
 		_currentWave = 2;
-		_waveTimer = 0f;
+		_waveTimer = 10f;
 
 		_spawnTimer.Start();
 
@@ -95,7 +128,7 @@ public partial class EnemySpawner : Node2D
 		_currentWave = 0;
 
 		ShowWaveText("Wave 2 Finished!");
-		GD.Print("All waves finished!");
+		ShowWaveText("All waves finished!");
 	}
 
 	private void ShowWaveText(string text)
@@ -123,7 +156,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 75f;
+		enemy.Speed = 30f;
 
 		pathFollow.AddChild(enemy);
 	}
@@ -139,8 +172,69 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy2 enemy2 = Enemy2Scene.Instantiate<Enemy2>();
-		enemy2.Speed = 95f;
+		enemy2.Speed = 40f;
 
 		pathFollow.AddChild(enemy2);
 	}
+
+
+	public override void _Input(InputEvent @event)
+	{
+		if( @event is InputEventMouseButton eventMouseButton && eventMouseButton.ButtonIndex == MouseButton.Left && !eventMouseButton.Pressed)
+		{
+			if (_isbuilding)
+			{
+				if (GameManager.instance.BuyTower())
+				{
+					PlaceTower();
+				}
+				else
+				{
+					GD.Print("Not enough coins to place tower!");
+				}
+			}
+			else
+			{
+				_isbuilding = true;
+			}
+		}
+		else if (@event is InputEventMouseMotion)
+		{
+			if (_isbuilding)
+			{
+				Vector2 mousePos = GetGlobalMousePosition();
+				_towerToPlace.Position = mousePos;
+			}
+		}
+	}
+
+	public void SetIsBuilding(bool value)
+	{
+		_isbuilding = value;
+		if (_isbuilding)
+		{
+			((CanvasItem)_towerToPlace).Show();
+		}
+		else
+		{
+			((CanvasItem)_towerToPlace).Hide();
+		}
+	}
+	void PlaceTower(){
+		if (_isbuilding)
+		{
+			_towerToPlace = null;
+		}
+	}
+		
+	private void OnTowerButtonPressed()
+	{
+		if(!GameManager.instance.CanBuyTower())
+		{
+			SetIsBuilding(true);
+		}
+		
+	}
+		
+		
 }
