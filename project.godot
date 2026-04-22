@@ -32,9 +32,11 @@ project/assembly_name="UI Project"
 
 folder_colors={
 "res://Assets/": "red",
+"res://Assets/Map/": "red",
 "res://Documentation/": "gray",
-"res://scenes/": "purple",
-"res://scripts/": "yellow"
+"res://Scenes/": "teal",
+"res://Script/": "purple",
+"res://scenes/": "purple"
 }
 
 [input]

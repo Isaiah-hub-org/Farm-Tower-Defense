@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://y2ejonfn5arc"]
 
-[ext_resource type="AudioStream" uid="uid://bgbx253ofti5h" path="res://Assets/Menu/AKAI.mp3" id="1_4geyq"]
+[ext_resource type="AudioStream" uid="uid://bgbx253ofti5h" path="res://Assets/Menu/Sound/AKAI.mp3" id="1_4geyq"]
 [ext_resource type="Script" uid="uid://xdcrt6s7m7aw" path="res://Script/Settings.cs" id="1_lhmql"]
-[ext_resource type="Texture2D" uid="uid://c011keth2ekjb" path="res://Assets/Menu/Sound-Three.png" id="2_i44u3"]
+[ext_resource type="Texture2D" uid="uid://c011keth2ekjb" path="res://Assets/Menu/Sound/Sound-Three.png" id="2_i44u3"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_i44u3"]
 color = Color(0.9238579, 0.869087, 0.8525042, 1)

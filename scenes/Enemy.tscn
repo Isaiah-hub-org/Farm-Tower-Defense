@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b3jkmleqqnir6"]
 
 [ext_resource type="Script" uid="uid://rlxjb32jeara" path="res://Script/Enemy.cs" id="1_s7bn3"]
-[ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Icons/chomp_idle (2).png" id="2_2hac7"]
+[ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Monster_Plant/chomp_idle (2).png" id="2_2hac7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7bn3"]
 atlas = ExtResource("2_2hac7")
