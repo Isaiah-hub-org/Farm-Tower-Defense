@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://d2l81vhouwkw0"]
 
-[ext_resource type="Script" uid="uid://x1ln76djhpww" path="res://scripts/Enemy2.cs" id="1_3n2en"]
+[ext_resource type="Script" uid="uid://x1ln76djhpww" path="res://Script/Enemy2.cs" id="1_3n2en"]
 [ext_resource type="Texture2D" uid="uid://cftlthoaox1hm" path="res://Assets/Icons/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Run.png" id="1_mym6m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3n2en"]

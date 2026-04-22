@@ -7,7 +7,7 @@ public partial class EnemySpawner : Node2D
 	[Export] public PackedScene Enemy2Scene;
 	[Export] public PackedScene TowerScene;
 	[Export] public Path2D Path;               
-	[Export] public float SpawnInterval = 1f;   
+	[Export] public float SpawnInterval = 5f;   
 
 	private Timer _spawnTimer;
 	private Timer _labelTimer;
@@ -156,7 +156,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 100f;
+		enemy.Speed = 20f;
 
 		pathFollow.AddChild(enemy);
 	}
@@ -172,15 +172,15 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy2 enemy2 = Enemy2Scene.Instantiate<Enemy2>();
-		enemy2.Speed = 40f;
+		enemy2.Speed = 30f;
 
 		pathFollow.AddChild(enemy2);
 	}
 
 
-    public override void _Input(InputEvent @event)
-    {
-        if( @event is InputEventMouseButton eventMouseButton && eventMouseButton.ButtonIndex == MouseButton.Left && !eventMouseButton.Pressed)
+	public override void _Input(InputEvent @event)
+	{
+		if( @event is InputEventMouseButton eventMouseButton && eventMouseButton.ButtonIndex == MouseButton.Left && !eventMouseButton.Pressed)
 		{
 			if (_isbuilding)
 			{
@@ -206,7 +206,7 @@ public partial class EnemySpawner : Node2D
 				_towerToPlace.Position = mousePos;
 			}
 		}
-    }
+	}
 
 	public void SetIsBuilding(bool value)
 	{

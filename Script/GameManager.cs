@@ -10,14 +10,14 @@ public partial class GameManager : Node
 	private int _coins = 40;
 	private int _lives = 10;
 	private const int _Tower_Cost = 20;
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		instance = this;
 
-        _coinsLabel = GetNode<Label>("CanvasLayer/UI/VBoxContainer/Coins/Sprite2D/Label");
+		_coinsLabel = GetNode<Label>("CanvasLayer/UI/VBoxContainer/Coins/Sprite2D/Label");
 		_livesLabel = GetNode<Label>("CanvasLayer/UI/VBoxContainer/Lives/Sprite2D/Label");
 		_UpdateUI();
-    }
+	}
 
 	private void _UpdateUI()
 	{

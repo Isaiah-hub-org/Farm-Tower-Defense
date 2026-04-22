@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojwyu"]
 atlas = ExtResource("1_dobl1")
-region = Rect2(417.70636, 21.082611, 12.7229, 11.026543)
+region = Rect2(417.706, 21.0826, 12.7229, 11.0265)
 
 [node name="Coins" type="HBoxContainer"]
 offset_right = 40.0
