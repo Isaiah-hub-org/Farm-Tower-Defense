@@ -39,8 +39,8 @@ motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="closeMountaindup"]
 texture_filter = 1
-position = Vector2(157, 59)
-scale = Vector2(3.49062, 2.3)
+position = Vector2(1, 59)
+scale = Vector2(3.97812, 2.3)
 texture = ExtResource("2_41i37")
 centered = false
 
@@ -51,8 +51,8 @@ motion_mirroring = Vector2(320, 0)
 [node name="Sprite2D" type="Sprite2D" parent="GreenDirt"]
 texture_filter = 2
 texture_repeat = 2
-position = Vector2(0, 127)
-scale = Vector2(3.99062, 3.28889)
+position = Vector2(7, 148)
+scale = Vector2(3.96875, 3.35)
 texture = ExtResource("3_h550e")
 centered = false
 
@@ -62,7 +62,7 @@ motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Grass"]
 position = Vector2(0, 72)
-scale = Vector2(3.95, 3.59444)
+scale = Vector2(3.99375, 3.59444)
 texture = ExtResource("4_7hd7b")
 centered = false
 

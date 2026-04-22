@@ -4,6 +4,8 @@ using System;
 public partial class Enemy2 : CharacterBody2D
 {
 	[Export] public float Speed = 30f;
+	
+	[Export] public int HP = 1;
 
 	private PathFollow2D pathFollow;
 
@@ -24,8 +26,15 @@ public partial class Enemy2 : CharacterBody2D
 
 		if (pathFollow.ProgressRatio >= 1.0f)
 		{
-		pathFollow.QueueFree(); // removes enemy + pathfollow
+		_Pass(); // removes enemy + pathfollow
 		}
+	}
+	
+	private void _Pass()
+	{
+		GameManager.instance.OnEnemyPassed(this);
+		QueueFree();
+
 	}
 
 }

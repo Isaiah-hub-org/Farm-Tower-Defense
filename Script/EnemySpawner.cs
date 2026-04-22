@@ -7,7 +7,7 @@ public partial class EnemySpawner : Node2D
 	[Export] public PackedScene Enemy2Scene;
 	[Export] public PackedScene TowerScene;
 	[Export] public Path2D Path;               
-	[Export] public float SpawnInterval = 5f;   
+	[Export] public float SpawnInterval = 2.5f;   
 
 	private Timer _spawnTimer;
 	private Timer _labelTimer;
@@ -21,8 +21,8 @@ public partial class EnemySpawner : Node2D
 	private int _currentWave = 0;
 	private float _waveTimer = 0f;
 
-	[Export] public float Wave1Duration = 50f;  
-	[Export] public float Wave2Duration = 50f;  
+	[Export] public float Wave1Duration = 20f;  
+	[Export] public float Wave2Duration = 20f;  
 
 	public override void _Ready()
 	{
@@ -156,7 +156,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 20f;
+		enemy.Speed = 30f;
 
 		pathFollow.AddChild(enemy);
 	}
@@ -172,7 +172,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy2 enemy2 = Enemy2Scene.Instantiate<Enemy2>();
-		enemy2.Speed = 30f;
+		enemy2.Speed = 40f;
 
 		pathFollow.AddChild(enemy2);
 	}

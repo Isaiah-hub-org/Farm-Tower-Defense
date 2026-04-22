@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bni0g0xy42eg2" path="res://Assets/Icons/Preview.png" id="2_8qak7"]
 [ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://Script/EnemySpawner.cs" id="3_0f2yp"]
 [ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://scenes/Enemy.tscn" id="4_vm4q1"]
-[ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://Scenes/Enemy2.tscn" id="5_ud676"]
-[ext_resource type="PackedScene" uid="uid://lft7byq2e8m7" path="res://Scenes/Tower3.tscn" id="6_41ykk"]
+[ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://scenes/Enemy2.tscn" id="5_ud676"]
+[ext_resource type="PackedScene" uid="uid://lft7byq2e8m7" path="res://scenes/Tower3.tscn" id="6_41ykk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")
