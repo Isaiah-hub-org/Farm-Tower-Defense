@@ -4,7 +4,7 @@ using System;
 public partial class Enemy2 : CharacterBody2D
 {
 	[Export] public float Speed = 30f;
-
+	[Export] public int health = 10;
 	[Export] public int HP = 1;
 	private PathFollow2D pathFollow;
 
@@ -33,6 +33,14 @@ public partial class Enemy2 : CharacterBody2D
 		GameManager.instance.OnEnemyPassed(this);
 		QueueFree();
 
+	}
+	public void TakeDamage(int damage)
+	{
+		health -= damage;
+		if (health <= 0)
+		{
+			QueueFree();
+		}
 	}
 
 }

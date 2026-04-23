@@ -15,21 +15,23 @@ public partial class EnemySpawner : Node2D
 	private Node2D _towerPreview;
 	public Tower3 _towerToPlace;
 	public bool _isbuilding;
-
-	public TileMapLayer _tileMap;
-	//public float _cellRound;
+	private Vector2 _cellOffset;
+	private bool _towerHasValidPlacement;
+	public TileMapLayer _groundTileMap;
+	public float _cellRound;
 	private int _currentWave = 0;
 	private float _waveTimer = 0f;
 
-	[Export] public float Wave1Duration = 50f;  
+	[Export] public float Wave1Duration = 10f; 
 	[Export] public float Wave2Duration = 50f;  
 
 	public override void _Ready()
 	{
 		_towerToPlace = GetNode<Tower3>("Tower3");
-		_tileMap = GetNode<TileMapLayer>("TileMapLayer");
-		//_cellRound = _tileMap.TileSet.TileSize.X; 
-
+		
+		_groundTileMap = GetNode<TileMapLayer>("TileMapLayer");
+		_cellRound = _groundTileMap.TileSet.TileSize.X; 
+		_cellOffset = new Vector2(_cellRound / 2, _cellRound / 2);
 		_waveLabel = GetNode<Label>("WaveLabel");
 		_waveLabel.Text = "";
 		_isbuilding = true;
@@ -60,12 +62,8 @@ public partial class EnemySpawner : Node2D
 		SetIsBuilding(true);	
 
 
-		Node towerButtonParent = GetNode<Node>("CanvasLayer/UI/HBoxContainer/Sprite2D/Button");
-		for (int i = 0; i < towerButtonParent.GetChildCount(); i++)
-		{
-			Control c = (Control)towerButtonParent.GetChild(i);
-			c.Connect("pressed", Callable.From(OnTowerButtonPressed));
-		}
+		Button towerButton = GetNode<Button>("CanvasLayer/UI/HBoxContainer/Sprite2D/Button");
+		towerButton.Pressed += OnTowerButtonPressed;
 
 
 		
@@ -85,14 +83,10 @@ public partial class EnemySpawner : Node2D
 		}
 
 
-		if (_isbuilding)
+		if (_isbuilding && _towerToPlace != null)
 		{
 			Vector2 mousePos = GetGlobalMousePosition();
-			
-			Vector2I cell = _tileMap.LocalToMap(mousePos);
-			Vector2 snappedPos = _tileMap.MapToLocal(cell);
-			_towerToPlace.Position = snappedPos;
-
+			_towerToPlace.Position = _RoundPositionToTileMap(mousePos);
 		}
 	}
 
@@ -182,7 +176,7 @@ public partial class EnemySpawner : Node2D
     {
         if( @event is InputEventMouseButton eventMouseButton && eventMouseButton.ButtonIndex == MouseButton.Left && !eventMouseButton.Pressed)
 		{
-			if (_isbuilding)
+			if (_isbuilding && _towerToPlace != null)
 			{
 				if (GameManager.instance.BuyTower())
 				{
@@ -200,11 +194,12 @@ public partial class EnemySpawner : Node2D
 		}
 		else if (@event is InputEventMouseMotion)
 		{
-			if (_isbuilding)
-			{
-				Vector2 mousePos = GetGlobalMousePosition();
-				_towerToPlace.Position = mousePos;
-			}
+			
+			
+			Vector2 mousePos = GetGlobalMousePosition();
+			
+
+			
 		}
     }
 
@@ -221,19 +216,28 @@ public partial class EnemySpawner : Node2D
 		}
 	}
 	void PlaceTower(){
-		if (_isbuilding)
-		{
-			_towerToPlace = null;
-		}
+		Vector2 snappedPos = _RoundPositionToTileMap(GetGlobalMousePosition());
+		Tower3 newTower = TowerScene.Instantiate<Tower3>();
+		newTower.GlobalPosition = snappedPos;
+		AddChild(newTower);
+		SetIsBuilding(false);
 	}
 		
 	private void OnTowerButtonPressed()
 	{
-		if(!GameManager.instance.CanBuyTower())
+		if(GameManager.instance.CanBuyTower())
 		{
 			SetIsBuilding(true);
+
 		}
 		
+	}
+
+	private Vector2 _RoundPositionToTileMap(Vector2 position)
+	{
+		float x = Mathf.Round(position.X / _cellRound) * _cellRound + _cellOffset.X;
+		float y = Mathf.Round(position.Y / _cellRound) * _cellRound + _cellOffset.Y;
+		return new Vector2(x, y);
 	}
 		
 		

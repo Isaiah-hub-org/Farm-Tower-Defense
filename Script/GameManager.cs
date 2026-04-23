@@ -7,7 +7,7 @@ public partial class GameManager : Node
 	private Label _coinsLabel;
 	private Label _livesLabel;
 
-	private int _coins = 40;
+	private int _coins = 60;
 	private int _lives = 10;
 	private const int _Tower_Cost = 20;
 	public override void _Ready()

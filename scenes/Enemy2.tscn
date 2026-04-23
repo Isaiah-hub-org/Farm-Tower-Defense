@@ -67,10 +67,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bthki"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcd86"]
+radius = 27.479116
 
 [node name="Enemy2" type="CharacterBody2D" groups=["enemies"]]
-collision_mask = 2
 script = ExtResource("1_3n2en")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -80,9 +80,13 @@ scale = Vector2(0.7, 0.651)
 sprite_frames = SubResource("SpriteFrames_hr3b0")
 frame_progress = 0.0885488
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visibility_layer = 0
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-14, 1)
 rotation = -1.55509
-scale = Vector2(0.7, 0.7)
-shape = SubResource("CapsuleShape2D_bthki")
+scale = Vector2(0.70000005, 0.70000005)
+shape = SubResource("CircleShape2D_jcd86")
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]

@@ -5,10 +5,14 @@ public partial class Tower3 : Node2D
 	
 	[Export] public PackedScene BulletPrefab;
 	[Export] public float FireRate = 1.0f;
-
+	private int attackDamage = 1;
+	private float attackSpeed = 1.0f;
+	private float attackDelay;
+	private ShaderMaterial _spriteMaterial;
 	protected Node2D targetEnemy = null;
 	public override void _Ready()
 	{
+		_spriteMaterial = GetNode<Sprite2D>("Sprite2D").Material as ShaderMaterial;
 		Area2D area = GetNode<Area2D>("EnemyDetectionArea");
 		area.BodyEntered += OnEnemyEntered;
 		area.BodyExited += OnEnemyExited;
@@ -17,6 +21,8 @@ public partial class Tower3 : Node2D
 		timer.WaitTime = FireRate;
 		timer.Timeout += OnTimerTimeout;
 		timer.Start();
+
+		attackDelay = FireRate;
 		
 	}
 	
@@ -25,6 +31,15 @@ public partial class Tower3 : Node2D
 		if (targetEnemy != null)
 		{
 			LookAt(targetEnemy.GlobalPosition);
+			if (attackDelay > 0)
+			{
+				attackDelay -= (float)delta;
+			}
+			else
+			{
+				Shoot();
+				attackDelay = FireRate;
+			}
 		}
 	}
 	
@@ -67,5 +82,6 @@ public partial class Tower3 : Node2D
 		bullet.Rotation = Rotation;
 		GetTree().CurrentScene.AddChild(bullet);
 	}
+
 	
 }

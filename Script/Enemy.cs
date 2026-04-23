@@ -5,6 +5,7 @@ public partial class Enemy : CharacterBody2D
 {
 	[Export] public float Speed = 10f;
 	[Export] public int HP = 1;
+	[Export] public int health = 10;
 	private PathFollow2D pathFollow;
 
 	public override void _Ready()
@@ -33,6 +34,14 @@ public partial class Enemy : CharacterBody2D
 		GameManager.instance.OnEnemyPassed(this);
 		QueueFree();
 
+	}
+	public void TakeDamage(int damage)
+	{
+		health -= damage;
+		if (health <= 0)
+		{
+			QueueFree();
+		}
 	}
 
 }
