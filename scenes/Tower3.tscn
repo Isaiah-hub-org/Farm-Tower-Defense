@@ -20,7 +20,6 @@ hframes = 4
 vframes = 3
 
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
-light_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]
 rotation = 1.5708

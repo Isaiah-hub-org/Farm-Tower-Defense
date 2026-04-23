@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://catf67p2wm6s5"]
+
+[ext_resource type="Script" uid="uid://i64rt10tn4gt" path="res://Scenes/Tuto1.cs" id="1_kb1kc"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kb1kc")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1597.0
+offset_bottom = 720.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 583.0
+offset_right = 823.0
+offset_bottom = 614.0
+theme_override_colors/font_color = Color(0.54018605, 0.059510358, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.5176471, 0.1254902, 0, 1)
+text = "NEXT ----->"
+
+[node name="Tutorial" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 677.0
+offset_top = 24.0
+offset_right = 917.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 50
+text = "TUTORIAL"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 134.0
+offset_right = 121.0
+offset_bottom = 157.0
+text = "WELCOME TO OUR TOWER DEFENSE GAME.
+IT'S PRETTY BASIC TO BE HONEST AND SIMPLE ENOUGH FOR EVERYONE TO UNDERSTAND"
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 256.0
+offset_right = 129.0
+offset_bottom = 279.0
+text = "FIRST:
+
+YOU ARE GOING TO SPAWN WITH A TOWER ON YOUR CURSOR READY TO BE PLACED, NEXT TIME YOU ARE GOING TO NEED TO PRESS THE TOWER BUTTON
+ AT THE BOTTOM OF YOUR SCREEN BEFORE PLACING IT
+(IM WORKING ON IT😭🙏)"
+
+[node name="Label4" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 459.0
+offset_right = 130.0
+offset_bottom = 482.0
+text = "AND IM ALSO GOING TO GIVE YOU 1000 COINS TO PLACE INFINITE TOWERS🙂 FOR NOW AND BECAUSE ENEMIES DON
+T GIVE YOU COINS YET"
+
+[node name="Label5" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1007.0
+offset_top = 445.0
+offset_right = 1047.0
+offset_bottom = 468.0
+
+[connection signal="pressed" from="Panel/Button" to="." method="OnPressed"]

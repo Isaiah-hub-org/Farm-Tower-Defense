@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1a6kwifetavi"]
+
+[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster_Plant/wonwon.png" id="1_w8cp6"]
+[ext_resource type="Texture2D" uid="uid://diklpugn074d3" path="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_xembb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xembb"]
+atlas = ExtResource("1_w8cp6")
+region = Rect2(3.3184357, 1.703804, 27.566345, 27.14225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amkm2"]
+atlas = ExtResource("2_xembb")
+region = Rect2(102.768616, 29.140533, 35.5372, 34.859467)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1603.0
+offset_bottom = 717.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 42.0
+offset_right = 139.0
+offset_bottom = 65.0
+text = "SECOND:
+
+WAVES OF SCARY👹ENEMIES  ARE GOING TO PUP UP AND YOU HAVE TO DEFEND YOUR BASE"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 80.0
+offset_right = 1039.0
+offset_bottom = 103.0
+text = "FIRST ENEMY"
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.08400001
+offset_left = 929.0
+offset_top = 235.0
+offset_right = 1053.0
+offset_bottom = 197.772
+text = "SECOND ENEMY"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(994.00006, 153)
+scale = Vector2(4.305557, 3.842593)
+texture = SubResource("AtlasTexture_xembb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(989, 307)
+scale = Vector2(2.7571428, 2.4411764)
+texture = SubResource("AtlasTexture_amkm2")
