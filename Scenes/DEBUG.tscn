@@ -1,7 +1,50 @@
-[gd_scene format=3 uid="uid://dkkt2kdp7g3xh"]
+[gd_scene load_steps=3 format=3 uid="uid://dkkt2kdp7g3xh"]
+
+[ext_resource type="Script" uid="uid://l324irmhcx1t" path="res://Scenes/Debug.cs" id="1_rwhk2"]
+[ext_resource type="Texture2D" uid="uid://yvslndw05ggv" path="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/OIP.jpg" id="2_i12id"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_rwhk2")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1604.0
 offset_bottom = 717.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 673.0
+offset_top = 33.0
+offset_right = 844.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 50
+text = "BUGS"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 186.0
+offset_right = 64.0
+offset_bottom = 209.0
+text = "AGAIN THERES A LOTTTTTTS OF BUG AND NOT FINISHED STUFF, AGAIN IT'S BECAUSE WE ARE JUST LEARNING SO ITS A LIL BIT SLOW"
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 385.0
+offset_right = 781.0
+offset_bottom = 427.0
+theme_override_font_sizes/font_size = 30
+text = "you can play now"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1134, 215)
+texture = ExtResource("2_i12id")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 635.0
+offset_top = 577.0
+offset_right = 682.0
+offset_bottom = 608.0
+text = "PLAY"
+
+[connection signal="pressed" from="Button" to="." method="OnPressed"]

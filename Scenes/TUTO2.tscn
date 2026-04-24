@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1a6kwifetavi"]
+[gd_scene load_steps=6 format=3 uid="uid://c1a6kwifetavi"]
 
+[ext_resource type="Script" uid="uid://ddgyyeltbh35e" path="res://Scenes/Tuto2.cs" id="1_amkm2"]
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster_Plant/wonwon.png" id="1_w8cp6"]
 [ext_resource type="Texture2D" uid="uid://diklpugn074d3" path="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_xembb"]
 
@@ -12,6 +13,7 @@ atlas = ExtResource("2_xembb")
 region = Rect2(102.768616, 29.140533, 35.5372, 34.859467)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_amkm2")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1603.0
@@ -54,3 +56,12 @@ texture = SubResource("AtlasTexture_xembb")
 position = Vector2(989, 307)
 scale = Vector2(2.7571428, 2.4411764)
 texture = SubResource("AtlasTexture_amkm2")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 850.0
+offset_top = 587.0
+offset_right = 858.0
+offset_bottom = 595.0
+text = "NEXT ------>"
+
+[connection signal="pressed" from="Button" to="." method="OnPressed"]
