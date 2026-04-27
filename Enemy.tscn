@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3jkmleqqnir6"]
+[gd_scene load_steps=9 format=3 uid="uid://xrtaa6j82gn8"]
 
 [ext_resource type="Script" uid="uid://rlxjb32jeara" path="res://Script/Enemy.cs" id="1_s7bn3"]
 [ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Monster_Plant/chomp_idle (2).png" id="2_2hac7"]
@@ -39,25 +39,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cj2mj"]
-radius = 5.742787
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7bn3"]
+radius = 5.6568537
 
-[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
-position = Vector2(1.9073486e-06, -1.9073486e-06)
-rotation = 1.5707964
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(2.5, 2.5)
-collision_layer = 3
 script = ExtResource("1_s7bn3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4.7683716e-07, -2.7999992)
-scale = Vector2(0.41757807, 0.35930654)
+position = Vector2(-0.79999983, -4)
+scale = Vector2(0.7125, 0.55625)
 sprite_frames = SubResource("SpriteFrames_6do27")
 frame_progress = 0.77468
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visibility_layer = 0
-position = Vector2(0, 9.536743e-07)
-scale = Vector2(0.6999999, 0.6999999)
-shape = SubResource("CircleShape2D_cj2mj")
-debug_color = Color(0.25920346, 0.5431712, 0.8718339, 0.41960785)
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.1999999, 0)
+shape = SubResource("CircleShape2D_s7bn3")

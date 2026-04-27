@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7vwhkkimxmsl"
-path="res://.godot/imported/Monkey.png-590608de702713434ca4e61ef8488c81.ctex"
+uid="uid://dtbmfdc16l4io"
+path="res://.godot/imported/background_plains-Sheet5.png-35483dd9140e2a56dbb183393076f492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/Monkey.png"
-dest_files=["res://.godot/imported/Monkey.png-590608de702713434ca4e61ef8488c81.ctex"]
+source_file="res://Assets/Menu/Parallax/background_plains-Sheet5.png"
+dest_files=["res://.godot/imported/background_plains-Sheet5.png-35483dd9140e2a56dbb183393076f492.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7vwhkkimxmsl"
-path="res://.godot/imported/Monkey.png-590608de702713434ca4e61ef8488c81.ctex"
+uid="uid://b41fmk33anni"
+path="res://.godot/imported/simple.png-1e5f60957ad330ec1d95ea093378778c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/Monkey.png"
-dest_files=["res://.godot/imported/Monkey.png-590608de702713434ca4e61ef8488c81.ctex"]
+source_file="res://Assets/Menu/Small_UI/simple.png"
+dest_files=["res://.godot/imported/simple.png-1e5f60957ad330ec1d95ea093378778c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7vwhkkimxmsl"
-path="res://.godot/imported/Monkey.png-590608de702713434ca4e61ef8488c81.ctex"
+uid="uid://crw13gb4cw0yq"
+path="res://.godot/imported/chomp_idle (2).png-5c42221738f54a9e27911c92aa6f8d46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/Monkey.png"
-dest_files=["res://.godot/imported/Monkey.png-590608de702713434ca4e61ef8488c81.ctex"]
+source_file="res://Assets/Monster_Plant/chomp_idle (2).png"
+dest_files=["res://.godot/imported/chomp_idle (2).png-5c42221738f54a9e27911c92aa6f8d46.ctex"]
 
 [params]
 

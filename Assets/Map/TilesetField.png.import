@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7vwhkkimxmsl"
-path="res://.godot/imported/Monkey.png-590608de702713434ca4e61ef8488c81.ctex"
+uid="uid://bso8ipmwlhqj8"
+path="res://.godot/imported/TilesetField.png-33f7f85fcb9c09c0eb6e81f6057a0b86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/Monkey.png"
-dest_files=["res://.godot/imported/Monkey.png-590608de702713434ca4e61ef8488c81.ctex"]
+source_file="res://Assets/Map/TilesetField.png"
+dest_files=["res://.godot/imported/TilesetField.png-33f7f85fcb9c09c0eb6e81f6057a0b86.ctex"]
 
 [params]
 
