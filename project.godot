@@ -13,13 +13,13 @@ config_version=5
 config/name="UI Project"
 config/version="1.0"
 run/main_scene="uid://vpyktkkx07vx"
-config/features=PackedStringArray("4.5", "C#", "Forward Plus")
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://b7vwhkkimxmsl"
 
 [display]
 
-window/size/viewport_width=1600
-window/size/viewport_height=720
+window/size/viewport_width=1800
+window/size/viewport_height=1200
 window/size/mode=1
 window/size/resizable=false
 window/stretch/mode="canvas_items"
