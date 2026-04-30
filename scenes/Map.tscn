@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dg7w1x0t6pbbg"]
+[gd_scene load_steps=14 format=4 uid="uid://dg7w1x0t6pbbg"]
 
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Icons/Cozy Farm Tileset.png" id="1_v6avs"]
 [ext_resource type="Texture2D" uid="uid://bni0g0xy42eg2" path="res://Assets/Icons/Preview.png" id="2_8qak7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://scenes/Enemy.tscn" id="4_vm4q1"]
 [ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://scenes/Enemy2.tscn" id="5_ud676"]
 [ext_resource type="PackedScene" uid="uid://lft7byq2e8m7" path="res://scenes/Tower3.tscn" id="6_41ykk"]
+[ext_resource type="Shader" uid="uid://cubfoync8albe" path="res://shader2.gdshader" id="7_inly4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")
@@ -1253,6 +1254,16 @@ _data = {
 }
 point_count = 60
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ii6k2"]
+shader = ExtResource("7_inly4")
+shader_parameter/water_tint = Color(0.15, 0.45, 1, 0.18)
+shader_parameter/ripple_center = Vector2(0.5, 0.5)
+shader_parameter/ripple_speed = 4.0
+shader_parameter/ripple_frequency = 55.0
+shader_parameter/distortion_strength = 0.004
+shader_parameter/wave_strength = 0.018
+shader_parameter/edge_fade = 0.18
+
 [node name="Map" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -1297,5 +1308,12 @@ text = "Wave 1 Started!"
 
 [node name="Tower3" parent="Node2D" instance=ExtResource("6_41ykk")]
 position = Vector2(1282, 834)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ii6k2")
+offset_left = 72.0
+offset_top = 507.0
+offset_right = 477.0
+offset_bottom = 907.0
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
