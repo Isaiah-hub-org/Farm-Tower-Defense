@@ -68,27 +68,29 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jcd86"]
-radius = 27.479116
+radius = 27.4791
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lpdsr"]
-radius = 36.619667
+radius = 36.6197
 
 [node name="Enemy2" type="CharacterBody2D" groups=["enemies"]]
+position = Vector2(1, 0)
 script = ExtResource("1_3n2en")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 0.499998)
+position = Vector2(11, 1)
 rotation = 1.5708
 scale = Vector2(0.7, 0.651)
 sprite_frames = SubResource("SpriteFrames_hr3b0")
 frame_progress = 0.0885488
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(14, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-14, 1)
 rotation = -1.55509
-scale = Vector2(0.70000005, 0.70000005)
+scale = Vector2(0.7, 0.7)
 shape = SubResource("CircleShape2D_jcd86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
