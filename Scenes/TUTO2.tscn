@@ -1,67 +1,106 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1a6kwifetavi"]
+[gd_scene load_steps=7 format=3 uid="uid://b2ub6m0mxepfm"]
 
-[ext_resource type="Script" uid="uid://ddgyyeltbh35e" path="res://Scenes/Tuto2.cs" id="1_amkm2"]
+[ext_resource type="Script" uid="uid://ddgyyeltbh35e" path="res://Script/Tuto2.cs" id="1_amkm2"]
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster_Plant/wonwon.png" id="1_w8cp6"]
+[ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="2_1rbuv"]
 [ext_resource type="Texture2D" uid="uid://diklpugn074d3" path="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_xembb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xembb"]
 atlas = ExtResource("1_w8cp6")
-region = Rect2(3.3184357, 1.703804, 27.566345, 27.14225)
+region = Rect2(3.31844, 1.7038, 27.5663, 27.1423)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_amkm2"]
 atlas = ExtResource("2_xembb")
-region = Rect2(102.768616, 29.140533, 35.5372, 34.859467)
+region = Rect2(102.769, 29.1405, 35.5372, 34.8595)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_amkm2")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1603.0
-offset_bottom = 717.0
+offset_right = 1807.0
+offset_bottom = 1200.0
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="background" type="Sprite2D" parent="Panel"]
+position = Vector2(905, 605.5)
+scale = Vector2(18.8542, 12.5104)
+texture = ExtResource("2_1rbuv")
+
+[node name="Enemies" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 42.0
-offset_right = 139.0
-offset_bottom = 65.0
-text = "SECOND:
+offset_left = 496.0
+offset_top = 221.0
+offset_right = 1208.0
+offset_bottom = 296.0
+text = "Here are the enmies that are going to spawned their op trait and weakness"
 
-WAVES OF SCARY👹ENEMIES  ARE GOING TO PUP UP AND YOU HAVE TO DEFEND YOUR BASE"
-
-[node name="Label2" type="Label" parent="Panel"]
+[node name="enemy 1" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 938.0
-offset_top = 80.0
-offset_right = 1039.0
-offset_bottom = 103.0
+offset_left = 215.0
+offset_top = 315.0
+offset_right = 316.0
+offset_bottom = 338.0
 text = "FIRST ENEMY"
 
-[node name="Label3" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel/enemy 1"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 221.0
+offset_right = 84.0
+offset_bottom = 244.0
+text = "This is the first, most basic enemy that the player is going to encounter.
+Simple, not too fast, not too slow and not too tanky."
+
+[node name="eneny 2" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_bottom = 0.08400001
-offset_left = 929.0
-offset_top = 235.0
-offset_right = 1053.0
-offset_bottom = 197.772
+anchor_bottom = 0.084
+offset_left = 781.0
+offset_top = 741.0
+offset_right = 905.0
+offset_bottom = 703.772
 text = "SECOND ENEMY"
 
+[node name="Label" type="Label" parent="Panel/eneny 2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = 157.0
+offset_right = 287.0
+offset_bottom = 168.428
+text = "One of the fastest enemy out there,
+so be careful or your tower might miss their shots.
+But the only downside to this scary enemy is its health"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.019
+offset_left = 750.0
+offset_top = 128.0
+offset_right = 962.0
+offset_bottom = 174.2
+theme_override_font_sizes/font_size = 50
+text = "ENEMIES"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(994.00006, 153)
-scale = Vector2(4.305557, 3.842593)
+position = Vector2(262, 440)
+scale = Vector2(4.30556, 3.84259)
 texture = SubResource("AtlasTexture_xembb")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(989, 307)
-scale = Vector2(2.7571428, 2.4411764)
+position = Vector2(845, 838)
+scale = Vector2(2.75714, 2.44118)
 texture = SubResource("AtlasTexture_amkm2")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 850.0
-offset_top = 587.0
-offset_right = 858.0
-offset_bottom = 595.0
+offset_left = 790.0
+offset_top = 1063.0
+offset_right = 883.0
+offset_bottom = 1094.0
+theme_override_colors/font_hover_pressed_color = Color(0.854902, 0, 0, 1)
+theme_override_colors/font_color = Color(0.713726, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0, 0, 1)
 text = "NEXT ------>"
 
 [connection signal="pressed" from="Button" to="." method="OnPressed"]
