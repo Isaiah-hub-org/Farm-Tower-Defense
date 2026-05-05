@@ -5,6 +5,7 @@ public partial class EnemySpawner : Node2D
 {
 	[Export] public PackedScene EnemyScene;    
 	[Export] public PackedScene Enemy2Scene;
+	[Export] public PackedScene Enemy4Scene;
 	[Export] public PackedScene TowerScene;
 	[Export] public Path2D Path;               
 	[Export] public float SpawnInterval = 2f;   
@@ -23,8 +24,9 @@ public partial class EnemySpawner : Node2D
 	private float _waveTimer = 0f;
 
 	[Export] public float Wave1Duration = 15f; 
-	[Export] public float Wave2Duration = 50f;  
-
+	[Export] public float Wave2Duration = 20f;  
+	[Export] public float Wave3Duration = 30f;  
+	
 	public override void _Ready()
 	{
 		_towerToPlace = GetNode<Tower3>("Tower3");
@@ -64,8 +66,6 @@ public partial class EnemySpawner : Node2D
 
 		Button towerButton = GetNode<Button>("CanvasLayer/UI/HBoxContainer/Sprite2D/Button");
 		towerButton.Pressed += OnTowerButtonPressed;
-
-
 		
 	}
 
@@ -78,6 +78,10 @@ public partial class EnemySpawner : Node2D
 			StartWave2();
 		}
 		else if (_currentWave == 2 && _waveTimer >= Wave2Duration)
+		{
+			StartWave3();
+		}
+		else if (_currentWave == 3 && _waveTimer >= Wave3Duration)
 		{
 			EndWaves();
 		}
@@ -108,12 +112,25 @@ public partial class EnemySpawner : Node2D
 		_spawnTimer.Stop(); // stop old wave first
 
 		_currentWave = 2;
-		_waveTimer = 15f;
+		_waveTimer = 0f;
 
 		_spawnTimer.Start();
 
 		ShowWaveText("Wave 2 Started!");
 		GD.Print("Wave 2 started!");
+	}
+	
+	private void StartWave3()
+	{
+		_spawnTimer.Stop(); // stop old wave first
+
+		_currentWave = 3;
+		_waveTimer = 0f;
+
+		_spawnTimer.Start();
+
+		ShowWaveText("Wave 3 Started!");
+		GD.Print("Wave 3 started!");
 	}
 
 	private void EndWaves()
@@ -121,7 +138,7 @@ public partial class EnemySpawner : Node2D
 		_spawnTimer.Stop();
 		_currentWave = 0;
 
-		ShowWaveText("Wave 2 Finished!");
+		ShowWaveText("Wave 3 Finished!");
 		ShowWaveText("All waves finished!");
 	}
 
@@ -137,6 +154,13 @@ public partial class EnemySpawner : Node2D
 			SpawnPathEnemy();
 		else if (_currentWave == 2)
 			SpawnEnemy2();
+		else if (_currentWave == 3)
+			SpawnEnemy4();
+			GD.Print("Spawning Enemy 4 now!"); // If this shows up, the logic is working
+			if (Enemy4Scene == null) {
+				GD.Print("ERROR: Enemy4Scene is NOT assigned in the Inspector!");
+				return;
+	}
 	}
 
 	private void SpawnPathEnemy()
@@ -169,6 +193,22 @@ public partial class EnemySpawner : Node2D
 		enemy2.Speed = 40f;
 
 		pathFollow.AddChild(enemy2);
+	}
+	
+	private void SpawnEnemy4()
+	{
+		PathFollow2D pathFollow = new PathFollow2D
+		{
+			Loop = false,
+			Progress = 0,
+			Rotates = false
+		};
+		Path.AddChild(pathFollow);
+
+		Enemy4 enemy4 = Enemy4Scene.Instantiate<Enemy4>();
+		enemy4.Speed = 40f;
+
+		pathFollow.AddChild(enemy4);
 	}
 
 

@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxoauvd22ckr4"]
+
+[ext_resource type="Script" uid="uid://l30hap2p1lhv" path="res://Script/Enemy4.cs" id="1_31gh3"]
+[ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Icons/Chicken.png" id="2_0l5uo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq8dw"]
+atlas = ExtResource("2_0l5uo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en74x"]
+atlas = ExtResource("2_0l5uo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed2ev"]
+atlas = ExtResource("2_0l5uo")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxj8l"]
+atlas = ExtResource("2_0l5uo")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_234dp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq8dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en74x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed2ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxj8l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k32pn"]
+radius = 5.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_31gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_234dp")
+frame_progress = 0.401838
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_k32pn")
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]

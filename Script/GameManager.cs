@@ -46,9 +46,16 @@ public partial class GameManager : Node
 		_UpdateUI();
 	}
 	
+	
 	public void OnEnemyPassed(Enemy2 enemy2)
 	{
 		_lives -= enemy2.HP;
+		_UpdateUI();
+	}
+	
+	public void OnEnemyPassed(Enemy4 enemy4)
+	{
+		_lives -= enemy4.HP;
 		_UpdateUI();
 	}
 
