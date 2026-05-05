@@ -172,9 +172,9 @@ public partial class EnemySpawner : Node2D
 	}
 
 
-    public override void _Input(InputEvent @event)
-    {
-        if( @event is InputEventMouseButton eventMouseButton && eventMouseButton.ButtonIndex == MouseButton.Left && !eventMouseButton.Pressed)
+	public override void _Input(InputEvent @event)
+	{
+		if( @event is InputEventMouseButton eventMouseButton && eventMouseButton.ButtonIndex == MouseButton.Left && !eventMouseButton.Pressed)
 		{
 			if (_isbuilding && _towerToPlace != null)
 			{
@@ -201,7 +201,7 @@ public partial class EnemySpawner : Node2D
 
 			
 		}
-    }
+	}
 
 	public void SetIsBuilding(bool value)
 	{

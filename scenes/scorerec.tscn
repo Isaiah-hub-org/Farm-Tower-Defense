@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dpvwhxf8qyfq7"]
+[gd_scene load_steps=2 format=3 uid="uid://dpvwhxf8qyfq7"]
+
+[ext_resource type="Script" uid="uid://c4dwn4lx5iluj" path="res://Script/ScoreKeeper.cs" id="1_u5kpr"]
 
 [node name="Scoreboard" type="Node"]
+script = ExtResource("1_u5kpr")
