@@ -1,5 +1,6 @@
 using Godot;
-using System;
+
+namespace UIProject.Script;
 
 public partial class ScoreKeeper : Node
 {

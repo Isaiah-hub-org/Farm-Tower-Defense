@@ -17,3 +17,4 @@ mono_crash.*.json
 # Rider Stuff
 .idea/*
 *.csproj.old
+*.import

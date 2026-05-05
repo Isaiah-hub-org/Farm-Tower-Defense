@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using UIProject.Script;
 
 public partial class Enemy : CharacterBody2D
 {
@@ -7,10 +8,12 @@ public partial class Enemy : CharacterBody2D
 	[Export] public int HP = 1;
 	[Export] public int health = 1;
 	private PathFollow2D pathFollow;
+	private ScoreKeeper scoreKeeper;
 
 	public override void _Ready()
 	{
 		pathFollow = GetParent<PathFollow2D>();
+		scoreKeeper = GetNode<ScoreKeeper>("/root/ScoreKeeper");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -40,7 +43,6 @@ public partial class Enemy : CharacterBody2D
 		health -= damage;
 		if (health <= 0)
 		{
-			var scoreKeeper = GetNode<ScoreKeeper>("%Scoreboard");
 			scoreKeeper.AddPoints(2);
 			QueueFree();
 		}
