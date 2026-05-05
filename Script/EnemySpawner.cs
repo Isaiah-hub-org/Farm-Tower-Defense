@@ -7,7 +7,7 @@ public partial class EnemySpawner : Node2D
 	[Export] public PackedScene Enemy2Scene;
 	[Export] public PackedScene TowerScene;
 	[Export] public Path2D Path;               
-	[Export] public float SpawnInterval = 1f;   
+	[Export] public float SpawnInterval = 2f;   
 
 	private Timer _spawnTimer;
 	private Timer _labelTimer;
@@ -22,7 +22,7 @@ public partial class EnemySpawner : Node2D
 	private int _currentWave = 0;
 	private float _waveTimer = 0f;
 
-	[Export] public float Wave1Duration = 10f; 
+	[Export] public float Wave1Duration = 15f; 
 	[Export] public float Wave2Duration = 50f;  
 
 	public override void _Ready()
@@ -108,7 +108,7 @@ public partial class EnemySpawner : Node2D
 		_spawnTimer.Stop(); // stop old wave first
 
 		_currentWave = 2;
-		_waveTimer = 10f;
+		_waveTimer = 15f;
 
 		_spawnTimer.Start();
 
@@ -150,7 +150,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 100f;
+		enemy.Speed = 35f;
 
 		pathFollow.AddChild(enemy);
 	}
@@ -172,9 +172,9 @@ public partial class EnemySpawner : Node2D
 	}
 
 
-    public override void _Input(InputEvent @event)
-    {
-        if( @event is InputEventMouseButton eventMouseButton && eventMouseButton.ButtonIndex == MouseButton.Left && !eventMouseButton.Pressed)
+	public override void _Input(InputEvent @event)
+	{
+		if( @event is InputEventMouseButton eventMouseButton && eventMouseButton.ButtonIndex == MouseButton.Left && !eventMouseButton.Pressed)
 		{
 			if (_isbuilding && _towerToPlace != null)
 			{
@@ -201,7 +201,7 @@ public partial class EnemySpawner : Node2D
 
 			
 		}
-    }
+	}
 
 	public void SetIsBuilding(bool value)
 	{
