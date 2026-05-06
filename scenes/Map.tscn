@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://cfhn48qodgo82"]
+[gd_scene load_steps=45 format=4 uid="uid://cfhn48qodgo82"]
 
 [ext_resource type="Script" uid="uid://b7obyw80diwhf" path="res://Script/GameManager.cs" id="1_q4yjo"]
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Map/Cozy Farm Tileset.png" id="1_v6avs"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bg8xd7tm6ql15" path="res://Assets/Menu/Small_UI/coins-chests-etc-2-0.png" id="13_uylqo"]
 [ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="14_nitb1"]
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster_Plant/wonwon.png" id="15_dumge"]
+[ext_resource type="Shader" uid="uid://cubfoync8albe" path="res://shader2.gdshader" id="17_u4fdk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")
@@ -4039,14 +4040,14 @@ animations = [{
 }]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ii6k2"]
-shader = ExtResource("7_inly4")
+shader = ExtResource("17_u4fdk")
 shader_parameter/water_tint = Color(0.15, 0.45, 1, 0.18)
 shader_parameter/ripple_center = Vector2(0.5, 0.5)
-shader_parameter/ripple_speed = 4.0
-shader_parameter/ripple_frequency = 55.0
-shader_parameter/distortion_strength = 0.004
-shader_parameter/wave_strength = 0.018
-shader_parameter/edge_fade = 0.18
+shader_parameter/ripple_speed = 1.215
+shader_parameter/ripple_frequency = 32.85
+shader_parameter/distortion_strength = 0.015
+shader_parameter/wave_strength = 0.006
+shader_parameter/edge_fade = 0.545
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_q4yjo")
@@ -4202,11 +4203,11 @@ offset_right = 139.033
 offset_bottom = 45.6765
 rotation = 1.5708
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="tree shader" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ii6k2")
-offset_left = 72.0
-offset_top = 507.0
-offset_right = 477.0
-offset_bottom = 907.0
+offset_left = 128.0
+offset_top = 834.0
+offset_right = 195.0
+offset_bottom = 886.0
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
