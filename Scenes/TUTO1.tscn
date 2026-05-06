@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://catf67p2wm6s5"]
 
-[ext_resource type="Script" uid="uid://i64rt10tn4gt" path="res://Scenes/Tuto1.cs" id="1_kb1kc"]
+[ext_resource type="Script" uid="uid://i64rt10tn4gt" path="res://Script/Tuto1.cs" id="1_kb1kc"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kb1kc")
@@ -15,8 +15,8 @@ offset_left = 735.0
 offset_top = 583.0
 offset_right = 823.0
 offset_bottom = 614.0
-theme_override_colors/font_color = Color(0.54018605, 0.059510358, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.5176471, 0.1254902, 0, 1)
+theme_override_colors/font_color = Color(0.540186, 0.0595104, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.517647, 0.12549, 0, 1)
 text = "NEXT ----->"
 
 [node name="Tutorial" type="Label" parent="Panel"]

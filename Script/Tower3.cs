@@ -80,6 +80,7 @@ public partial class Tower3 : Node2D
 		Marker2D marker = GetNode<Marker2D>("Marker2D");
 		bullet.GlobalPosition = marker.GlobalPosition;
 		bullet.Rotation = Rotation;
+		//CallDeferred("add_child", bullet);
 		GetTree().CurrentScene.AddChild(bullet);
 	}
 

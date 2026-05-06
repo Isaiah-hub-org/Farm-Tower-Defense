@@ -15,7 +15,6 @@ public partial class Enemy4 : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		// Move along the path
 		pathFollow.Progress += Speed * (float)delta;
 	}
 	public override void _Process(double delta)
