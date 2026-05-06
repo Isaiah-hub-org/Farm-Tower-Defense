@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2l81vhouwkw0"]
+[gd_scene load_steps=14 format=3 uid="uid://d2l81vhouwkw0"]
 
-[ext_resource type="Script" uid="uid://x1ln76djhpww" path="res://scripts/Enemy2.cs" id="1_3n2en"]
-[ext_resource type="Texture2D" uid="uid://cftlthoaox1hm" path="res://Assets/Icons/Forest_Monsters_FREE/Mushroom/Mushroom without VFX/Mushroom-Run.png" id="1_mym6m"]
+[ext_resource type="Script" uid="uid://x1ln76djhpww" path="res://Script/Enemy2.cs" id="1_3n2en"]
+[ext_resource type="Texture2D" uid="uid://cftlthoaox1hm" path="res://Assets/Monster_Plant/Mushroom/Mushroom without VFX/Mushroom-Run.png" id="1_mym6m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3n2en"]
 atlas = ExtResource("1_mym6m")
@@ -67,22 +67,34 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bthki"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcd86"]
+radius = 27.4791
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpdsr"]
+radius = 36.6197
 
 [node name="Enemy2" type="CharacterBody2D" groups=["enemies"]]
-collision_mask = 2
+position = Vector2(1, 0)
 script = ExtResource("1_3n2en")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 0.499998)
+position = Vector2(11, 1)
 rotation = 1.5708
 scale = Vector2(0.7, 0.651)
 sprite_frames = SubResource("SpriteFrames_hr3b0")
 frame_progress = 0.0885488
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visibility_layer = 0
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(14, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-14, 1)
 rotation = -1.55509
 scale = Vector2(0.7, 0.7)
-shape = SubResource("CapsuleShape2D_bthki")
+shape = SubResource("CircleShape2D_jcd86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lpdsr")
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]
