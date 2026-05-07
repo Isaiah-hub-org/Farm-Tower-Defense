@@ -4,7 +4,7 @@ public partial class Tower3 : Node2D
 {
 
 	[Export] public PackedScene BulletPrefab;
-	[Export] public float FireRate = 3.0f;
+	[Export] public float FireRate = 5.0f;
 	private int attackDamage = 1;
 	private float attackSpeed = 0.5f;
 	private float attackDelay;

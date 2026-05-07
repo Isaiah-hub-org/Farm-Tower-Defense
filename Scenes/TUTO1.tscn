@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxgu73d5itysk"]
 
 [ext_resource type="Script" uid="uid://i64rt10tn4gt" path="res://Script/Tuto1.cs" id="1_kb1kc"]
+[ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="2_i670m"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kb1kc")
@@ -12,7 +13,7 @@ offset_bottom = 720.0
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
 position = Vector2(905, 602.5)
 scale = Vector2(18.8958, 12.6146)
-
+texture = ExtResource("2_i670m")
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 0

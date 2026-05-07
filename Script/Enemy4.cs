@@ -4,7 +4,7 @@ using System;
 public partial class Enemy4 : CharacterBody2D
 {
 	[Export] public float Speed = 55f;
-	[Export] public int health = 10;
+	[Export] public int health = 80;
 	[Export] public int HP = 1;
 	private PathFollow2D pathFollow;
 

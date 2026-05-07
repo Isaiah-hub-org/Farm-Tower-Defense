@@ -76,12 +76,12 @@ But the only downside to this scary enemy is its health"
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.019
-offset_left = 750.0
-offset_top = 128.0
-offset_right = 962.0
-offset_bottom = 174.2
+offset_left = 566.0
+offset_top = 117.0
+offset_right = 1043.0
+offset_bottom = 163.2
 theme_override_font_sizes/font_size = 50
-text = "ENEMIES"
+text = "ENEMIES & TOWERS"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(262, 440)
@@ -98,9 +98,9 @@ offset_left = 790.0
 offset_top = 1063.0
 offset_right = 883.0
 offset_bottom = 1094.0
-theme_override_colors/font_hover_pressed_color = Color(0.854902, 0, 0, 1)
 theme_override_colors/font_color = Color(0.713726, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.8, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.854902, 0, 0, 1)
 text = "NEXT ------>"
 
 [connection signal="pressed" from="Button" to="." method="OnPressed"]

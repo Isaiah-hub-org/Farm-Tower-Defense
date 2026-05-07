@@ -5,7 +5,7 @@ public partial class Enemy : CharacterBody2D
 {
 	[Export] public float Speed = 10f;
 	[Export] public int HP = 1;
-	[Export] public int health = 10;
+	[Export] public int health = 40;
 	[Export] public int reward = 5;
 	private PathFollow2D pathFollow;
 
