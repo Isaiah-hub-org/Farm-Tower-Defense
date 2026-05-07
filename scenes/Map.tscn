@@ -4045,7 +4045,7 @@ script = ExtResource("1_q4yjo")
 script = ExtResource("3_0f2yp")
 EnemyScene = ExtResource("4_vm4q1")
 Enemy2Scene = ExtResource("5_ud676")
-Enemy4Scene = ExtResource("5_u4fdk")
+
 TowerScene = ExtResource("6_41ykk")
 Path = NodePath("Path2D")
 SpawnInterval = 2.5

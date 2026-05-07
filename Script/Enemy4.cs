@@ -38,8 +38,14 @@ public partial class Enemy4 : CharacterBody2D
 		health -= damage;
 		if (health <= 0)
 		{
-			QueueFree();
+			Die();
+			
 		}
+	}
+	private void Die()
+	{
+		GameManager.instance.OnEnemyDied(this);
+		QueueFree();
 	}
 
 }

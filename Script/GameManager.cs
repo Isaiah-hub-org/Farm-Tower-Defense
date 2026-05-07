@@ -9,6 +9,7 @@ public partial class GameManager : Node
 
 	private int _coins = 60;
 	private int _lives = 10;
+	
 	private const int _Tower_Cost = 20;
 	public override void _Ready()
 	{
@@ -59,4 +60,19 @@ public partial class GameManager : Node
 		_UpdateUI();
 	}
 
+	public void OnEnemyDied(Enemy enemy)
+	{
+		_coins += enemy.reward;
+		_UpdateUI();
+	}
+	public void OnEnemyDied(Enemy2 enemy2)
+	{
+		_coins += 10; // reward for Enemy2
+		_UpdateUI();
+	}
+	public void OnEnemyDied(Enemy4 enemy4)
+	{
+		_coins += 15; // reward for Enemy4
+		_UpdateUI();
+	}
 }
