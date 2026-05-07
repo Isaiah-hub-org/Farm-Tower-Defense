@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2ub6m0mxepfm"]
+[gd_scene load_steps=11 format=3 uid="uid://b2ub6m0mxepfm"]
 
 [ext_resource type="Script" uid="uid://ddgyyeltbh35e" path="res://Script/Tuto2.cs" id="1_amkm2"]
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster_Plant/wonwon.png" id="1_w8cp6"]
 [ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="2_1rbuv"]
 [ext_resource type="Texture2D" uid="uid://diklpugn074d3" path="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_xembb"]
+[ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Icons/Chicken.png" id="5_v4pl1"]
+[ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Monster_Plant/chomp_idle (2).png" id="6_s5btx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xembb"]
 atlas = ExtResource("1_w8cp6")
@@ -12,6 +14,14 @@ region = Rect2(3.31844, 1.7038, 27.5663, 27.1423)
 [sub_resource type="AtlasTexture" id="AtlasTexture_amkm2"]
 atlas = ExtResource("2_xembb")
 region = Rect2(102.769, 29.1405, 35.5372, 34.8595)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfxmy"]
+atlas = ExtResource("5_v4pl1")
+region = Rect2(42.16913, 10.084522, 13.494019, 13.494019)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwnev"]
+atlas = ExtResource("6_s5btx")
+region = Rect2(1.9272156, 5.397812, 27.75911, 28.144653)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_amkm2")
@@ -43,10 +53,10 @@ text = "FIRST ENEMY"
 
 [node name="Label" type="Label" parent="Panel/enemy 1"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 221.0
-offset_right = 84.0
-offset_bottom = 244.0
+offset_left = -4.0
+offset_top = 177.0
+offset_right = 547.0
+offset_bottom = 226.0
 text = "This is the first, most basic enemy that the player is going to encounter.
 Simple, not too fast, not too slow and not too tanky."
 
@@ -54,20 +64,20 @@ Simple, not too fast, not too slow and not too tanky."
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.084
-offset_left = 781.0
-offset_top = 741.0
-offset_right = 905.0
-offset_bottom = 703.772
+offset_left = 234.0
+offset_top = 745.0
+offset_right = 358.0
+offset_bottom = 707.772
 text = "SECOND ENEMY"
 
 [node name="Label" type="Label" parent="Panel/eneny 2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 1.0
-offset_left = -133.0
-offset_top = 157.0
-offset_right = 287.0
-offset_bottom = 168.428
+offset_left = -5.0
+offset_top = 141.0
+offset_right = 415.0
+offset_bottom = 152.42804
 text = "One of the fastest enemy out there,
 so be careful or your tower might miss their shots.
 But the only downside to this scary enemy is its health"
@@ -84,12 +94,12 @@ theme_override_font_sizes/font_size = 50
 text = "ENEMIES & TOWERS"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(262, 440)
-scale = Vector2(4.30556, 3.84259)
+position = Vector2(1207.0001, 412.00003)
+scale = Vector2(3.967592, 3.1111107)
 texture = SubResource("AtlasTexture_xembb")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(845, 838)
+position = Vector2(298, 823.00006)
 scale = Vector2(2.75714, 2.44118)
 texture = SubResource("AtlasTexture_amkm2")
 
@@ -102,5 +112,41 @@ theme_override_colors/font_color = Color(0.713726, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.8, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.854902, 0, 0, 1)
 text = "NEXT ------>"
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1139, 803.96875)
+scale = Vector2(6.932697, 6.3125014)
+texture = SubResource("AtlasTexture_bfxmy")
+
+[node name="Enemy 3" type="Label" parent="."]
+offset_left = 1096.0
+offset_top = 744.0
+offset_right = 1235.0
+offset_bottom = 767.0
+text = "Third Enemy"
+
+[node name="Label" type="Label" parent="Enemy 3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.14400001
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = 121.0
+offset_right = 486.984
+offset_bottom = 158.5
+text = "The tankies enemy for now, kind of slow but does more damage 
+and take more damage"
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(263, 422.99997)
+scale = Vector2(4.2407403, 3.302498)
+texture = SubResource("AtlasTexture_wwnev")
+
+[node name="Tower" type="Label" parent="."]
+offset_left = 1117.0
+offset_top = 316.0
+offset_right = 1306.0
+offset_bottom = 339.0
+text = "FIRST TOWER"
 
 [connection signal="pressed" from="Button" to="." method="OnPressed"]
