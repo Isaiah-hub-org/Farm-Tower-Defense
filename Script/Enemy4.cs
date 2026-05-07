@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public partial class Enemy2 : CharacterBody2D
+public partial class Enemy4 : CharacterBody2D
 {
-	[Export] public float Speed = 60f;
+	[Export] public float Speed = 55f;
 	[Export] public int health = 10;
 	[Export] public int HP = 1;
 	private PathFollow2D pathFollow;
@@ -15,7 +15,6 @@ public partial class Enemy2 : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		// Move along the path
 		pathFollow.Progress += Speed * (float)delta;
 	}
 	public override void _Process(double delta)
