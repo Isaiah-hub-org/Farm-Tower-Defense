@@ -2,53 +2,52 @@ shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
 
-uniform vec4 water_tint : source_color = vec4(0.15, 0.45, 1.0, 0.18);
+uniform float start_y: hint_range(0.0, 1.0) = .3;
+uniform float strength: hint_range(0.0, 1.0) = .15;
+uniform float curve_scale: hint_range(0.0, 3.0) = 1.5;
+uniform float speed : hint_range(0.0, 10.0) = 2.0;
+uniform float wind_start: hint_range(-1.57, 1.57) = 0.0;
 
-uniform vec2 ripple_center = vec2(0.5, 0.5);
-uniform float ripple_speed = 4.0;
-uniform float ripple_frequency = 55.0;
-uniform float distortion_strength = 0.015;
-uniform float wave_strength = 0.006;
-uniform float edge_fade = 0.2;
+varying vec4 v_color;
+
+void vertex() {
+	v_color = COLOR;
+
+	float scale = (pow(2.0, curve_scale) * strength * 2.0);
+
+	// Makes the ColorRect bigger so the wind distortion does not get cut off
+	VERTEX *= 1.0 + scale;
+}
 
 void fragment() {
-	vec2 uv = UV;
-	vec2 screen_uv = SCREEN_UV;
+	float scale = (pow(2.0, curve_scale) * strength * 2.0);
+	float total_scale = 1.0 + scale;
 
-	// Direction from ripple center
-	vec2 dir = uv - ripple_center;
-	float dist = length(dir);
-	vec2 normal_dir = dist > 0.0001 ? normalize(dir) : vec2(0.0);
+	// ColorRect uses plain UV
+	vec2 local_uv = UV;
 
-	// Circular ripple wave
-	float ripple = sin(dist * ripple_frequency - TIME * ripple_speed);
+	vec2 adjusted_local_uv = (local_uv - 0.5) * total_scale + 0.5;
 
-	// Fade ripple out farther away
-	float falloff = exp(-dist * 4.0);
+	vec2 wind_uv = adjusted_local_uv;
 
-	// Extra moving water wobble
-	vec2 wave_offset = vec2(
-		sin(uv.y * 24.0 + TIME * 1.8),
-		cos(uv.x * 20.0 + TIME * 1.5)
-	) * wave_strength;
+	wind_uv.x += sin(TIME * speed + wind_start)
+		* smoothstep(start_y, 1.0 + start_y, pow((1.0 - wind_uv.y), 0.5))
+		* pow((1.0 - wind_uv.y + 1.0), curve_scale)
+		* strength;
 
-	// Main distortion
-	vec2 ripple_offset = normal_dir * ripple * falloff * distortion_strength;
-	vec2 final_offset = ripple_offset + wave_offset;
+	if (wind_uv.x < 0.0 || wind_uv.x > 1.0 || wind_uv.y < 0.0 || wind_uv.y > 1.0) {
+		discard;
+	}
 
-	// Distort the screen behind the water
-	vec4 distorted_screen = texture(screen_texture, screen_uv + final_offset);
+	// Convert the fake UV movement into screen distortion
+	vec2 wind_offset = wind_uv - local_uv;
 
-	// Soft edge fade so it doesn't look like a hard box
-	float left = smoothstep(0.0, edge_fade, uv.x);
-	float right = smoothstep(0.0, edge_fade, 1.0 - uv.x);
-	float top = smoothstep(0.0, edge_fade, uv.y);
-	float bottom = smoothstep(0.0, edge_fade, 1.0 - uv.y);
-	float edge_mask = left * right * top * bottom;
+	// Lower this if it is too strong
+	vec2 final_screen_uv = SCREEN_UV + wind_offset * 0.05;
 
-	// Final color
-	vec3 final_rgb = mix(distorted_screen.rgb, water_tint.rgb, water_tint.a);
-	float final_alpha = edge_mask * 0.9;
+	// Sample whatever is behind the ColorRect
+	vec4 screen_color = texture(screen_texture, final_screen_uv);
 
-	COLOR = vec4(final_rgb, final_alpha);
+	// Output background only, so the ColorRect itself stays transparent
+	COLOR = screen_color;
 }
