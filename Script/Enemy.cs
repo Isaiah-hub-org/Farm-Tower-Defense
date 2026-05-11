@@ -5,7 +5,8 @@ public partial class Enemy : CharacterBody2D
 {
 	[Export] public float Speed = 10f;
 	[Export] public int HP = 1;
-	[Export] public int health = 10;
+	[Export] public int health = 40;
+	[Export] public int reward = 5;
 	private PathFollow2D pathFollow;
 
 	public override void _Ready()
@@ -40,8 +41,14 @@ public partial class Enemy : CharacterBody2D
 		health -= damage;
 		if (health <= 0)
 		{
-			QueueFree();
+			Die();
 		}
+		
+	}
+	private void Die()
+	{
+		GameManager.instance.OnEnemyDied(this);
+		QueueFree();
 	}
 
 }
