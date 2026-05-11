@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://i64rt10tn4gt" path="res://Script/Tuto1.cs" id="1_kb1kc"]
 [ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="2_i670m"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_kb1kc")
 
 [node name="Panel" type="Panel" parent="."]
