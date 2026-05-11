@@ -1,12 +1,12 @@
-[gd_scene load_steps=42 format=4 uid="uid://cfhn48qodgo82"]
+[gd_scene load_steps=44 format=4 uid="uid://cfhn48qodgo82"]
 
 [ext_resource type="Script" uid="uid://b7obyw80diwhf" path="res://Script/GameManager.cs" id="1_q4yjo"]
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Map/Cozy Farm Tileset.png" id="1_v6avs"]
 [ext_resource type="Texture2D" uid="uid://bni0g0xy42eg2" path="res://Assets/Icons/Preview.png" id="2_8qak7"]
 [ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://Script/EnemySpawner.cs" id="3_0f2yp"]
 [ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://Scenes/Enemy.tscn" id="4_vm4q1"]
-[ext_resource type="PackedScene" uid="uid://dxoauvd22ckr4" path="res://Scenes/Enemy4.tscn" id="5_u4fdk"]
-[ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://Scenes/Enemy2.tscn" id="5_ud676"]
+[ext_resource type="PackedScene" uid="uid://dxoauvd22ckr4" path="res://Scenes/Enemy4.tscn" id="5_6hulr"]
+[ext_resource type="PackedScene" uid="uid://d2l81vhouwkw0" path="res://scenes/Enemy2.tscn" id="5_ud676"]
 [ext_resource type="PackedScene" uid="uid://cccanpfge88nb" path="res://Scenes/Tower3.tscn" id="6_41ykk"]
 [ext_resource type="Texture2D" uid="uid://bso8ipmwlhqj8" path="res://Assets/Map/TilesetField.png" id="7_jdjsr"]
 [ext_resource type="Texture2D" uid="uid://c2ewuqmaeo4yl" path="res://Assets/Map/TilesetFloor.png" id="8_6hulr"]
@@ -3993,7 +3993,7 @@ script = ExtResource("1_q4yjo")
 script = ExtResource("3_0f2yp")
 EnemyScene = ExtResource("4_vm4q1")
 Enemy2Scene = ExtResource("5_ud676")
-
+Enemy4Scene = ExtResource("5_6hulr")
 TowerScene = ExtResource("6_41ykk")
 Path = NodePath("Path2D")
 SpawnInterval = 2.5
