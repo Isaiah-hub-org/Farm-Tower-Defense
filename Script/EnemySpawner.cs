@@ -8,7 +8,7 @@ public partial class EnemySpawner : Node2D
 	[Export] public PackedScene Enemy4Scene;
 	[Export] public PackedScene TowerScene;
 	[Export] public Path2D Path;               
-	[Export] public float SpawnInterval = 0.2f;
+	[Export] public float SpawnInterval = 0.5f;
 
 	private Timer _spawnTimer;
 	private Timer _labelTimer;
