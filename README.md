@@ -3,8 +3,9 @@ mary - enemies 1,2,4, and tower.
 
 Game Play Features
 Towers
-[TOWER 1]
-[TOWER 1 DESCRIPTION]
+[First Blood]
+
+[First Blood DESCRIPTION]
 tower one shoots green bullets at enemies when detected.
 Enemies
 [ENEMY 1]
