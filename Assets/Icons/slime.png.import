@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4nm6q01tc77d"
-path="res://.godot/imported/Cozy Farm Tileset.png-d344e71ace296001509b9de495a347d0.ctex"
+uid="uid://bn5l2csmc3vem"
+path="res://.godot/imported/slime.png-ab3dad5160345e9a199f60daa87a8e14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map/Cozy Farm Tileset.png"
-dest_files=["res://.godot/imported/Cozy Farm Tileset.png-d344e71ace296001509b9de495a347d0.ctex"]
+source_file="res://Assets/Icons/slime.png"
+dest_files=["res://.godot/imported/slime.png-ab3dad5160345e9a199f60daa87a8e14.ctex"]
 
 [params]
 

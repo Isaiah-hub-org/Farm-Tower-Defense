@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwthuu7f5jxhk"]
+
+[ext_resource type="Script" uid="uid://brmkk4qgjawl8" path="res://Script/Enemy3.cs" id="1_dxyk6"]
+[ext_resource type="Texture2D" uid="uid://bn5l2csmc3vem" path="res://Assets/Icons/slime.png" id="1_hukrr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxyk6"]
+atlas = ExtResource("1_hukrr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no5mw"]
+atlas = ExtResource("1_hukrr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v15ab"]
+atlas = ExtResource("1_hukrr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60q65"]
+atlas = ExtResource("1_hukrr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h2kam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxyk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no5mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v15ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60q65")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hukrr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_250ly"]
+radius = 18.384777
+
+[node name="Enemy 3" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_dxyk6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.7683716e-07, -2)
+rotation = 1.5707964
+scale = Vector2(1.40625, 1.25)
+sprite_frames = SubResource("SpriteFrames_h2kam")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -3)
+shape = SubResource("CircleShape2D_hukrr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_250ly")

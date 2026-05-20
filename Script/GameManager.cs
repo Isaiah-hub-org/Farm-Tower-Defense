@@ -59,10 +59,20 @@ public partial class GameManager : Node
 		_lives -= enemy4.HP;
 		_UpdateUI();
 	}
+	public void OnEnemyPassed(Enemy3 enemy3)
+	{
+		_lives -= enemy3.HP;
+		_UpdateUI();
+	}
+	public void OnEnemyDied(Enemy3 enemy3)
+	{
+		_coins += 10; // reward for Enemy3
+		_UpdateUI();
+	}
 
 	public void OnEnemyDied(Enemy enemy)
 	{
-		_coins += enemy.reward;
+		_coins += 10;
 		_UpdateUI();
 	}
 	public void OnEnemyDied(Enemy2 enemy2)

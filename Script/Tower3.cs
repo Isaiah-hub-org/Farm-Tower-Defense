@@ -47,7 +47,7 @@ public partial class Tower3 : Node2D
 	{
 		if (body.IsInGroup("enemies"))
 		{
-			GD.Print("detects");
+			
 			targetEnemy = body as Node2D;
 			
 			Shoot();
