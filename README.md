@@ -38,13 +38,12 @@ Custom Signals
 
 
 Thang Bawi:
+I worked on several parts of the game's development, including coding the health system so player can 
+take damage and track their health during gameplay. I also helped create and program some of the enemies, making them 
+interact with players and function properly in the game. In addition, I developed the scoreboard/leaderbaord system to 
+keep track of player scores and rankings.  
 
-
-
-
-
-
-
+ 
 
 
 Mary Lynn:
