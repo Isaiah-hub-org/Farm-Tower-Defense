@@ -50,7 +50,8 @@ Thang Bawi:
 Mary Lynn:
 I made the enemies (1,2,4)
 I also made the leaf tower which is our only tower.
-Created the path2d and enemey spawner.
+Created the path2d and enemy spawner.
+Helped develop the code for the game. 
 
 
 
