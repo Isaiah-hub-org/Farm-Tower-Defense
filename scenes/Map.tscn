@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://cfhn48qodgo82"]
+[gd_scene load_steps=48 format=4 uid="uid://cfhn48qodgo82"]
 
 [ext_resource type="Script" uid="uid://b7obyw80diwhf" path="res://Script/GameManager.cs" id="1_q4yjo"]
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Map/Cozy Farm Tileset.png" id="1_v6avs"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="14_nitb1"]
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster_Plant/wonwon.png" id="15_dumge"]
 [ext_resource type="Shader" uid="uid://cubfoync8albe" path="res://shader2.gdshader" id="17_u4fdk"]
+[ext_resource type="Shader" uid="uid://tmptgbst61t5" path="res://scenes/gradident.gdshader" id="18_08blb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")
@@ -4054,14 +4055,28 @@ shader_parameter/offset = 0.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u4fdk"]
 shader = ExtResource("17_u4fdk")
 shader_parameter/speed = 1.0
-shader_parameter/minStrength = 0.05
-shader_parameter/maxStrength = 0.01
+shader_parameter/minStrength = 0.75
+shader_parameter/maxStrength = 0.075
 shader_parameter/strengthScale = 100.0
 shader_parameter/interval = 3.5
 shader_parameter/detail = 1.0
 shader_parameter/distortion = 0.0
 shader_parameter/heightOffset = 0.0
 shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r402g"]
+shader = ExtResource("18_08blb")
+shader_parameter/color_start = Color(0.05, 0.05, 0.05, 0.55)
+shader_parameter/color_end = Color(0.75, 0.75, 0.75, 0.55)
+shader_parameter/edge_color = Color(1, 0.65, 0.1, 1)
+shader_parameter/opacity = 0.55
+shader_parameter/gradient_width = 0.45
+shader_parameter/fade_position = 0.0
+shader_parameter/fade_speed = 0.45
+shader_parameter/noise_scale = 35.0
+shader_parameter/noise_strength = 0.35
+shader_parameter/edge_size = 0.05
+shader_parameter/move_direction = Vector2(1, 0.35)
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_q4yjo")
@@ -4229,6 +4244,160 @@ offset_bottom = 886.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_u4fdk")
 position = Vector2(268, 662)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_r402g")
+offset_left = -8.0
+offset_top = 1115.0
+offset_right = 32.0
+offset_bottom = 1155.0
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(150, 822)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(107, 1031)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(107, 1031)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D18" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(50, 1071)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D19" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(-33, 1188)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D20" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(20, 1189)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D21" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(-31, 1102)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D22" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(134, 1090)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D23" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(12, 1026)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(360, 1184)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(472, 1021)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(752, 1178)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(1114, 835)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(1363, 1067)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(1464, 553)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(852, 611)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(768, 329)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(328, 406)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D15" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(161, 179)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D16" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(713, 24)
+texture = ExtResource("1_v6avs")
+region_enabled = true
+region_rect = Rect2(0, 48, 44, 52)
+
+[node name="Sprite2D17" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u4fdk")
+position = Vector2(1380, 156)
 texture = ExtResource("1_v6avs")
 region_enabled = true
 region_rect = Rect2(0, 48, 44, 52)
