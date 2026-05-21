@@ -5,7 +5,8 @@ public partial class Enemy4 : CharacterBody2D
 {
 	[Export] public float Speed = 55f;
 	[Export] public int health = 80;
-	[Export] public int HP = 1;
+	[Export] public int HP = 3;
+	[Export] public int reward = 40;
 	private PathFollow2D pathFollow;
 
 	public override void _Ready()

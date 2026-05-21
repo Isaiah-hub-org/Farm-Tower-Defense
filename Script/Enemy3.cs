@@ -3,10 +3,10 @@ using System;
 
 public partial class Enemy3 : CharacterBody2D
 {
-	[Export] public float Speed = 10f;
-	[Export] public int HP = 1;
-	[Export] public int health = 5;
-	[Export] public int reward = 5;
+	[Export] public float Speed = 40f;
+	[Export] public int HP = 2;
+	[Export] public int health = 50;
+	[Export] public int reward = 15;
 	private PathFollow2D pathFollow;
 
 	public override void _Ready()

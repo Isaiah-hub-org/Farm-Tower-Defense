@@ -7,8 +7,8 @@ public partial class GameManager : Node
 	private Label _coinsLabel;
 	private Label _livesLabel;
 
-	private int _coins = 60;
-	private int _lives = 10;
+	private int _coins = 0;
+	private int _lives = 50;
 	
 	private const int _Tower_Cost = 20;
 	public override void _Ready()
@@ -41,6 +41,8 @@ public partial class GameManager : Node
 		}
 		
 	}
+
+	// When an enemy passes through the end of the path, the player's lives are reduced by the enemy's HP and the UI is updated
 	public void OnEnemyPassed(Enemy enemy)
 	{
 		_lives -= enemy.HP;
@@ -64,25 +66,32 @@ public partial class GameManager : Node
 		_lives -= enemy3.HP;
 		_UpdateUI();
 	}
+
+
+	// The reward for killing an enemy is added to the player's coins and the UI is updated
+
+
+
+
 	public void OnEnemyDied(Enemy3 enemy3)
 	{
-		_coins += 10; // reward for Enemy3
+		_coins += enemy3.reward; // reward for Enemy3
 		_UpdateUI();
 	}
 
 	public void OnEnemyDied(Enemy enemy)
 	{
-		_coins += 10;
+		_coins += enemy.reward; // reward for Enemy
 		_UpdateUI();
 	}
 	public void OnEnemyDied(Enemy2 enemy2)
 	{
-		_coins += 10; // reward for Enemy2
+		_coins += enemy2.reward; // reward for Enemy2
 		_UpdateUI();
 	}
 	public void OnEnemyDied(Enemy4 enemy4)
 	{
-		_coins += 15; // reward for Enemy4
+		_coins += enemy4.reward; // reward for Enemy4
 		_UpdateUI();
 	}
 }

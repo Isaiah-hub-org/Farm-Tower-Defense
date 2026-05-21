@@ -4062,19 +4062,6 @@ format = 2
 [node name="Timer" type="Timer" parent="EnemySpawner"]
 autostart = true
 
-[node name="WaveLabel" type="Label" parent="EnemySpawner"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 371.0
-offset_top = 146.0
-offset_right = 608.0
-offset_bottom = 198.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 30
-text = "Wave 1 Started!"
-
 [node name="TileMapLayer" type="TileMapLayer" parent="EnemySpawner"]
 position = Vector2(-137, -395)
 rotation = -1.5708
@@ -4101,6 +4088,18 @@ position = Vector2(-459, 313)
 rotation = -1.5708
 scale = Vector2(1.34279, 1.80396)
 curve = SubResource("Curve2D_7if1s")
+
+[node name="WaveLabel" type="Label" parent="EnemySpawner"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 708.0
+offset_top = 346.0
+offset_right = 945.0
+offset_bottom = 398.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -3,14 +3,16 @@ using System;
 
 public partial class EnemySpawner : Node2D
 {
+	// Exported variables for enemy scenes, path, spawn interval, and wave durations
 	[Export] public PackedScene EnemyScene;    
 	[Export] public PackedScene Enemy2Scene;
 	[Export] public PackedScene Enemy4Scene;
 	[Export] public PackedScene Enemy3Scene;
 	[Export] public PackedScene TowerScene;
 	[Export] public Path2D Path;               
-	[Export] public float SpawnInterval = 0.2f;
+	[Export] public float SpawnInterval = 1.5f;
 
+	// Private variables for timers, UI elements, tower placement, and wave management
 	private Timer _spawnTimer;
 	private Timer _labelTimer;
 	private Label _waveLabel;
@@ -24,11 +26,12 @@ public partial class EnemySpawner : Node2D
 	private int _currentWave = 0;
 	private float _waveTimer = 0f;
 
-	[Export] public float Wave1Duration =15f;
-	[Export] public float Wave2Duration = 15f;
-	[Export] public float Wave3Duration = 15f;
-	[Export] public float Wave4Duration = 75f;
+	[Export] public float Wave1Duration =50f;
+	[Export] public float Wave2Duration = 50f;
+	[Export] public float Wave3Duration = 50f;
+	[Export] public float Wave4Duration = 25f;
 
+	// Called when the node enters the scene tree for the first time
 	public override void _Ready()
 	{
 		_towerToPlace = GetNode<Tower3>("Tower3");
@@ -52,7 +55,7 @@ public partial class EnemySpawner : Node2D
 		// Label Timer
 		_labelTimer = new Timer
 		{
-			WaitTime =0f,
+			WaitTime =5f,
 			OneShot = true,
 			Autostart = false
 		};
@@ -70,6 +73,7 @@ public partial class EnemySpawner : Node2D
 		towerButton.Pressed += OnTowerButtonPressed;
 		
 	}
+
 
 	public override void _Process(double delta)
 	{
@@ -99,6 +103,7 @@ public partial class EnemySpawner : Node2D
 			_towerToPlace.Position = _RoundPositionToTileMap(mousePos);
 		}
 	}
+	// Methods for starting waves, ending waves, showing wave text, spawning enemies, handling input, and placing towers
 
 	private void StartWave1()
 	{
@@ -109,8 +114,8 @@ public partial class EnemySpawner : Node2D
 
 		_spawnTimer.Start();
 
-		ShowWaveText("Wave 1 Started!");
-		GD.Print("Wave 1 started!");
+		ShowWaveText("Wave 1 Starting!");
+		
 	}
 
 	private void StartWave2()
@@ -122,8 +127,8 @@ public partial class EnemySpawner : Node2D
 
 		_spawnTimer.Start();
 
-		ShowWaveText("Wave 2 Started!");
-		GD.Print("Wave 2 started!");
+		ShowWaveText("Wave 2 Starting!");
+		
 	}
 	
 	private void StartWave3()
@@ -135,8 +140,8 @@ public partial class EnemySpawner : Node2D
 
 		_spawnTimer.Start();
 
-		ShowWaveText("Wave 3 Started!");
-		GD.Print("Wave 3 started!");
+		ShowWaveText("Wave 3 Starting!");
+		
 	}
 	private void StartWave4()
 	{
@@ -147,8 +152,8 @@ public partial class EnemySpawner : Node2D
 
 		_spawnTimer.Start();
 
-		ShowWaveText("Wave 4 Started!");
-		GD.Print("Wave 4 started!");
+		ShowWaveText("Wave 4 Starting!");
+		
 	}
 
 	private void EndWaves()
@@ -157,7 +162,7 @@ public partial class EnemySpawner : Node2D
 		_currentWave = 0;
 
 		ShowWaveText("Wave 4 Finished!");
-		ShowWaveText("All waves finished!");
+		
 	}
 
 	private void ShowWaveText(string text)
@@ -190,7 +195,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy enemy = EnemyScene.Instantiate<Enemy>();
-		enemy.Speed = 35f;
+		enemy.Speed = 30f;
 
 		pathFollow.AddChild(enemy);
 	}
@@ -206,7 +211,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy2 enemy2 = Enemy2Scene.Instantiate<Enemy2>();
-		enemy2.Speed = 60f;
+		enemy2.Speed = 55f;
 
 		pathFollow.AddChild(enemy2);
 	}
@@ -222,7 +227,7 @@ public partial class EnemySpawner : Node2D
 		Path.AddChild(pathFollow);
 
 		Enemy4 enemy4 = Enemy4Scene.Instantiate<Enemy4>();
-		enemy4.Speed = 25f;
+		enemy4.Speed = 20f;
 
 		pathFollow.AddChild(enemy4);
 	}
