@@ -1,27 +1,311 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2ub6m0mxepfm"]
+[gd_scene load_steps=50 format=3 uid="uid://b2ub6m0mxepfm"]
 
 [ext_resource type="Script" uid="uid://ddgyyeltbh35e" path="res://Script/Tuto2.cs" id="1_amkm2"]
-[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster/wonwon.png" id="1_w8cp6"]
 [ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="2_1rbuv"]
 [ext_resource type="Texture2D" uid="uid://diklpugn074d3" path="res://Assets/Monster/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_xembb"]
+[ext_resource type="Texture2D" uid="uid://bn5l2csmc3vem" path="res://Assets/Monster/slime.png" id="3_uo0oy"]
 [ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Monster/Chicken.png" id="5_v4pl1"]
 [ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Monster/chomp_idle (2).png" id="6_s5btx"]
+[ext_resource type="Texture2D" uid="uid://d0snffs08tfyg" path="res://Assets/Monster/DinoSprites - doux.png" id="7_s5btx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xembb"]
-atlas = ExtResource("1_w8cp6")
-region = Rect2(3.31844, 1.7038, 27.5663, 27.1423)
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4pl1"]
+atlas = ExtResource("3_uo0oy")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_amkm2"]
-atlas = ExtResource("2_xembb")
-region = Rect2(102.769, 29.1405, 35.5372, 34.8595)
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5btx"]
+atlas = ExtResource("3_uo0oy")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfxmy"]
-atlas = ExtResource("5_v4pl1")
-region = Rect2(42.1691, 10.0845, 13.494, 13.494)
+atlas = ExtResource("3_uo0oy")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wwnev"]
+atlas = ExtResource("3_uo0oy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pqkmb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4pl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5btx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfxmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwnev")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rl2o"]
+atlas = ExtResource("2_xembb")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqghy"]
+atlas = ExtResource("2_xembb")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcgoy"]
+atlas = ExtResource("2_xembb")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxkj2"]
+atlas = ExtResource("2_xembb")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl48h"]
+atlas = ExtResource("2_xembb")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ist3g"]
+atlas = ExtResource("2_xembb")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfahs"]
+atlas = ExtResource("2_xembb")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d7ec3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rl2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqghy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcgoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxkj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl48h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ist3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfahs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwq2y"]
 atlas = ExtResource("6_s5btx")
-region = Rect2(1.92722, 5.39781, 27.7591, 28.1447)
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b06x0"]
+atlas = ExtResource("6_s5btx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpihj"]
+atlas = ExtResource("6_s5btx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6lxj"]
+atlas = ExtResource("6_s5btx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2tuc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwq2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b06x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpihj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6lxj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqkmb"]
+atlas = ExtResource("5_v4pl1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6rl2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqkmb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7ec3"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tuc7"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc5oh"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v61kc"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22ly7"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v1d0"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifx4m"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4rua"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yxsa"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn4ue"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(216, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8knq2"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(240, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y06tq"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(264, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktmpo"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(288, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxjcg"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(312, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vuha"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(408, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7kql"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(432, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlv4x"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(456, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plp3r"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(480, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfw5c"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(504, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvf5n"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(528, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rsqa"]
+atlas = ExtResource("7_s5btx")
+region = Rect2(552, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unjcv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7ec3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tuc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc5oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v61kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22ly7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v1d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifx4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4rua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yxsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn4ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8knq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y06tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktmpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxjcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vuha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7kql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlv4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plp3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfw5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvf5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rsqa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_amkm2")
@@ -35,53 +319,6 @@ position = Vector2(905, 605.5)
 scale = Vector2(18.8542, 12.5104)
 texture = ExtResource("2_1rbuv")
 
-[node name="Enemies" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 496.0
-offset_top = 221.0
-offset_right = 1208.0
-offset_bottom = 296.0
-text = "Here are the enmies that are going to spawned their op trait and weakness"
-
-[node name="enemy 1" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 215.0
-offset_top = 315.0
-offset_right = 316.0
-offset_bottom = 338.0
-text = "FIRST ENEMY"
-
-[node name="Label" type="Label" parent="Panel/enemy 1"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = 177.0
-offset_right = 547.0
-offset_bottom = 226.0
-text = "This is the first, most basic enemy that the player is going to encounter.
-Simple, not too fast, not too slow and not too tanky."
-
-[node name="eneny 2" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.084
-offset_left = 234.0
-offset_top = 745.0
-offset_right = 358.0
-offset_bottom = 707.772
-text = "SECOND ENEMY"
-
-[node name="Label" type="Label" parent="Panel/eneny 2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 1.0
-offset_left = -5.0
-offset_top = 141.0
-offset_right = 415.0
-offset_bottom = 152.428
-text = "One of the fastest enemy out there,
-so be careful or your tower might miss their shots.
-But the only downside to this scary enemy is its health"
-
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
@@ -93,54 +330,118 @@ offset_bottom = 163.2
 theme_override_font_sizes/font_size = 50
 text = "ENEMIES & TOWERS"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1207, 412)
-scale = Vector2(3.96759, 3.11111)
-texture = SubResource("AtlasTexture_xembb")
+[node name="Enemies" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 205.0
+offset_right = 514.0
+offset_bottom = 280.0
+text = "Here are the enmies ,their  traits and weaknesses"
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(298, 823)
-scale = Vector2(2.75714, 2.44118)
-texture = SubResource("AtlasTexture_amkm2")
+[node name="enemy 1" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 281.0
+offset_right = 242.0
+offset_bottom = 304.0
+text = "FIRST ENEMY"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 790.0
-offset_top = 1063.0
-offset_right = 883.0
-offset_bottom = 1094.0
-theme_override_colors/font_hover_pressed_color = Color(0.854902, 0, 0, 1)
-theme_override_colors/font_color = Color(0.713726, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.8, 0, 0, 1)
-text = "NEXT ------>"
+[node name="Label" type="Label" parent="Panel/enemy 1"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 101.0
+offset_right = 538.0
+offset_bottom = 150.0
+text = "This is the first, most basic enemy that the player is going to encounter.
+Simple, not too fast, not too slow and not too tanky."
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(1139, 803.969)
-scale = Vector2(6.9327, 6.3125)
-texture = SubResource("AtlasTexture_bfxmy")
+[node name="eneny 2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.084
+offset_left = 128.0
+offset_top = 429.0
+offset_right = 252.0
+offset_bottom = 391.77197
+text = "SECOND ENEMY"
 
-[node name="Enemy 3" type="Label" parent="."]
-offset_left = 1096.0
-offset_top = 744.0
-offset_right = 1235.0
-offset_bottom = 767.0
+[node name="Label" type="Label" parent="Panel/eneny 2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 88.0
+offset_right = 424.0
+offset_bottom = 99.42804
+text = "One of the fastest enemy out there,
+so be careful or your tower might miss their shots.
+But the only downside to this scary enemy is its health"
+
+[node name="Enemy 3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 607.0
+offset_right = 272.0
+offset_bottom = 630.0
 text = "Third Enemy"
 
-[node name="Label" type="Label" parent="Enemy 3"]
+[node name="Label" type="Label" parent="Panel/Enemy 3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.144
 anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = 121.0
-offset_right = 486.984
-offset_bottom = 158.5
-text = "The tankies enemy for now, kind of slow but does more damage 
-and take more damage"
+offset_left = 2.0
+offset_top = 98.0
+offset_right = 479.984
+offset_bottom = 135.5
+text = "Can literally be called mojang 2.0 a lil bit tanky and faster but just as simple"
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(263, 423)
-scale = Vector2(4.24074, 3.3025)
-texture = SubResource("AtlasTexture_wwnev")
+[node name="enemy4" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 736.0
+offset_right = 246.0
+offset_bottom = 785.0
+text = "Fourth Enemy
+"
+
+[node name="Label" type="Label" parent="Panel/enemy4"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 88.0
+offset_right = 44.0
+offset_bottom = 111.0
+text = "Feels like a boss , really tanky but slow"
+
+[node name="Enemy 5" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 860.0
+offset_right = 255.0
+offset_bottom = 883.0
+text = "The Final Boss"
+
+[node name="Label" type="Label" parent="Panel/Enemy 5"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 86.0
+offset_right = 42.0
+offset_bottom = 86.0
+grow_vertical = 2
+text = "This is the final boss of our game , can you even kill this thing?"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 834.0
+offset_top = 1031.0
+offset_right = 977.0
+offset_bottom = 1093.0
+theme_override_colors/font_color = Color(0.713726, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.854902, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "NEXT ------>"
 
 [node name="Tower" type="Label" parent="."]
 offset_left = 1117.0
@@ -148,5 +449,56 @@ offset_top = 316.0
 offset_right = 1306.0
 offset_bottom = 339.0
 text = "FIRST TOWER"
+
+[node name="Label" type="Label" parent="Tower"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Tower 2" type="Label" parent="."]
+offset_left = 266.0
+offset_top = 888.0
+offset_right = 306.0
+offset_bottom = 911.0
+
+[node name="Label" type="Label" parent="Tower 2"]
+layout_mode = 0
+offset_left = 644.0
+offset_top = -381.0
+offset_right = 684.0
+offset_bottom = -358.0
+
+[node name="Enemy3" type="AnimatedSprite2D" parent="."]
+position = Vector2(178.99994, 655)
+scale = Vector2(6.28125, 5.749997)
+sprite_frames = SubResource("SpriteFrames_pqkmb")
+autoplay = "default"
+frame_progress = 0.3105842
+
+[node name="Enemy2" type="AnimatedSprite2D" parent="."]
+position = Vector2(189, 456.00003)
+scale = Vector2(2.625, 2.09375)
+sprite_frames = SubResource("SpriteFrames_d7ec3")
+autoplay = "default"
+frame_progress = 0.57692677
+
+[node name="Enemy1" type="AnimatedSprite2D" parent="."]
+position = Vector2(194, 327)
+scale = Vector2(4.75, 3.09375)
+sprite_frames = SubResource("SpriteFrames_2tuc7")
+autoplay = "default"
+frame_progress = 0.008390281
+
+[node name="Enemy4" type="AnimatedSprite2D" parent="."]
+position = Vector2(189, 789)
+rotation = 3.1415927
+scale = Vector2(6.4374995, -5.4687514)
+sprite_frames = SubResource("SpriteFrames_6rl2o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(193, 910)
+scale = Vector2(5, 3.0416667)
+sprite_frames = SubResource("SpriteFrames_unjcv")
+frame_progress = 0.68886614
 
 [connection signal="pressed" from="Button" to="." method="OnPressed"]

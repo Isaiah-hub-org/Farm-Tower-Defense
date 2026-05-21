@@ -24,7 +24,7 @@ I created a dynamic main menu, our UI, 2 enemies, 2 towers,our lose condition an
 
 
 Mary Lynn(best teamate):
-I contributed as much as i could in the development of our game.My main focuses were the enemies, towers and assets.I worked on 3 different enemies and 1 tower,created the path2D for the enemies,how they should spawn and how many waves needed to win the game.
+I contributed as much as i could in the development of our game.My main focuses were the enemies, towers and assets.I worked on 3 different enemies and 1 tower,created the path2D for the enemies,how they should spawn and how many waves needed to win the game. Created most of the code of the enemies + tower + managers.
 
 
 Thang Bawi:
