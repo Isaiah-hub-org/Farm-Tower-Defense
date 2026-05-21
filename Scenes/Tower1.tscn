@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhorcxtnn4aod"]
+
+[ext_resource type="Script" uid="uid://chtu2wykujl7x" path="res://Script/Tower1.cs" id="1_darof"]
+[ext_resource type="Texture2D" uid="uid://5jb61p8eitwy" path="res://Assets/Monster/ToxicFrogGreenBrown_Idle.png" id="1_lb71s"]
+[ext_resource type="PackedScene" uid="uid://bhcpxmp4nwmph" path="res://Scenes/FireBall.tscn" id="2_dwmcs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_darof"]
+atlas = ExtResource("1_lb71s")
+region = Rect2(7, 10, 30, 33)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dwmcs"]
+radius = 102.0049
+
+[node name="Tower1" type="Node2D"]
+script = ExtResource("1_darof")
+FireBallPrefab = ExtResource("2_dwmcs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.000001, -1.9073486e-06)
+scale = Vector2(1.6021055, 1.5986837)
+texture = SubResource("AtlasTexture_darof")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dwmcs")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="OnEnemyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="OnEnemyExited"]

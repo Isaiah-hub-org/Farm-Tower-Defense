@@ -10,6 +10,7 @@ public partial class EnemySpawner : Node2D
 	[Export] public PackedScene Enemy3Scene;
 	[Export] public PackedScene Enemy5Scene;
 	[Export] public PackedScene TowerScene;
+	[Export] public PackedScene Tower1Scene;
 	
 	[Export] public Path2D Path;               
 	[Export] public float SpawnInterval = 1.5f;
@@ -19,7 +20,7 @@ public partial class EnemySpawner : Node2D
 	private Timer _labelTimer;
 	private Label _waveLabel;
 	private Node2D _towerPreview;
-	public Tower3 _towerToPlace;
+	public Tower1 _towerToPlace;
 	public bool _isbuilding;
 	private Vector2 _cellOffset;
 	private bool _towerHasValidPlacement;
@@ -37,7 +38,7 @@ public partial class EnemySpawner : Node2D
 	// Called when the node enters the scene tree for the first time
 	public override void _Ready()
 	{
-		_towerToPlace = GetNode<Tower3>("Tower3");
+		_towerToPlace = GetNode<Tower1>("Tower1");
 		
 		_groundTileMap = GetNode<TileMapLayer>("TileMapLayer");
 		_cellRound = _groundTileMap.TileSet.TileSize.X; 
@@ -329,7 +330,7 @@ public partial class EnemySpawner : Node2D
 	}
 	void PlaceTower(){
 		Vector2 snappedPos = _RoundPositionToTileMap(GetGlobalMousePosition());
-		Tower3 newTower = TowerScene.Instantiate<Tower3>();
+		Tower1 newTower = Tower1Scene.Instantiate<Tower1>();
 		newTower.GlobalPosition = snappedPos;
 		AddChild(newTower);
 		SetIsBuilding(false);

@@ -44,6 +44,8 @@ public partial class Enemy3 : CharacterBody2D
 			Die();
 		}
 		
+		
+		
 	}
 	private void Die()
 	{

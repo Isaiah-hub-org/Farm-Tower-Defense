@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://cfhn48qodgo82"]
+[gd_scene load_steps=47 format=4 uid="uid://cfhn48qodgo82"]
 
 [ext_resource type="Script" uid="uid://b7obyw80diwhf" path="res://Script/GameManager.cs" id="1_q4yjo"]
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Map/Cozy Farm Tileset.png" id="1_v6avs"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dtf6btg5qmh7w" path="res://Scenes/Enemy5.tscn" id="7_dms03"]
 [ext_resource type="Texture2D" uid="uid://bso8ipmwlhqj8" path="res://Assets/Map/TilesetField.png" id="7_jdjsr"]
 [ext_resource type="Texture2D" uid="uid://c2ewuqmaeo4yl" path="res://Assets/Map/TilesetFloor.png" id="8_6hulr"]
+[ext_resource type="PackedScene" uid="uid://dhorcxtnn4aod" path="res://Scenes/Tower1.tscn" id="9_6kno7"]
 [ext_resource type="Texture2D" uid="uid://dxsa0ci7v08as" path="res://Assets/Map/TileSet_V1.png" id="9_jdjsr"]
 [ext_resource type="Texture2D" uid="uid://ddgng3o22po1c" path="res://Assets/Map/TilesetFloorDetail.png" id="10_ejakq"]
 [ext_resource type="Texture2D" uid="uid://dfm3po6u5yuab" path="res://Assets/Map/TilesetNature.png" id="11_dms03"]
@@ -4052,6 +4053,7 @@ Enemy4Scene = ExtResource("5_6hulr")
 Enemy3Scene = ExtResource("6_ejakq")
 Enemy5Scene = ExtResource("7_dms03")
 TowerScene = ExtResource("6_41ykk")
+Tower1Scene = ExtResource("9_6kno7")
 Path = NodePath("Path2D")
 SpawnInterval = 1.0
 Wave1Duration = 30.0
@@ -4062,6 +4064,9 @@ Wave5Duration = 1.0
 
 [node name="Tower3" parent="EnemySpawner" instance=ExtResource("6_41ykk")]
 position = Vector2(-301, 35)
+
+[node name="Tower1" parent="EnemySpawner" instance=ExtResource("9_6kno7")]
+position = Vector2(-88, -251)
 
 [node name="TileMap" type="TileMap" parent="EnemySpawner"]
 format = 2
