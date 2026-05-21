@@ -41,6 +41,13 @@ public partial class GameManager : Node
 		}
 		
 	}
+	public void LoseGame()
+	{
+		if (_lives <= 0)
+		{
+			GetTree().ChangeSceneToFile("res://GameOVer.tscn");
+		}
+	}
 
 	// When an enemy passes through the end of the path, the player's lives are reduced by the enemy's HP and the UI is updated
 	public void OnEnemyPassed(Enemy enemy)

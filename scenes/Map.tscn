@@ -4169,6 +4169,7 @@ position = Vector2(-301, 35)
 
 [node name="Tower1" parent="EnemySpawner" instance=ExtResource("9_6kno7")]
 position = Vector2(-88, -251)
+FireRate = 5.0
 
 [node name="TileMap" type="TileMap" parent="EnemySpawner"]
 format = 2
@@ -4278,7 +4279,7 @@ offset_bottom = 44.599907
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer"]
 position = Vector2(39, 138)
 sprite_frames = SubResource("SpriteFrames_3nddx")
-frame_progress = 0.479263
+frame_progress = 0.5758772
 
 [node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/AnimatedSprite2D"]
 offset_left = -14.0
