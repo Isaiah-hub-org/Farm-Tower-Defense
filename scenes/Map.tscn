@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bg8xd7tm6ql15" path="res://Assets/Menu/Small_UI/coins-chests-etc-2-0.png" id="13_uylqo"]
 [ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="14_nitb1"]
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster/wonwon.png" id="15_dumge"]
+[ext_resource type="Texture2D" uid="uid://dlwty5a13qfg" path="res://Assets/Menu/Small_UI/panel-013.png" id="19_nitb1"]
+[ext_resource type="Texture2D" uid="uid://5jb61p8eitwy" path="res://Assets/Monster/ToxicFrogGreenBrown_Idle.png" id="22_dumge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")
@@ -3988,14 +3990,6 @@ _data = {
 }
 point_count = 38
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jrcb4"]
-atlas = ExtResource("13_uylqo")
-region = Rect2(656.895, 482.36, 14.8816, 14.3684)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b3mxb"]
-atlas = ExtResource("13_uylqo")
-region = Rect2(321.61, 195.369, 13.1666, 11.3233)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_iye0r"]
 atlas = ExtResource("13_uylqo")
 region = Rect2(416, 17, 16, 17)
@@ -4038,6 +4032,114 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfmft"]
+atlas = ExtResource("15_dumge")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs4iy"]
+atlas = ExtResource("15_dumge")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiqu0"]
+atlas = ExtResource("15_dumge")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cvfu"]
+atlas = ExtResource("15_dumge")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5aq6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfmft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs4iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiqu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cvfu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a88i"]
+atlas = ExtResource("22_dumge")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dctp6"]
+atlas = ExtResource("22_dumge")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqqo1"]
+atlas = ExtResource("22_dumge")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpsl1"]
+atlas = ExtResource("22_dumge")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhpwq"]
+atlas = ExtResource("22_dumge")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5ur4"]
+atlas = ExtResource("22_dumge")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhdqs"]
+atlas = ExtResource("22_dumge")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kl1s"]
+atlas = ExtResource("22_dumge")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nddx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a88i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dctp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqqo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpsl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhpwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5ur4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhdqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kl1s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrcb4"]
+atlas = ExtResource("13_uylqo")
+region = Rect2(656.895, 482.36, 14.8816, 14.3684)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3mxb"]
+atlas = ExtResource("13_uylqo")
+region = Rect2(321.61, 195.369, 13.1666, 11.3233)
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_q4yjo")
@@ -4104,6 +4206,77 @@ theme_override_font_sizes/font_size = 30
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 1805.0
+offset_top = 238.0
+offset_right = 1902.0
+offset_bottom = 721.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer"]
+position = Vector2(52.00005, 298)
+rotation = -1.5708
+scale = Vector2(4.121483, 0.9347776)
+texture = ExtResource("14_nitb1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HBoxContainer/Sprite2D"]
+position = Vector2(13.587342, -1.0695449)
+rotation = 1.5707972
+scale = Vector2(1.8156642, 0.4217985)
+skew = 1.4305115e-05
+texture = ExtResource("19_nitb1")
+
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer/Sprite2D/Sprite2D2"]
+offset_left = -24.156797
+offset_top = -23.00919
+offset_right = 25.185732
+offset_bottom = 24.842587
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer/Sprite2D/Sprite2D2"]
+position = Vector2(-1.1116266e-05, -55.797302)
+rotation = -1.5707998
+scale = Vector2(1.0205758, 0.99510986)
+texture = ExtResource("19_nitb1")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer/Sprite2D/Sprite2D2"]
+position = Vector2(11.409302, -63.63687)
+rotation = -1.5707998
+scale = Vector2(1.1323804, 1.0636486)
+sprite_frames = SubResource("SpriteFrames_hniq5")
+autoplay = "default"
+frame_progress = 0.157522
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer/Sprite2D/Sprite2D2"]
+position = Vector2(-9.801656, -5.0108013)
+scale = Vector2(0.6306572, 0.5330143)
+sprite_frames = SubResource("SpriteFrames_5aq6m")
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Sprite2D/Sprite2D2/AnimatedSprite2D"]
+offset_left = -9.342493
+offset_top = 12.473053
+offset_right = 30.657507
+offset_bottom = 35.473053
+theme_override_colors/font_color = Color(1, 0.35686275, 1, 1)
+text = "20"
+
+[node name="Button2" type="Button" parent="CanvasLayer/HBoxContainer/Sprite2D"]
+offset_left = 26.674557
+offset_top = -46.391426
+offset_right = 46.94563
+offset_bottom = 44.599907
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer"]
+position = Vector2(39, 138)
+sprite_frames = SubResource("SpriteFrames_3nddx")
+frame_progress = 0.479263
+
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/AnimatedSprite2D"]
+offset_left = -14.0
+offset_top = 11.0
+offset_right = 5.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 0.35686275, 1, 1)
+text = "20"
+
 [node name="UI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
@@ -4129,73 +4302,30 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/UI/VBoxContainer/Coins"]
-position = Vector2(-14, 76)
-scale = Vector2(6.39286, 4.96429)
+position = Vector2(1207, 124.99997)
+scale = Vector2(4.410699, 2.982143)
 texture = SubResource("AtlasTexture_jrcb4")
 
 [node name="Label" type="Label" parent="CanvasLayer/UI/VBoxContainer/Coins/Sprite2D"]
-offset_left = 7.19553
-offset_top = -18.5324
-offset_right = 24.1955
-offset_bottom = 23.4676
+offset_left = -10.202462
+offset_top = 7.041907
+offset_right = 6.7975073
+offset_bottom = 35.04191
 theme_override_font_sizes/font_size = 20
 
 [node name="Lives" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer"]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/UI/VBoxContainer/Lives"]
-position = Vector2(48, 5.74999)
-scale = Vector2(6.98077, 4.86364)
+position = Vector2(1265.0001, -2.0980835e-05)
+scale = Vector2(4.668269, 3.4318202)
 texture = SubResource("AtlasTexture_b3mxb")
 
 [node name="Label" type="Label" parent="CanvasLayer/UI/VBoxContainer/Lives/Sprite2D"]
-offset_left = 5.30028
-offset_top = -19.8925
-offset_right = 20.3003
-offset_bottom = 15.1075
+offset_left = -10.068003
+offset_top = 0.5827842
+offset_right = 4.9320183
+offset_bottom = 28.582785
 theme_override_font_sizes/font_size = 20
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI"]
-visible = false
-layout_mode = 0
-offset_left = 446.0
-offset_top = 233.0
-offset_right = 486.0
-offset_bottom = 273.0
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/UI/HBoxContainer"]
-position = Vector2(37, 445)
-rotation = -1.5708
-scale = Vector2(0.796786, 0.690763)
-texture = ExtResource("14_nitb1")
-
-[node name="Label" type="Label" parent="CanvasLayer/UI/HBoxContainer/Sprite2D"]
-offset_left = -20.0806
-offset_top = -20.2675
-offset_right = 19.9194
-offset_bottom = 2.73246
-rotation = 1.5708
-text = "20"
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/UI/HBoxContainer/Sprite2D"]
-position = Vector2(7.53024, 1.44771)
-rotation = 1.5708
-scale = Vector2(2.96285, 2.41187)
-texture = ExtResource("15_dumge")
-hframes = 4
-vframes = 3
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/UI/HBoxContainer/Sprite2D"]
-position = Vector2(-31.3761, 10.1336)
-sprite_frames = SubResource("SpriteFrames_hniq5")
-autoplay = "default"
-frame_progress = 0.157522
-
-[node name="Button" type="Button" parent="CanvasLayer/UI/HBoxContainer/Sprite2D"]
-offset_left = 45.9707
-offset_top = -45.9463
-offset_right = 139.033
-offset_bottom = 45.6765
-rotation = 1.5708
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
