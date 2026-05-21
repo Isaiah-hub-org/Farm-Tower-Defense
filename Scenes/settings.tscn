@@ -5,15 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://c011keth2ekjb" path="res://Assets/Menu/Sound/Sound-Three.png" id="2_i44u3"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_i44u3"]
-color = Color(0.9238579, 0.869087, 0.8525042, 1)
+color = Color(0.923858, 0.869087, 0.852504, 1)
 thickness = 7
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_lhmql"]
-color = Color(0.3372549, 0, 0, 1)
+color = Color(0.337255, 0, 0, 1)
 thickness = 7
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_aaqfp"]
-color = Color(0.3372549, 0, 0, 1)
+color = Color(0.337255, 0, 0, 1)
 thickness = 7
 
 [node name="Control" type="Control"]

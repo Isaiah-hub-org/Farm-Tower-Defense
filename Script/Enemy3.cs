@@ -1,12 +1,12 @@
 using Godot;
 using System;
 
-public partial class Enemy : CharacterBody2D
+public partial class Enemy3 : CharacterBody2D
 {
-	[Export] public float Speed = 20f;
-	[Export] public int HP = 1;
-	[Export] public int health = 40;
-	[Export] public int reward = 5;
+	[Export] public float Speed = 40f;
+	[Export] public int HP = 2;
+	[Export] public int health = 50;
+	[Export] public int reward = 15;
 	private PathFollow2D pathFollow;
 
 	public override void _Ready()
@@ -26,7 +26,7 @@ public partial class Enemy : CharacterBody2D
 
 		if (pathFollow.ProgressRatio >= 1.0f)
 		{
-		_Pass(); // removes enemy + pathfollow
+			_Pass(); // removes enemy + pathfollow
 		}
 	}
 
@@ -44,11 +44,12 @@ public partial class Enemy : CharacterBody2D
 			Die();
 		}
 		
+		
+		
 	}
 	private void Die()
 	{
 		GameManager.instance.OnEnemyDied(this);
 		QueueFree();
 	}
-
 }

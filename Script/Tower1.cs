@@ -1,10 +1,10 @@
 using Godot;
 using System;
-public partial class Tower3 : Node2D
-{
 
-	[Export] public PackedScene BulletPrefab;
-	[Export] public float FireRate = 5.0f;
+public partial class Tower1 : Node2D
+{
+	[Export] PackedScene FireBallPrefab;
+	[Export] public float FireRate = 1.0f;
 	private int attackDamage = 1;
 	private float attackSpeed = 0.5f;
 	private float attackDelay;
@@ -13,7 +13,7 @@ public partial class Tower3 : Node2D
 	public override void _Ready()
 	{
 		_spriteMaterial = GetNode<Sprite2D>("Sprite2D").Material as ShaderMaterial;
-		Area2D area = GetNode<Area2D>("EnemyDetectionArea");
+		Area2D area = GetNode<Area2D>("Area2D");
 		area.BodyEntered += OnEnemyEntered;
 		area.BodyExited += OnEnemyExited;
 	
@@ -25,7 +25,7 @@ public partial class Tower3 : Node2D
 		attackDelay = FireRate;
 		
 	}
-	
+
 	public override void _Process(double delta)
 	{
 		if (targetEnemy != null)
@@ -68,21 +68,16 @@ public partial class Tower3 : Node2D
 			Shoot();
 		}	
 	}
+
 	private void Shoot()
 	{
-		if (BulletPrefab == null)
-		{
-			GD.Print("Bullet prefab missing");
-			return;
-		}
 		
-		Bullet bullet = BulletPrefab.Instantiate<Bullet>();
-		Marker2D marker = GetNode<Marker2D>("Marker2D");
-		bullet.GlobalPosition = marker.GlobalPosition;
-		bullet.Rotation = Rotation;
-		//CallDeferred("add_child", bullet);
-		GetTree().CurrentScene.AddChild(bullet);
-	}
 
-	
+		FireBall fireball = FireBallPrefab.Instantiate<FireBall>();
+		Marker2D marker = GetNode<Marker2D>("Marker2D");
+		fireball.GlobalPosition = marker.GlobalPosition;
+		fireball.Rotation = Rotation;
+		//CallDeferred("add_child", bullet);
+		GetTree().CurrentScene.AddChild(fireball);
+	}
 }

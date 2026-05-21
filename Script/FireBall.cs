@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Bullet : Area2D
+public partial class FireBall : Area2D
 {
 	public int damage = 10;
 	[Export] public float Speed = 500f;

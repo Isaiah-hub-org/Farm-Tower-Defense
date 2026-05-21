@@ -50,7 +50,11 @@ offset_left = 915.0
 offset_top = 379.0
 offset_right = 1732.0
 offset_bottom = 506.0
-text = "What to do #1"
+text = "What to know #1
+
+First you are going to spawn with a tower already equiped so you can at least make some money 
+before the wave starts,
+YOU CAN PLACE TOWERS BY DOUBLE LEFT CLICK"
 
 [node name="wtd#2" type="Label" parent="Panel"]
 layout_mode = 0
@@ -58,7 +62,10 @@ offset_left = 157.0
 offset_top = 586.0
 offset_right = 900.0
 offset_bottom = 727.0
-text = "What to do #2"
+text = "What to know #2 
+
+Enemies can give you different amount of money and some also have more health or do 
+more damage"
 
 [node name="wtd#3" type="Label" parent="Panel"]
 layout_mode = 0
@@ -66,8 +73,9 @@ offset_left = 925.0
 offset_top = 808.0
 offset_right = 1674.0
 offset_bottom = 923.0
-text = "What to do #3
+text = "What to know #3
 
-YOU CAN LEAVE THE GAME BY PRESSING \"esc\" ON YOUR KEYBOARD WHEN YOU ARE IN GAME."
+YOU CAN LEAVE THE GAME BY PRESSING \"esc\" ON YOUR KEYBOARD WHEN YOU ARE IN GAME.
+IF YOU PLAY AGAIN YOU'RE GONNA RESTART BUT LOADING BACK IN THE SAME PLAY COMING SOON"
 
 [connection signal="pressed" from="Panel/Button" to="." method="OnPressed"]

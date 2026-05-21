@@ -1,12 +1,12 @@
 using Godot;
 using System;
 
-public partial class Enemy : CharacterBody2D
+public partial class Enemy4 : CharacterBody2D
 {
-	[Export] public float Speed = 20f;
-	[Export] public int HP = 1;
-	[Export] public int health = 40;
-	[Export] public int reward = 5;
+	[Export] public float Speed = 55f;
+	[Export] public int health = 80;
+	[Export] public int HP = 3;
+	[Export] public int reward = 40;
 	private PathFollow2D pathFollow;
 
 	public override void _Ready()
@@ -16,7 +16,6 @@ public partial class Enemy : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		// Move along the path
 		pathFollow.Progress += Speed * (float)delta;
 	}
 	public override void _Process(double delta)
@@ -26,10 +25,9 @@ public partial class Enemy : CharacterBody2D
 
 		if (pathFollow.ProgressRatio >= 1.0f)
 		{
-		_Pass(); // removes enemy + pathfollow
+			_Pass();
 		}
 	}
-
 	private void _Pass()
 	{
 		GameManager.instance.OnEnemyPassed(this);
@@ -42,8 +40,8 @@ public partial class Enemy : CharacterBody2D
 		if (health <= 0)
 		{
 			Die();
+			
 		}
-		
 	}
 	private void Die()
 	{
