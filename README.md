@@ -1,56 +1,57 @@
-Development Team
-mary - enemies 1,2,4, and tower. 
+DEV TEAM:
+Mary Lynn
+Isaiah Pierre
+Thang Bawi
+JP
 
-Game Play Features
-Towers
-[First Blood]
-a green leaf tower
-[First Blood DESCRIPTION]
-tower one shoots green bullets at enemies when detected.
-Enemies
-[ENEMY 1]
-a cabbage tower
-[ENEMY 1 DESCRIPTION]
-enemy is pretty normal, not as fast as second enemy, and pretty tanky. Health is at(40).
-This enemy is the constant.
-[ENEMY 2]
-enemy 2 is more smaller and faster than the first enemy.
-the health is less then the first enemy (30).
-[ENEMY 4]
-enemy 4 is the 3rd enemy but its name is enemy4 and is the most tanky as it has the most health out of all (80). 
-Slow because of how tanky it is.
 
-Programming Concepts
 
-C# and OOP
+Description of our game
 
-Enums
+Our game is going to be a tower defense game with a farm theme.You’re going to be able to place different type of plants that are going to protect your base from other plants(which are going to be the enemies).The goal of the game is going to be surviving,there’s going to be 15 waves and you have to survive each of them. As simple as that.
 
-[ENUMS]
 
-UI
-HUD
-[HUD]
 
-Godot
-Custom Signals
-[CUSTOM SIGNALS]
+
+Team member overview:
+
+
+Isaiah Pierre(team leader)
+I am the team leader of my team and im really grateful for all the work my other teamates put im.
+I worked on pretty much everything, from main menu to enemies and towers.But my main goal was to connect my teamates work all together and make the game work. 
+I created a dynamic main menu, our UI, 2 enemies, 2 towers,our lose condition and win conditon, and some other background stuff to make the gameplay work.Thanks to Mary I was able to have some test enemies pretty early, making it better for me to code the gameplay.
+
+
+
+Mary Lynn(best teamate):
+I contributed as much as i could in the development of our game.My main focuses were the enemies, towers and assets.I worked on 3 different enemies and 1 tower,created the path2D for the enemies,how they should spawn and how many waves needed to win the game.
 
 
 Thang Bawi:
-I worked on several parts of the game's development, including coding the health system so player can 
-take damage and track their health during gameplay. I also helped create and program some of the enemies, making them 
-interact with players and function properly in the game. In addition, I developed the scoreboard/leaderbaord system to 
-keep track of player scores and rankings.  
+I worked on several parts of the game's development, including coding the health system(
+take damage and track health during gameplay). I also helped create and program some of the enemies, making them interact with towers and the map itself. In addition, I developed the scoreboard/leaderbaord system to keep track of player scores and rankings(which is not done).  
 
- 
-
-
-Mary Lynn:
-I made the enemies (1,2,4)
-I also made the leaf tower which is our only tower.
-Created the path2d and enemy spawner.
-Helped develop the code for the game. 
+JP:
 
 
 
+
+
+
+
+
+
+
+Instruction about our coding system(pending):
+
+
+
+
+
+
+
+
+
+Reason of our game design:
+
+We decided to designed our game that way because we wanted a simple, fun, and pretty tower defense gameplay. We made the towers and the enemies as appealing as we could and also made the codes really simple so that most people can understand them(and also because we are still C# beginners) 
