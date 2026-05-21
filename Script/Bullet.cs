@@ -32,6 +32,16 @@ public partial class Bullet : Area2D
 				enemy4.TakeDamage(damage);
 				QueueFree();
 			}
+			else if (body is Enemy3 enemy3)
+			{
+				enemy3.TakeDamage(damage);
+				QueueFree();
+			}
+			else if (body is Enemy5 enemy5)
+			{
+				enemy5.TakeDamage(damage);
+				QueueFree();
+			}
 		}
 	}
 }

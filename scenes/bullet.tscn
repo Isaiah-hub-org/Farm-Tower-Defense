@@ -15,7 +15,7 @@ hframes = 4
 vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 7
+light_mask = 31
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_mkf8s")
 

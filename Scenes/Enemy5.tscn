@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtf6btg5qmh7w"]
+
+[ext_resource type="Script" uid="uid://bhvlybroivsy" path="res://Script/Enemy5.cs" id="1_d4qu2"]
+[ext_resource type="Texture2D" uid="uid://d0snffs08tfyg" path="res://Assets/DinoSprites - doux.png" id="2_hos1r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4qu2"]
+atlas = ExtResource("2_hos1r")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hos1r"]
+atlas = ExtResource("2_hos1r")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ixgs"]
+atlas = ExtResource("2_hos1r")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qac2c"]
+atlas = ExtResource("2_hos1r")
+region = Rect2(216, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_del2x"]
+atlas = ExtResource("2_hos1r")
+region = Rect2(240, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ydpxg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4qu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hos1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ixgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qac2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_del2x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yyxfk"]
+radius = 5.3851647
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpjis"]
+radius = 11.045361
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemies"]]
+rotation = 1.5707964
+script = ExtResource("1_d4qu2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.0000002, 2.3841858e-07)
+scale = Vector2(1.5202528, 1.6503155)
+sprite_frames = SubResource("SpriteFrames_ydpxg")
+autoplay = "default"
+frame_progress = 0.30629846
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_yyxfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lpjis")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 6
+offset_left = -7.0
+offset_top = -19.0
+offset_right = 6.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 7
+text = "MIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true

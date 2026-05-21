@@ -8,7 +8,9 @@ public partial class EnemySpawner : Node2D
 	[Export] public PackedScene Enemy2Scene;
 	[Export] public PackedScene Enemy4Scene;
 	[Export] public PackedScene Enemy3Scene;
+	[Export] public PackedScene Enemy5Scene;
 	[Export] public PackedScene TowerScene;
+	
 	[Export] public Path2D Path;               
 	[Export] public float SpawnInterval = 1.5f;
 
@@ -29,7 +31,8 @@ public partial class EnemySpawner : Node2D
 	[Export] public float Wave1Duration =50f;
 	[Export] public float Wave2Duration = 50f;
 	[Export] public float Wave3Duration = 50f;
-	[Export] public float Wave4Duration = 25f;
+	[Export] public float Wave4Duration = 15f;
+	[Export] public float Wave5Duration = 3f;
 
 	// Called when the node enters the scene tree for the first time
 	public override void _Ready()
@@ -93,6 +96,10 @@ public partial class EnemySpawner : Node2D
 		}
 		else if (_currentWave == 4 && _waveTimer >= Wave4Duration)
 		{
+			StartWave5();
+		}
+		else if (_currentWave == 5 && _waveTimer >= Wave5Duration)
+		{
 			EndWaves();
 		}
 
@@ -155,13 +162,25 @@ public partial class EnemySpawner : Node2D
 		ShowWaveText("Wave 4 Starting!");
 		
 	}
+	private void StartWave5()
+	{
+		_spawnTimer.Stop(); // stop old wave first
+
+		_currentWave = 5;
+		_waveTimer = 0f;
+
+		_spawnTimer.Start();
+
+		ShowWaveText("Wave 5 Starting!");
+		
+	}
 
 	private void EndWaves()
 	{
 		_spawnTimer.Stop();
 		_currentWave = 0;
 
-		ShowWaveText("Wave 4 Finished!");
+		ShowWaveText("Wave 5 Finished!");
 		
 	}
 
@@ -181,6 +200,8 @@ public partial class EnemySpawner : Node2D
 			SpawnEnemy3();
 		else if (_currentWave == 4)
 			SpawnEnemy4();
+		else if (_currentWave == 5)
+			SpawnEnemy5();
 		 
 	}
 
@@ -245,6 +266,21 @@ public partial class EnemySpawner : Node2D
 		enemy3.Speed = 40f;
 
 		pathFollow.AddChild(enemy3);
+	}
+	private void SpawnEnemy5()
+	{
+		PathFollow2D pathFollow = new PathFollow2D
+		{
+			Loop = false,
+			Progress = 0,
+			Rotates = false
+		};
+		Path.AddChild(pathFollow);
+
+		Enemy5 enemy5 = Enemy5Scene.Instantiate<Enemy5>();
+		enemy5.Speed = 10f;
+
+		pathFollow.AddChild(enemy5);
 	}
 
 

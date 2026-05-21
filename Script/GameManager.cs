@@ -66,6 +66,11 @@ public partial class GameManager : Node
 		_lives -= enemy3.HP;
 		_UpdateUI();
 	}
+	public void OnEnemyPassed(Enemy5 enemy5)
+	{
+		_lives -= enemy5.HP;
+		_UpdateUI();
+	}
 
 
 	// The reward for killing an enemy is added to the player's coins and the UI is updated
@@ -92,6 +97,11 @@ public partial class GameManager : Node
 	public void OnEnemyDied(Enemy4 enemy4)
 	{
 		_coins += enemy4.reward; // reward for Enemy4
+		_UpdateUI();
+	}
+	public void OnEnemyDied(Enemy5 enemy5)
+	{
+		_coins += enemy5.reward; // reward for Enemy5
 		_UpdateUI();
 	}
 }

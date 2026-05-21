@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hukrr"]
@@ -52,10 +52,13 @@ position = Vector2(4.7683716e-07, -2)
 rotation = 1.5707964
 scale = Vector2(1.40625, 1.25)
 sprite_frames = SubResource("SpriteFrames_h2kam")
+autoplay = "default"
+frame_progress = 0.624271
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(-2, -3)
 shape = SubResource("CircleShape2D_hukrr")
 

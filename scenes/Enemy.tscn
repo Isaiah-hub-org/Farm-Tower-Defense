@@ -36,11 +36,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cj2mj"]
-radius = 5.74279
+radius = 5.64
 
 [node name="Enemy2" type="CharacterBody2D" groups=["enemies"]]
 position = Vector2(1.90735e-06, -1.90735e-06)
@@ -53,11 +53,11 @@ script = ExtResource("1_s7bn3")
 position = Vector2(4.76837e-07, -2.8)
 scale = Vector2(0.417578, 0.359307)
 sprite_frames = SubResource("SpriteFrames_6do27")
-frame_progress = 0.77468
+autoplay = "default"
+frame_progress = 0.35919926
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visibility_layer = 0
 position = Vector2(0, 9.53674e-07)
 scale = Vector2(0.7, 0.7)
 shape = SubResource("CircleShape2D_cj2mj")
-debug_color = Color(0.259203, 0.543171, 0.871834, 0.419608)
+debug_color = Color(0.9007455, 0.20477197, 0.59961885, 0.41960785)
