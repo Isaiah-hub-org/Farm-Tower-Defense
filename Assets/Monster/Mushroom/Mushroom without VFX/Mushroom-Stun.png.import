@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diklpugn074d3"
-path="res://.godot/imported/Mushroom-Idle.png-0162833f3154adcb1a4bc0fea6b8ae5e.ctex"
+uid="uid://dho7vtywbfv7s"
+path="res://.godot/imported/Mushroom-Stun.png-4b252085fc31ab62473c7c211b7bdebe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/Mushroom-Idle.png"
-dest_files=["res://.godot/imported/Mushroom-Idle.png-0162833f3154adcb1a4bc0fea6b8ae5e.ctex"]
+source_file="res://Assets/Monster/Mushroom/Mushroom without VFX/Mushroom-Stun.png"
+dest_files=["res://.godot/imported/Mushroom-Stun.png-4b252085fc31ab62473c7c211b7bdebe.ctex"]
 
 [params]
 

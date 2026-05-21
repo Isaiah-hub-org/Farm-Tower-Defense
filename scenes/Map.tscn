@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7obyw80diwhf" path="res://Script/GameManager.cs" id="1_q4yjo"]
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Map/Cozy Farm Tileset.png" id="1_v6avs"]
-[ext_resource type="Texture2D" uid="uid://bni0g0xy42eg2" path="res://Assets/Icons/Preview.png" id="2_8qak7"]
+[ext_resource type="Texture2D" uid="uid://bni0g0xy42eg2" path="res://Assets/Map/Preview.png" id="2_8qak7"]
 [ext_resource type="Script" uid="uid://co2tfp3b2luh0" path="res://Script/EnemySpawner.cs" id="3_0f2yp"]
 [ext_resource type="PackedScene" uid="uid://b3jkmleqqnir6" path="res://Scenes/Enemy.tscn" id="4_vm4q1"]
 [ext_resource type="PackedScene" uid="uid://dxoauvd22ckr4" path="res://Scenes/Enemy4.tscn" id="5_6hulr"]
@@ -14,10 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dxsa0ci7v08as" path="res://Assets/Map/TileSet_V1.png" id="9_jdjsr"]
 [ext_resource type="Texture2D" uid="uid://ddgng3o22po1c" path="res://Assets/Map/TilesetFloorDetail.png" id="10_ejakq"]
 [ext_resource type="Texture2D" uid="uid://dfm3po6u5yuab" path="res://Assets/Map/TilesetNature.png" id="11_dms03"]
-[ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Icons/Chicken.png" id="12_6kno7"]
+[ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Monster/Chicken.png" id="12_6kno7"]
 [ext_resource type="Texture2D" uid="uid://bg8xd7tm6ql15" path="res://Assets/Menu/Small_UI/coins-chests-etc-2-0.png" id="13_uylqo"]
 [ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="14_nitb1"]
-[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster_Plant/wonwon.png" id="15_dumge"]
+[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster/wonwon.png" id="15_dumge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")

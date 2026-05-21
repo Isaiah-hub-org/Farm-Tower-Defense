@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn5l2csmc3vem"
-path="res://.godot/imported/slime.png-ab3dad5160345e9a199f60daa87a8e14.ctex"
+uid="uid://diff42ujivblf"
+path="res://.godot/imported/Mushroom-Die.png-631f5a438571126d18186ba96c6e07d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/slime.png"
-dest_files=["res://.godot/imported/slime.png-ab3dad5160345e9a199f60daa87a8e14.ctex"]
+source_file="res://Assets/Monster/Mushroom/Mushroom with VFX/Mushroom-Die.png"
+dest_files=["res://.godot/imported/Mushroom-Die.png-631f5a438571126d18186ba96c6e07d7.ctex"]
 
 [params]
 

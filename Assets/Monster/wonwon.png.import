@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgcuitnwtl4cv"
-path="res://.godot/imported/Mushroom-Stun.png-fa3cb2b3a33e432a13a7904453df6af8.ctex"
+uid="uid://cpm4it4q4dq6l"
+path="res://.godot/imported/wonwon.png-c31230a34735851ab54cc282a0b1696c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/Mushroom-Stun.png"
-dest_files=["res://.godot/imported/Mushroom-Stun.png-fa3cb2b3a33e432a13a7904453df6af8.ctex"]
+source_file="res://Assets/Monster/wonwon.png"
+dest_files=["res://.godot/imported/wonwon.png-c31230a34735851ab54cc282a0b1696c.ctex"]
 
 [params]
 

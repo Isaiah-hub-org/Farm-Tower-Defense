@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpm4it4q4dq6l"
-path="res://.godot/imported/wonwon.png-bba40bf2e6570ebf86d22559fe70f5f5.ctex"
+uid="uid://bn5l2csmc3vem"
+path="res://.godot/imported/slime.png-a645f8a486efd34a7185f374a4762ab9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monster_Plant/wonwon.png"
-dest_files=["res://.godot/imported/wonwon.png-bba40bf2e6570ebf86d22559fe70f5f5.ctex"]
+source_file="res://Assets/Monster/slime.png"
+dest_files=["res://.godot/imported/slime.png-a645f8a486efd34a7185f374a4762ab9.ctex"]
 
 [params]
 

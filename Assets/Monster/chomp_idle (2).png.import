@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkiotofi102v1"
-path="res://.godot/imported/Mushroom-Hit.png-76bc30986ecb10e5dd23299d2cd2a76a.ctex"
+uid="uid://crw13gb4cw0yq"
+path="res://.godot/imported/chomp_idle (2).png-90e9a7a8066e109619de78716679d8dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/Mushroom-Hit.png"
-dest_files=["res://.godot/imported/Mushroom-Hit.png-76bc30986ecb10e5dd23299d2cd2a76a.ctex"]
+source_file="res://Assets/Monster/chomp_idle (2).png"
+dest_files=["res://.godot/imported/chomp_idle (2).png-90e9a7a8066e109619de78716679d8dd.ctex"]
 
 [params]
 

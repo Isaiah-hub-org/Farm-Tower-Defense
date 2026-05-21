@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bx32khxvylua3"]
 
-[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster_Plant/wonwon.png" id="1_mkf8s"]
+[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster/wonwon.png" id="1_mkf8s"]
 [ext_resource type="Script" uid="uid://lrlelvpeogtr" path="res://Script/Bullet.cs" id="1_y25gk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkf8s"]

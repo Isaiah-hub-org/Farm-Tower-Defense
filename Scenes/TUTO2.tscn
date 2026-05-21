@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://b2ub6m0mxepfm"]
 
 [ext_resource type="Script" uid="uid://ddgyyeltbh35e" path="res://Script/Tuto2.cs" id="1_amkm2"]
-[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster_Plant/wonwon.png" id="1_w8cp6"]
+[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster/wonwon.png" id="1_w8cp6"]
 [ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="2_1rbuv"]
-[ext_resource type="Texture2D" uid="uid://diklpugn074d3" path="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_xembb"]
-[ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Icons/Chicken.png" id="5_v4pl1"]
-[ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Monster_Plant/chomp_idle (2).png" id="6_s5btx"]
+[ext_resource type="Texture2D" uid="uid://diklpugn074d3" path="res://Assets/Monster/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_xembb"]
+[ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Monster/Chicken.png" id="5_v4pl1"]
+[ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Monster/chomp_idle (2).png" id="6_s5btx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xembb"]
 atlas = ExtResource("1_w8cp6")

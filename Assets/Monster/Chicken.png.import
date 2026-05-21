@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdlyduo1rv3f6"
-path="res://.godot/imported/Mushroom-Attack.png-d31d69c0a452052cee7b5c5c1129f7f2.ctex"
+uid="uid://ddfxgxvr7d1ol"
+path="res://.godot/imported/Chicken.png-8a4f19de4b9ccc5ff74e866c93139534.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monster_Plant/Mushroom/Mushroom with VFX/Mushroom-Attack.png"
-dest_files=["res://.godot/imported/Mushroom-Attack.png-d31d69c0a452052cee7b5c5c1129f7f2.ctex"]
+source_file="res://Assets/Monster/Chicken.png"
+dest_files=["res://.godot/imported/Chicken.png-8a4f19de4b9ccc5ff74e866c93139534.ctex"]
 
 [params]
 
