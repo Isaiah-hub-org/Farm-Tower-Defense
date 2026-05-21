@@ -54,10 +54,10 @@ position = Vector2(4.76837e-07, -2.8)
 scale = Vector2(0.417578, 0.359307)
 sprite_frames = SubResource("SpriteFrames_6do27")
 autoplay = "default"
-frame_progress = 0.35919926
+frame_progress = 0.359199
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9.53674e-07)
 scale = Vector2(0.7, 0.7)
 shape = SubResource("CircleShape2D_cj2mj")
-debug_color = Color(0.9007455, 0.20477197, 0.59961885, 0.41960785)
+debug_color = Color(0.900746, 0.204772, 0.599619, 0.419608)
