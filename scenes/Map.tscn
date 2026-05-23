@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://cfhn48qodgo82"]
+[gd_scene load_steps=64 format=4 uid="uid://cfhn48qodgo82"]
 
 [ext_resource type="Script" uid="uid://b7obyw80diwhf" path="res://Script/GameManager.cs" id="1_q4yjo"]
 [ext_resource type="Texture2D" uid="uid://d4nm6q01tc77d" path="res://Assets/Map/Cozy Farm Tileset.png" id="1_v6avs"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster/wonwon.png" id="15_dumge"]
 [ext_resource type="Texture2D" uid="uid://dlwty5a13qfg" path="res://Assets/Menu/Small_UI/panel-013.png" id="19_nitb1"]
 [ext_resource type="Texture2D" uid="uid://5jb61p8eitwy" path="res://Assets/Monster/ToxicFrogGreenBrown_Idle.png" id="22_dumge"]
+[ext_resource type="Script" uid="uid://iopgfbsw7t73" path="res://PauseMenu.cs" id="23_dumge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")
@@ -4339,5 +4340,17 @@ offset_top = 0.5827842
 offset_right = 4.9320183
 offset_bottom = 28.582785
 theme_override_font_sizes/font_size = 20
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
+script = ExtResource("23_dumge")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="CanvasLayer/CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
