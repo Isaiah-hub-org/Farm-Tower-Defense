@@ -17,9 +17,9 @@ Team member overview:
 
 
 Isaiah Pierre(team leader)
-I am the team leader of my team and im really grateful for all the work my other teamates put im.
+I am the team leader and im a lil bit disappointed of my team, we could've done way more but i feel like some of us did not put enough work into it .
 I worked on pretty much everything, from main menu to enemies and towers.But my main goal was to connect my teamates work all together and make the game work. 
-I created a dynamic main menu, our UI, 2 enemies, 2 towers,our lose condition and win conditon, and some other background stuff to make the gameplay work.Thanks to Mary I was able to have some test enemies pretty early, making it better for me to code the gameplay.
+I created a dynamic main menu, our UI, 2 enemies, 1 tower,our lose condition ,pause , and some other background stuff to make the gameplay work.Thanks to Mary I was able to have some test enemies pretty early, making it better for me to code the other enemies and make a better gameplay.
 
 
 
