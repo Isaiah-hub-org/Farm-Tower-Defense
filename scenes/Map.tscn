@@ -4342,6 +4342,7 @@ offset_bottom = 28.582785
 theme_override_font_sizes/font_size = 20
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
+process_mode = 1
 script = ExtResource("23_dumge")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/CanvasLayer"]

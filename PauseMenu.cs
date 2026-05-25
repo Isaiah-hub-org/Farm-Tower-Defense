@@ -7,6 +7,7 @@ public partial class GameManager : Node
         if (Input.IsActionJustPressed("ui_cancel"))
         {
             TogglePause();
+            
         }
     }
 

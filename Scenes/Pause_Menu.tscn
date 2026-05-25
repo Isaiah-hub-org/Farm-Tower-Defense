@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://gvjm2sgabvcv"]
+[gd_scene load_steps=2 format=3 uid="uid://cdplbi11qcv45"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_rj3w3"]
 script/source = "using Godot;
@@ -22,7 +22,7 @@ public partial class PauseMenu : CanvasLayer
 "
 
 [node name="CanvasLayer" type="CanvasLayer"]
-process_mode = 2
+process_mode = 1
 script = SubResource("CSharpScript_rj3w3")
 
 [node name="Panel" type="Panel" parent="."]
