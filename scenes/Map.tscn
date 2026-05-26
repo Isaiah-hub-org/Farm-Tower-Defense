@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster/wonwon.png" id="15_dumge"]
 [ext_resource type="Texture2D" uid="uid://dlwty5a13qfg" path="res://Assets/Menu/Small_UI/panel-013.png" id="19_nitb1"]
 [ext_resource type="Texture2D" uid="uid://5jb61p8eitwy" path="res://Assets/Monster/ToxicFrogGreenBrown_Idle.png" id="22_dumge"]
-[ext_resource type="Script" uid="uid://iopgfbsw7t73" path="res://PauseMenu.cs" id="23_dumge"]
+[ext_resource type="Script" uid="uid://iopgfbsw7t73" path="res://Script/PauseMenu.cs" id="23_dumge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vi7k"]
 texture = ExtResource("1_v6avs")
