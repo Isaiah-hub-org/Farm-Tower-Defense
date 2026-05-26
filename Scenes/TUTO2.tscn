@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://b2ub6m0mxepfm"]
+[gd_scene load_steps=66 format=3 uid="uid://b2ub6m0mxepfm"]
 
 [ext_resource type="Script" uid="uid://ddgyyeltbh35e" path="res://Script/Tuto2.cs" id="1_amkm2"]
 [ext_resource type="Texture2D" uid="uid://b41fmk33anni" path="res://Assets/Menu/Small_UI/simple.png" id="2_1rbuv"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ddfxgxvr7d1ol" path="res://Assets/Monster/Chicken.png" id="5_v4pl1"]
 [ext_resource type="Texture2D" uid="uid://crw13gb4cw0yq" path="res://Assets/Monster/chomp_idle (2).png" id="6_s5btx"]
 [ext_resource type="Texture2D" uid="uid://d0snffs08tfyg" path="res://Assets/Monster/DinoSprites - doux.png" id="7_s5btx"]
+[ext_resource type="Texture2D" uid="uid://5jb61p8eitwy" path="res://Assets/Monster/ToxicFrogGreenBrown_Idle.png" id="8_wwnev"]
+[ext_resource type="Texture2D" uid="uid://cpm4it4q4dq6l" path="res://Assets/Monster/wonwon.png" id="9_pqkmb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v4pl1"]
 atlas = ExtResource("3_uo0oy")
@@ -307,6 +309,106 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_unjcv"]
+atlas = ExtResource("8_wwnev")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpo0h"]
+atlas = ExtResource("8_wwnev")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyguy"]
+atlas = ExtResource("8_wwnev")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moraj"]
+atlas = ExtResource("8_wwnev")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvtpo"]
+atlas = ExtResource("8_wwnev")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7804"]
+atlas = ExtResource("8_wwnev")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rj3l"]
+atlas = ExtResource("8_wwnev")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhcrq"]
+atlas = ExtResource("8_wwnev")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_10vdi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unjcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpo0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyguy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moraj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvtpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7804")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rj3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhcrq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiqwp"]
+atlas = ExtResource("9_pqkmb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7636"]
+atlas = ExtResource("9_pqkmb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqwos"]
+atlas = ExtResource("9_pqkmb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fknd5"]
+atlas = ExtResource("9_pqkmb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1a1av"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiqwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7636")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqwos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fknd5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_amkm2")
 
@@ -362,7 +464,7 @@ anchor_bottom = 0.084
 offset_left = 128.0
 offset_top = 429.0
 offset_right = 252.0
-offset_bottom = 391.77197
+offset_bottom = 391.772
 text = "SECOND ENEMY"
 
 [node name="Label" type="Label" parent="Panel/eneny 2"]
@@ -372,7 +474,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 88.0
 offset_right = 424.0
-offset_bottom = 99.42804
+offset_bottom = 99.428
 text = "One of the fastest enemy out there,
 so be careful or your tower might miss their shots.
 But the only downside to this scary enemy is its health"
@@ -437,68 +539,106 @@ offset_left = 834.0
 offset_top = 1031.0
 offset_right = 977.0
 offset_bottom = 1093.0
+theme_override_colors/font_hover_pressed_color = Color(0.854902, 0, 0, 1)
 theme_override_colors/font_color = Color(0.713726, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.8, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.854902, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "NEXT ------>"
 
 [node name="Tower" type="Label" parent="."]
-offset_left = 1117.0
-offset_top = 316.0
-offset_right = 1306.0
-offset_bottom = 339.0
+offset_left = 1169.0
+offset_top = 266.0
+offset_right = 1358.0
+offset_bottom = 289.0
 text = "FIRST TOWER"
 
 [node name="Label" type="Label" parent="Tower"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.392
+anchor_right = -0.392
+offset_left = 59.088
+offset_top = 88.0
+offset_right = 502.088
+offset_bottom = 111.0
+text = "This is the first tower and it shoots fire ball at a slow pace"
 
-[node name="Tower 2" type="Label" parent="."]
-offset_left = 266.0
-offset_top = 888.0
-offset_right = 306.0
-offset_bottom = 911.0
+[node name="Tower2" type="Label" parent="."]
+offset_left = 1151.0
+offset_top = 407.0
+offset_right = 1340.0
+offset_bottom = 430.0
+text = "SECOND TOWER"
 
-[node name="Label" type="Label" parent="Tower 2"]
+[node name="Label" type="Label" parent="Tower2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.392
+anchor_right = -0.392
+offset_left = 78.088
+offset_top = 102.0
+offset_right = 521.088
+offset_bottom = 125.0
+
+[node name="Tower 3" type="Label" parent="."]
+offset_left = 1159.0
+offset_top = 542.0
+offset_right = 1295.0
+offset_bottom = 591.0
+text = "THIRD TOWER
+"
+
+[node name="Label" type="Label" parent="Tower 3"]
 layout_mode = 0
-offset_left = 644.0
-offset_top = -381.0
-offset_right = 684.0
-offset_bottom = -358.0
+offset_left = 2.0
+offset_top = 77.0
+offset_right = 334.0
+offset_bottom = 132.0
+text = "Third tower, just shoots spikes"
 
 [node name="Enemy3" type="AnimatedSprite2D" parent="."]
-position = Vector2(178.99994, 655)
-scale = Vector2(6.28125, 5.749997)
+position = Vector2(179, 655)
+scale = Vector2(6.28125, 5.75)
 sprite_frames = SubResource("SpriteFrames_pqkmb")
 autoplay = "default"
-frame_progress = 0.3105842
+frame_progress = 0.310584
 
 [node name="Enemy2" type="AnimatedSprite2D" parent="."]
-position = Vector2(189, 456.00003)
+position = Vector2(189, 456)
 scale = Vector2(2.625, 2.09375)
 sprite_frames = SubResource("SpriteFrames_d7ec3")
 autoplay = "default"
-frame_progress = 0.57692677
+frame_progress = 0.576927
 
 [node name="Enemy1" type="AnimatedSprite2D" parent="."]
 position = Vector2(194, 327)
 scale = Vector2(4.75, 3.09375)
 sprite_frames = SubResource("SpriteFrames_2tuc7")
 autoplay = "default"
-frame_progress = 0.008390281
+frame_progress = 0.00839028
 
 [node name="Enemy4" type="AnimatedSprite2D" parent="."]
 position = Vector2(189, 789)
-rotation = 3.1415927
-scale = Vector2(6.4374995, -5.4687514)
+rotation = 3.14159
+scale = Vector2(6.4375, -5.46875)
 sprite_frames = SubResource("SpriteFrames_6rl2o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(193, 910)
-scale = Vector2(5, 3.0416667)
+scale = Vector2(5, 3.04167)
 sprite_frames = SubResource("SpriteFrames_unjcv")
-frame_progress = 0.68886614
+frame_progress = 0.688866
+
+[node name="Tower1" type="AnimatedSprite2D" parent="."]
+position = Vector2(1230, 315)
+scale = Vector2(3.20833, 2.70833)
+sprite_frames = SubResource("SpriteFrames_10vdi")
+autoplay = "default"
+frame_progress = 0.048639
+
+[node name="Tower3" type="AnimatedSprite2D" parent="."]
+position = Vector2(1189, 595)
+scale = Vector2(2.52747, 2.03125)
+sprite_frames = SubResource("SpriteFrames_1a1av")
 
 [connection signal="pressed" from="Button" to="." method="OnPressed"]

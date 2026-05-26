@@ -75,7 +75,7 @@ offset_right = 1674.0
 offset_bottom = 923.0
 text = "What to know #3
 
-YOU CAN LEAVE THE GAME BY PRESSING \"esc\" ON YOUR KEYBOARD WHEN YOU ARE IN GAME.
+YOU CAN Pause THE GAME BY PRESSING \"esc\" ON YOUR KEYBOARD WHEN YOU ARE IN GAME.
 IF YOU PLAY AGAIN YOU'RE GONNA RESTART BUT LOADING BACK IN THE SAME PLAY COMING SOON"
 
 [connection signal="pressed" from="Panel/Button" to="." method="OnPressed"]

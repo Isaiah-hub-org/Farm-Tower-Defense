@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdplbi11qcv45"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_rj3w3"]
+script/source = "using Godot;
+using System;
+
+public partial class PauseMenu : CanvasLayer
+{
+	 public override void _Process(double delta)
+    {
+        if (Input.IsActionJustPressed(\"ui_cancel\"))
+        {
+            TogglePause();
+        }
+    }
+
+    private void TogglePause()
+    {
+        GetTree().Paused = !GetTree().Paused;
+    }
+}
+"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 1
+script = SubResource("CSharpScript_rj3w3")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 488.0
+offset_bottom = 277.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 113.0
+offset_right = 296.0
+offset_bottom = 160.0
+text = "Resume"

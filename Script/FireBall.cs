@@ -4,7 +4,7 @@ using System;
 public partial class FireBall : Area2D
 {
 	public int damage = 10;
-	[Export] public float Speed = 500f;
+	[Export] public float Speed = 100f;
 	
 	private bool hasHit = false;
 	
