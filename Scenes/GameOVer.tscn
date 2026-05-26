@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d2p6budfha5n8"]
+
+[node name="Panel" type="Panel"]
+offset_right = 1072.0
+offset_bottom = 682.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1093.0
+offset_bottom = 547.0
+theme_override_font_sizes/font_size = 100
+text = "You lost"

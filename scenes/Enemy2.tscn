@@ -1,100 +1,96 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2l81vhouwkw0"]
+[gd_scene load_steps=13 format=3 uid="uid://d2l81vhouwkw0"]
 
 [ext_resource type="Script" uid="uid://x1ln76djhpww" path="res://Script/Enemy2.cs" id="1_3n2en"]
-[ext_resource type="Texture2D" uid="uid://cftlthoaox1hm" path="res://Assets/Monster_Plant/Mushroom/Mushroom without VFX/Mushroom-Run.png" id="1_mym6m"]
+[ext_resource type="Texture2D" uid="uid://diklpugn074d3" path="res://Assets/Monster/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_jcd86"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3n2en"]
-atlas = ExtResource("1_mym6m")
-region = Rect2(0, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3buae"]
-atlas = ExtResource("1_mym6m")
-region = Rect2(80, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_adkxb"]
-atlas = ExtResource("1_mym6m")
-region = Rect2(160, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgy0h"]
-atlas = ExtResource("1_mym6m")
-region = Rect2(240, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_unis0"]
-atlas = ExtResource("1_mym6m")
-region = Rect2(320, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_61ukt"]
-atlas = ExtResource("1_mym6m")
-region = Rect2(400, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bc3st"]
-atlas = ExtResource("1_mym6m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpdsr"]
+atlas = ExtResource("2_jcd86")
 region = Rect2(480, 0, 80, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wetwd"]
-atlas = ExtResource("1_mym6m")
-region = Rect2(560, 0, 80, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wm3a"]
+atlas = ExtResource("2_jcd86")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n7dj"]
+atlas = ExtResource("2_jcd86")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qeg4"]
+atlas = ExtResource("2_jcd86")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdyx1"]
+atlas = ExtResource("2_jcd86")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78tey"]
+atlas = ExtResource("2_jcd86")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uql5"]
+atlas = ExtResource("2_jcd86")
+region = Rect2(0, 0, 80, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hr3b0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3n2en")
+"texture": SubResource("AtlasTexture_lpdsr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3buae")
+"texture": SubResource("AtlasTexture_6wm3a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_adkxb")
+"texture": SubResource("AtlasTexture_7n7dj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jgy0h")
+"texture": SubResource("AtlasTexture_0qeg4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_unis0")
+"texture": SubResource("AtlasTexture_fdyx1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_61ukt")
+"texture": SubResource("AtlasTexture_78tey")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bc3st")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wetwd")
+"texture": SubResource("AtlasTexture_7uql5")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jcd86"]
 radius = 27.4791
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lpdsr"]
-radius = 36.6197
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1eqr"]
 
 [node name="Enemy2" type="CharacterBody2D" groups=["enemies"]]
 position = Vector2(1, 0)
 script = ExtResource("1_3n2en")
+Speed = 65.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(11, 1)
-rotation = 1.5708
+rotation = 1.5707964
 scale = Vector2(0.7, 0.651)
 sprite_frames = SubResource("SpriteFrames_hr3b0")
-frame_progress = 0.0885488
+autoplay = "default"
+frame_progress = 0.2749178
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(14, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(-14, 1)
 rotation = -1.55509
 scale = Vector2(0.7, 0.7)
 shape = SubResource("CircleShape2D_jcd86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_lpdsr")
+visibility_layer = 0
+shape = SubResource("CircleShape2D_i1eqr")
 
 [connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
 [connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]

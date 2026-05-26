@@ -1,0 +1,48 @@
+using Godot;
+using System;
+
+public partial class FireBall : Area2D
+{
+	public int damage = 10;
+	[Export] public float Speed = 100f;
+	
+	private bool hasHit = false;
+	
+	public override void _Process(double delta)
+	{
+		 Position += Transform.X * Speed * (float)delta;
+	}
+
+	private void OnEnemyEntered(Node2D body)
+	{
+		if (body.IsInGroup("enemies"))
+		{
+			hasHit = true;
+			if (body is Enemy enemy)
+			{
+				enemy.TakeDamage(damage);
+				QueueFree();
+			}
+			else if (body is Enemy2 enemy2)
+			{
+				enemy2.TakeDamage(damage);
+				QueueFree();
+			}
+			else if (body is Enemy4 enemy4)
+			{
+				enemy4.TakeDamage(damage);
+				QueueFree();
+			}
+			else if (body is Enemy3 enemy3)
+			{
+				enemy3.TakeDamage(damage);
+				QueueFree();
+			}
+			else if (body is Enemy5 enemy5)
+			{
+				enemy5.TakeDamage(damage);
+				QueueFree();
+			}
+		}
+	}
+}

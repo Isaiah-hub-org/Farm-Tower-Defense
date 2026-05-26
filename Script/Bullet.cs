@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 public partial class Bullet : Area2D
 {
@@ -25,6 +26,21 @@ public partial class Bullet : Area2D
 			else if (body is Enemy2 enemy2)
 			{
 				enemy2.TakeDamage(damage);
+				QueueFree();
+			}
+			else if (body is Enemy4 enemy4)
+			{
+				enemy4.TakeDamage(damage);
+				QueueFree();
+			}
+			else if (body is Enemy3 enemy3)
+			{
+				enemy3.TakeDamage(damage);
+				QueueFree();
+			}
+			else if (body is Enemy5 enemy5)
+			{
+				enemy5.TakeDamage(damage);
 				QueueFree();
 			}
 		}

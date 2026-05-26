@@ -2,11 +2,11 @@ using Godot;
 using System;
 public partial class Tower3 : Node2D
 {
-	
+
 	[Export] public PackedScene BulletPrefab;
-	[Export] public float FireRate = 1.0f;
+	[Export] public float FireRate = 5.0f;
 	private int attackDamage = 1;
-	private float attackSpeed = 1.0f;
+	private float attackSpeed = 0.5f;
 	private float attackDelay;
 	private ShaderMaterial _spriteMaterial;
 	protected Node2D targetEnemy = null;
@@ -16,7 +16,7 @@ public partial class Tower3 : Node2D
 		Area2D area = GetNode<Area2D>("EnemyDetectionArea");
 		area.BodyEntered += OnEnemyEntered;
 		area.BodyExited += OnEnemyExited;
-		
+	
 		Timer timer = GetNode<Timer>("Timer");
 		timer.WaitTime = FireRate;
 		timer.Timeout += OnTimerTimeout;
@@ -47,7 +47,7 @@ public partial class Tower3 : Node2D
 	{
 		if (body.IsInGroup("enemies"))
 		{
-			GD.Print("detects");
+			
 			targetEnemy = body as Node2D;
 			
 			Shoot();
@@ -80,6 +80,7 @@ public partial class Tower3 : Node2D
 		Marker2D marker = GetNode<Marker2D>("Marker2D");
 		bullet.GlobalPosition = marker.GlobalPosition;
 		bullet.Rotation = Rotation;
+		//CallDeferred("add_child", bullet);
 		GetTree().CurrentScene.AddChild(bullet);
 	}
 
