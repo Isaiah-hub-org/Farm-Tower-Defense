@@ -44,7 +44,8 @@ and I had fun. I did the shaders and help on a tower and did a lot of the decora
 
 
 
-Instruction about our coding system(pending):
+Instruction about our coding system: Our coding system is pretty simple
+we did not any enums nor list on our codes.
 
 
 
