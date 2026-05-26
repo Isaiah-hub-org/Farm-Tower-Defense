@@ -634,7 +634,7 @@ position = Vector2(1230, 315)
 scale = Vector2(3.20833, 2.70833)
 sprite_frames = SubResource("SpriteFrames_10vdi")
 autoplay = "default"
-frame_progress = 0.048639
+frame_progress = 0.526098
 
 [node name="Tower3" type="AnimatedSprite2D" parent="."]
 position = Vector2(1189, 595)
