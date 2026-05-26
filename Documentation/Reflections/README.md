@@ -31,7 +31,9 @@ Thang Bawi:
 I worked on several parts of the game's development, including coding the health system(
 take damage and track health during gameplay). I also helped create and program some of the enemies, making them interact with towers and the map itself. In addition, I developed the scoreboard/leaderbaord system to keep track of player scores and rankings(which is not done).  
 
-JP:
+JP: During the project, I thought I did a good job. I wasn't the most skilled in the group. I 
+tried to utalize my time on things I could do. It was a great learning opportunity for me 
+and I had fun. I did the shaders and help on a tower and did a lot of the decoration part.
 
 
 
